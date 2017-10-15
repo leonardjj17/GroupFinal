@@ -46,14 +46,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">O'Shea Shenanigan's</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Main</a></li>
-                        <li><a runat="server" href="~/About">About Shenanigan's</a></li>
-                        <li><a runat="server" href="~/Contact">Contact Us</a></li>
+                        <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
+                        <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
+                        <li><a runat="server" href="~/Views/EmployeeListing">Employee Listing</a></li>
                     </ul>
                 </div>
             </div>

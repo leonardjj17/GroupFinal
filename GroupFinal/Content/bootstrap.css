@@ -4928,7 +4928,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-    padding: 30px;
+    width: 1000px;
     margin-bottom: 30px;
     font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
     font-size: 21px;
