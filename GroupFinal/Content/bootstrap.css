@@ -311,11 +311,11 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #ffffff;
 }
 
 input,
@@ -757,10 +757,11 @@ pre code {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+    padding-right: 15px;
+    padding-left: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 .container:before,
@@ -783,6 +784,12 @@ pre code {
   clear: both;
 }
 
+    .container.header-content {
+        background-color: darkgreen;
+        margin: 0 auto;
+        color: white;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    }
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -1078,9 +1085,9 @@ pre code {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 992px) {
   .container {
-    max-width: 900px;
+    max-width: 970px;
   }
   .col-md-1,
   .col-md-2,
@@ -1241,7 +1248,7 @@ pre code {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .container {
     max-width: 1170px;
   }
@@ -4028,6 +4035,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  
 }
 
 .navbar:before,
@@ -4079,6 +4087,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    
   }
 }
 
@@ -4196,6 +4205,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
+
 }
 
 .navbar-brand:hover,
@@ -4206,6 +4216,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
     margin-left: -15px;
+    color: white;
   }
 }
 
@@ -4219,6 +4230,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
+  
 }
 
 .navbar-toggle .icon-bar {
@@ -4226,10 +4238,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   width: 22px;
   height: 2px;
   border-radius: 1px;
+  
 }
 
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
+  
 }
 
 @media (min-width: 768px) {
@@ -4240,12 +4254,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
   margin: 7.5px -15px;
+  
 }
 
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  
 }
 
 @media (max-width: 767px) {
@@ -4257,13 +4273,16 @@ textarea.input-group-sm > .input-group-btn > .btn {
     background-color: transparent;
     border: 0;
     box-shadow: none;
+    
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
     padding: 5px 15px 5px 25px;
+    
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 20px;
+    
   }
   .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -4275,9 +4294,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-nav {
     float: left;
     margin: 0;
+    
   }
   .navbar-nav > li {
     float: left;
+    
   }
   .navbar-nav > li > a {
     padding-top: 15px;
@@ -4288,6 +4309,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
+    
   }
   .navbar-right {
     float: right !important;
@@ -4352,11 +4374,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  
 }
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  
 }
 
 .navbar-nav.pull-right > li > .dropdown-menu,
@@ -4368,48 +4392,57 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px;
+  
 }
 
 .navbar-text {
   float: left;
   margin-top: 15px;
   margin-bottom: 15px;
+  
 }
 
 @media (min-width: 768px) {
   .navbar-text {
     margin-right: 15px;
     margin-left: 15px;
+    
   }
 }
 
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
+  
 }
 
 .navbar-default .navbar-brand {
   color: #777777;
+  
 }
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #5e5e5e;
   background-color: transparent;
+  
 }
 
 .navbar-default .navbar-text {
   color: #777777;
+  
 }
 
 .navbar-default .navbar-nav > li > a {
   color: #777777;
+  
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #333333;
   background-color: transparent;
+  
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -4417,6 +4450,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:focus {
   color: #555555;
   background-color: #e7e7e7;
+  
 }
 
 .navbar-default .navbar-nav > .disabled > a,
@@ -4424,6 +4458,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .disabled > a:focus {
   color: #cccccc;
   background-color: transparent;
+  
 }
 
 .navbar-default .navbar-toggle {
@@ -4455,6 +4490,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:focus {
   color: #555555;
   background-color: #e7e7e7;
+  
 }
 
 .navbar-default .navbar-nav > .open > a .caret,
@@ -4472,11 +4508,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #777777;
+    
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333333;
     background-color: transparent;
+    
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
@@ -4494,10 +4532,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-link {
   color: #777777;
+  
 }
 
 .navbar-default .navbar-link:hover {
   color: #333333;
+  
 }
 
 .navbar-inverse {
@@ -4507,6 +4547,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-brand {
   color: #999999;
+  
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -4517,6 +4558,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-text {
   color: #999999;
+  
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -4541,6 +4583,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444444;
   background-color: transparent;
+  
 }
 
 .navbar-inverse .navbar-toggle {
@@ -4608,6 +4651,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #444444;
     background-color: transparent;
+    
   }
 }
 
@@ -4928,43 +4972,43 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-    width: 1000px;
-    margin-bottom: 30px;
-    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-    font-size: 21px;
-    font-weight: 200;
-    line-height: 2.1428571435;
+    margin-bottom: 20px;
     color: inherit;
-    background-color: #eeeeee;
-    background-image: url("/images/main_title1.png");
-    background-repeat: no-repeat;
+    background-color: darkgreen;
+    margin: 0 auto;
+
 }
 
-.jumbotron h1 {
-  line-height: 1;
-  color: inherit;
-}
+    .jumbotron h1 {
+        color: white;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        font-weight: 100;
+        font-size: 50pt;
+        padding-left: 50px;
+     
+    }
 
-.jumbotron p {
-  line-height: 1.4;
+
+
+.jumbotron img {
+  
+
 }
 
 .container .jumbotron {
-  border-radius: 6px;
+    border-radius: 6px;
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+   margin: 0 auto;
+
   }
   .container .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+
   }
-  .jumbotron h1 {
-    font-size: 63px;
-  }
+
 }
 
 .thumbnail {
@@ -6816,4 +6860,40 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+
+.navbar-header {
+    background-color: #000000;
+    color: white;
+}
+
+.nav navbar-nav {
+    color: white;
+}
+
+.container body-content h1 {
+    font-size: 80px;
+    
+}
+
+
+.row img {
+    margin-left: 120px;
+    
+}
+
+#start {
+   margin-left: 538px;
+   margin-top: 366px;
+   font-size: 1.5em;
+   font-weight: bold;
+   color: white;
+   background-color: firebrick;
+   border-radius: 20px;
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   word-wrap: break-word;
+   text-align: center;
+ }
 }

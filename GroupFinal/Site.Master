@@ -60,6 +60,10 @@
                 </div>
             </div>
         </div>
+        <div class="jumbotron">
+        <h1>O'Shea Shenanigan's Pub & Pizza</h1>
+     </div>
+    </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
