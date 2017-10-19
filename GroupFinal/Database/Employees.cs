@@ -10,9 +10,14 @@ namespace GroupFinal.DA
     {
         public Employee GetEmployeeByLogin(String Login)
         {
+            SqlConnection connection = Connection.getConnection();
+            if (connection != null)
+            {
+                connection.Open();
+            }
             if (Login == null) return null;
-            String query = "SELECT * FROM Employees WHERE Role in ('Employee', 'Manager') AND Login = @Login";
-            SqlCommand cmd = new SqlCommand(query);
+            String query = "SELECT * FROM Employees WHERE Role IN ('Employee', 'Manager') AND Login = @Login";
+            SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("Login", Login);
 
         }
