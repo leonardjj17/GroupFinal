@@ -184,6 +184,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\EmployeeListing.aspx" />
+    <Content Include="Views\Financial.aspx" />
     <Content Include="Views\PizzaMaster.aspx" />
     <Content Include="Views\PizzaMasterMobile.aspx" />
     <Content Include="Web.config" />
@@ -271,6 +272,13 @@
     </Compile>
     <Compile Include="Views\EmployeeListing.aspx.designer.cs">
       <DependentUpon>EmployeeListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Financial.aspx.cs">
+      <DependentUpon>Financial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Financial.aspx.designer.cs">
+      <DependentUpon>Financial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaMaster.aspx.cs">
       <DependentUpon>PizzaMaster.aspx</DependentUpon>
