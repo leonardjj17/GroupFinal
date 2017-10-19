@@ -11,5 +11,23 @@ namespace GroupFinal.Views {
     
     
     public partial class Financial {
+        
+        /// <summary>
+        /// lblStoreNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStoreNumber;
+        
+        /// <summary>
+        /// lblStoreBalance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStoreBalance;
     }
 }
