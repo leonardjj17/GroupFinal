@@ -197,6 +197,8 @@
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\EmployeeDA.cs" />
     <Compile Include="Database\OrderDA.cs" />
+    <Compile Include="Database\ProductsDA.cs" />
+    <Compile Include="Database\StoreDA.cs" />
     <Compile Include="Employees\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

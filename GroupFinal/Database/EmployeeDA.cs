@@ -56,7 +56,7 @@ namespace GroupFinal.DA
             return e;
         }
 
-        public static List<Employee> GetAllEmployee()
+        public static List<Employee> GetAllEmployees()
         {
             List<Employee> allEmployees = new List<Employee>();
 
@@ -102,7 +102,98 @@ namespace GroupFinal.DA
             }
             return allEmployees;
         }
+        public static List<Employee> GetAllEmployeeExceptManagerByStoreNumber(int storeNum)
+        {
+            List<Employee> allEmployees = new List<Employee>();
 
+            SqlConnection connection = Connection.getConnection();
 
+            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager') AND storeNum = @storeNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", storeNum);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Employee e = new Employee();
+
+                    //e.EmployeeID = (int)read["employeeID"];
+                    //e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeRole = (String)read["role"];
+                    //e.Login = (String)read["login"];
+                    //e.password = (String)read["password"];
+
+                    allEmployees.Add(e);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allEmployees;
+        }
+
+        public static List<Employee> GetAllEmployeeExceptManager()
+        {
+            List<Employee> allEmployees = new List<Employee>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager')";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Employee e = new Employee();
+
+                    //e.EmployeeID = (int)read["employeeID"];
+                    //e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeRole = (String)read["role"];
+                    //e.Login = (String)read["login"];
+                    //e.password = (String)read["password"];
+
+                    allEmployees.Add(e);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allEmployees;
+        }
     }
 }
