@@ -49,7 +49,7 @@ namespace GroupFinal
             
         }
         //get and sets for all employee variables
-        public string EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
 
         public string EmployeeFirst { get; set; }
 
