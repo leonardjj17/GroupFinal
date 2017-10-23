@@ -11,7 +11,8 @@ namespace GroupFinal.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblStoreNumber.Text = Convert.ToString(Session["storeNumber"]);
+            lblStoreBalance.Text = Convert.ToString(Session["storeBalance"]);
         }
     }
 }

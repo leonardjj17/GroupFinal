@@ -185,6 +185,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\EmployeeListing.aspx" />
     <Content Include="Views\Financial.aspx" />
+    <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\PizzaMaster.aspx" />
     <Content Include="Views\PizzaMasterMobile.aspx" />
     <Content Include="Web.config" />
@@ -193,7 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Classes\Finacial.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\Sides.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\EmployeeDA.cs" />
     <Compile Include="Database\OrderDA.cs" />
@@ -282,6 +285,13 @@
     </Compile>
     <Compile Include="Views\Financial.aspx.designer.cs">
       <DependentUpon>Financial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaMaster.aspx.cs">
       <DependentUpon>PizzaMaster.aspx</DependentUpon>
