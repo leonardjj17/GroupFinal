@@ -69,7 +69,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's Inc.</p>
+                <p>&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</p>
             </footer>
         </div>
 

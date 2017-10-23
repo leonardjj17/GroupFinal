@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GroupFinal.DA
 {
-    public class Orders
+    public class OrderDA
     {
     }
 }

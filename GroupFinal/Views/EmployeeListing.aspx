@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Employee Listing" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeListing.aspx.cs" Inherits="GroupFinal.Views.EmployeeListing" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <h2><%: Title %>
+     <h2><%: Title %> </h2>
          <table style="width:99%;">
          
          <tr>
@@ -15,7 +15,7 @@
          </tr>
         
          </table>
-     </h2>
+    
 
    
 </asp:Content>

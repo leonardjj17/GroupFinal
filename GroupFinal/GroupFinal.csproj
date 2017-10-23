@@ -194,8 +194,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Database\Connection.cs" />
-    <Compile Include="Database\Employees.cs" />
-    <Compile Include="Database\Orders.cs" />
+    <Compile Include="Database\EmployeeDA.cs" />
+    <Compile Include="Database\OrderDA.cs" />
     <Compile Include="Employees\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
