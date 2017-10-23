@@ -194,7 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Classes\Finacial.cs" />
+    <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Sides.cs" />
     <Compile Include="Database\Connection.cs" />
