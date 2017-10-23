@@ -18,7 +18,7 @@ namespace GroupFinal
         //empty constructor
         public Products()
         {
-
+            
             productPrice = 0.0;
             productType = "";
             productQuantity = 0;

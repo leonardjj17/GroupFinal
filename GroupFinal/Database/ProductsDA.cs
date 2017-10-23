@@ -59,7 +59,7 @@ namespace GroupFinal.Database
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Products";
+            String query = "SELECT * FROM Products WHERE productType = 'ingredients'";
             SqlCommand cmd = new SqlCommand(query, connection);
 
 
@@ -72,15 +72,12 @@ namespace GroupFinal.Database
                 {
                     Products p = new Products();
 
-                    //e.EmployeeID = (int)read["employeeID"];
-                    //e.StoreNum = (String)read["storeNum"];
-                    //e.EmployeeFirst = (String)read["employeeFirst"];
-                    //e.EmployeeLast = (String)read["employeeLast"];
-                    //e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    //e.EmployeeStatus = (String)read["empl"];
-                    //e.EmployeeRole = (String)read["role"];
-                    //e.Login = (String)read["login"];
-                    //e.password = (String)read["password"];
+                    //p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    //p.ProductDetail = (String)read["productDetail"];
+                    //p.ProductPrice = (decimal)read["productPrice"];
+                    //p.ProductCost = (decimal)read["productCost"];
+                    //p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
                 }
