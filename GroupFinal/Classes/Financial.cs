@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class Finacial
+    public class Financial
     {
         //the only thing I figure we needed for right now was storeBalance
         private double storeBalance;
