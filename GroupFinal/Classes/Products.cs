@@ -8,13 +8,14 @@ namespace GroupFinal
     public class Products
     {
         //declaring variables
-        private double productPrice;
+        private int productID; private double productPrice;
         private string productType;
         private int productQuantity;
 
         //empty constructor
         public Products()
         {
+
             productPrice = 0.0;
             productType = "";
             productQuantity = 0;
