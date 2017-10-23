@@ -35,10 +35,10 @@ namespace GroupFinal.DA
                 e.EmployeeFirst = (String)read["employeeFirst"];
                 e.EmployeeLast = (String)read["employeeLast"];
                 e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                e.EmployeeStatus = (String)read["empl"];
+                e.EmployeeStatus = (String)read["employeeRole"];
                 e.EmployeeRole = (String)read["role"];
                 //e.Login = (String)read["login"];
-                //e.password = (String)read["password"];
+                //e.Password = (String)read["password"];
 
             }
             catch (SqlException ex)
