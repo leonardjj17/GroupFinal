@@ -18,6 +18,7 @@ namespace GroupFinal
         private int employeeOrders;
         private string employeeLogin;
         private string employeePassword;
+        private string storeNum;
 
         //empty constructor
         public Employee()
@@ -32,9 +33,10 @@ namespace GroupFinal
             employeeOrders = 0;
             employeeLogin = "";
             employeePassword = "";
+            storeNum = "";
         }
         //constructor with all the variables
-        public Employee(int employeeID, string employeeFirst, string employeeLast, string employeePhone, string employeeRole, DateTime employeeHireDate, string employeeStatus, int employeeOrders, string employeeLogin, string employeePassword)
+        public Employee(int employeeID, string employeeFirst, string employeeLast, string employeePhone, string employeeRole, DateTime employeeHireDate, string employeeStatus, int employeeOrders, string employeeLogin, string employeePassword, string storeNum)
         {
             this.employeeID = employeeID;
             this.employeeFirst = employeeFirst;
@@ -46,7 +48,7 @@ namespace GroupFinal
             this.employeeOrders = employeeOrders;
             this.employeeLogin = employeeLogin;
             this.employeePassword = employeePassword;
-            
+            this.storeNum = storeNum;
         }
         //get and sets for all employee variables
         public int EmployeeID { get; set; }
@@ -64,5 +66,11 @@ namespace GroupFinal
         public string EmployeeStatus { get; set; }
 
         public int EmployeeOrders { get; set; }
+
+        public string EmployeeLogin { get; set; }
+        
+        public string EmployeePassword { get; set; }
+        
+        public string StoreNum { get; set; }
     }
 }
