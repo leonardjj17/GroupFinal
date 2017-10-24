@@ -196,6 +196,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\ServiceZips.cs" />
     <Compile Include="Classes\Sides.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />
