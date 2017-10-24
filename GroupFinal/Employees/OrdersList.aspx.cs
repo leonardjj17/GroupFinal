@@ -8,18 +8,18 @@ using System.Web.UI.WebControls;
 
 namespace GroupFinal.Employees
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class OrdersList : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            Employee employee = (Employee)Session["employee"];
-            if (Session["employee"] == null)
+            string storeNum = (string)Session["storeNum"];
+
+            OrderList orders = new OrderList(storeNum);
+            foreach (Order order in orders.getOrders())
             {
-                Response.Redirect("Login.aspx");
+
             }
 
-            //lblName.Text = employee.EmployeeFirst;
         }
     }
 }
