@@ -37,8 +37,9 @@ namespace GroupFinal.DA
                 e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
                 e.EmployeeStatus = (String)read["employeeRole"];
                 e.EmployeeRole = (String)read["role"];
-                //e.Login = (String)read["login"];
-                //e.Password = (String)read["password"];
+                e.Login = (String)read["login"];
+                e.Password = (String)read["password"];
+                
 
             }
             catch (SqlException ex)
@@ -75,15 +76,15 @@ namespace GroupFinal.DA
                 {
                     Employee e = new Employee();
 
-                    //e.EmployeeID = (int)read["employeeID"];
-                    //e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
                     e.EmployeeStatus = (String)read["empl"];
                     e.EmployeeRole = (String)read["role"];
-                    //e.Login = (String)read["login"];
-                    //e.password = (String)read["password"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
 
                     allEmployees.Add(e);
                 }

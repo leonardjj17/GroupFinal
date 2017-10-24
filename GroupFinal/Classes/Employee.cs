@@ -67,9 +67,9 @@ namespace GroupFinal
 
         public int EmployeeOrders { get; set; }
 
-        public string EmployeeLogin { get; set; }
+        public string Login { get; set; }
         
-        public string EmployeePassword { get; set; }
+        public string Password { get; set; }
         
         public string StoreNum { get; set; }
     }
