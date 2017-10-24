@@ -28,12 +28,12 @@ namespace GroupFinal.Database
                 {
                     Products p = new Products();
 
-                    //p.ProductID = (int)read["productID"];
+                    p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
-                    //p.ProductDetail = (String)read["productDetail"];
-                    //p.ProductPrice = (decimal)read["productPrice"];
-                    //p.ProductCost = (decimal)read["productCost"];
-                    //p.ProductQty = (int)read["productQty"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
 
                     allProducts.Add(p);
                 }
@@ -75,9 +75,229 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (decimal)read["productPrice"];
-                    //p.ProductCost = (decimal)read["productCost"];
-                    //p.ProductQty = (int)read["productQty"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
+
+                    allIngredients.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allIngredients;
+        }
+
+        public static List<Products> GetAllSides()
+        {
+            List<Products> allIngredients = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'sides'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
+
+                    allIngredients.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allIngredients;
+        }
+
+        public static List<Products> GetAllSalads()
+        {
+            List<Products> allIngredients = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'salads'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
+
+                    allIngredients.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allIngredients;
+        }
+
+        public static List<Products> GetAllDressings()
+        {
+            List<Products> allIngredients = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'dressings'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
+
+                    allIngredients.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allIngredients;
+        }
+
+        public static List<Products> GetAllDrinks()
+        {
+            List<Products> allIngredients = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'drinks'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
+
+                    allIngredients.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allIngredients;
+        }
+
+        public static List<Products> GetAllAlcohol()
+        {
+            List<Products> allIngredients = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'alcohol'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
                 }
