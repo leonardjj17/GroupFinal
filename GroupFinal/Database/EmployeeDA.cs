@@ -43,11 +43,11 @@ namespace GroupFinal.DA
             }
             catch (SqlException ex)
             {
-
+                return null;
             }
             catch (Exception ex)
             {
-
+                return null;
             }
             finally
             {

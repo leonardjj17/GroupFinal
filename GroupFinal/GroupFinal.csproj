@@ -131,6 +131,7 @@
     <Content Include="App_Data\OsheaDB_log.ldf" />
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\Login.aspx" />
+    <Content Include="Employees\OrdersList.aspx" />
     <Content Include="Orders\Orders.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -194,6 +195,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\OrderList.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\EmployeeDA.cs" />
     <Compile Include="Database\OrderDA.cs" />
@@ -209,6 +211,13 @@
     </Compile>
     <Compile Include="Employees\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\OrdersList.aspx.cs">
+      <DependentUpon>OrdersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\OrdersList.aspx.designer.cs">
+      <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders\Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
@@ -229,7 +238,7 @@
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Pizza.cs" />
     <Compile Include="Classes\Products.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

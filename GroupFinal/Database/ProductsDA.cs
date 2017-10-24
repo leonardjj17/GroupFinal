@@ -97,7 +97,7 @@ namespace GroupFinal.Database
             {
                 connection.Close();
             }
-            return allEmployees;
+            return allIngredients;
         }
     }
 }

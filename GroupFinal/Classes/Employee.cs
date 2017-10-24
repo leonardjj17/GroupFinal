@@ -16,6 +16,7 @@ namespace GroupFinal
         private DateTime employeeHireDate;
         private string employeeStatus;
         private int employeeOrders;
+        private string employeePassword;
         //empty constructor
         public Employee()
         {
@@ -56,5 +57,8 @@ namespace GroupFinal
         public string EmployeeStatus { get; set; }
 
         public int EmployeeOrders { get; set; }
+
+        public string EmployeePassword { get; set; }
+        public string EmployeeStoreNum { get; set; }
     }
 }
