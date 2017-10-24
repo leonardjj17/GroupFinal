@@ -43,7 +43,7 @@ namespace GroupFinal
 
         public string ProductType { get; set; }
 
-        public int ProductQuantity { get; set; }
+        public int ProductQty { get; set; }
 
         public double ProductCost { get; set; }
 

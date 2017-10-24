@@ -75,9 +75,9 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (decimal)read["productPrice"];
-                    //p.ProductCost = (decimal)read["productCost"];
-                    //p.ProductQty = (int)read["productQty"];
+                    p.ProductPrice = (double)read["productMenuPrice"];
+                    p.ProductCost = (double)read["productCost"];
+                    p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
                 }
