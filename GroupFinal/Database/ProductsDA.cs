@@ -72,10 +72,10 @@ namespace GroupFinal.Database
                 {
                     Products p = new Products();
 
-                    //p.ProductID = (int)read["productID"];
+                    p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
-                    //p.ProductDetail = (String)read["productDetail"];
-                    //p.ProductPrice = (decimal)read["productPrice"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = (decimal)read["productPrice"];
                     //p.ProductCost = (decimal)read["productCost"];
                     //p.ProductQty = (int)read["productQty"];
 
