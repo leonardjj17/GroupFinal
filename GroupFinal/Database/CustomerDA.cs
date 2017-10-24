@@ -7,5 +7,6 @@ namespace GroupFinal.Database
 {
     public class CustomerDA
     {
+
     }
 }

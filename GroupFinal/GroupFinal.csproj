@@ -198,6 +198,8 @@
     <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Salads.cs" />
+    <Compile Include="Classes\ServiceZips.cs" />
+    <Compile Include="Classes\Sides.cs" />
     <Compile Include="Classes\Stores.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />
