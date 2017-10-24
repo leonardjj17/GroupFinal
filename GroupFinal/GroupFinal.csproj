@@ -237,7 +237,7 @@
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Pizza.cs" />
     <Compile Include="Classes\Products.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
