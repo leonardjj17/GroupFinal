@@ -196,6 +196,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Alcohol.cs" />
+    <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drinks.cs" />
     <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />

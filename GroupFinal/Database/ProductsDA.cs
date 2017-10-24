@@ -103,7 +103,7 @@ namespace GroupFinal.Database
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Products WHERE productType = 'sides'";
+            String query = "SELECT * FROM Products WHERE productType = 'sides`";
             SqlCommand cmd = new SqlCommand(query, connection);
 
 
