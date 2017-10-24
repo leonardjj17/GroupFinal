@@ -8,7 +8,7 @@ namespace GroupFinal.Classes
     public class Financial
     {
         //the only thing I figure we needed for right now was storeBalance
-        private double totalBudget;
+        private double storeBalance;
         private string storeNum;
         private double totalDailyLoss;
         private double totalDailyProfit;
@@ -22,10 +22,10 @@ namespace GroupFinal.Classes
         {
 
         }
-        public Financial(double totalBudget, string storeNum, double totalDailyLoss, double totalDailyProfit, double totalDailyNetGain, int day, int month, int year)
+        public Financial(double storeBalance, string storeNum, double totalDailyLoss, double totalDailyProfit, double totalDailyNetGain, int day, int month, int year)
         {
 
-            this.totalBudget = totalBudget;
+            this.storeBalance = storeBalance;
             this.storeNum = storeNum;
             this.totalDailyLoss = totalDailyLoss;
             this.totalDailyProfit = totalDailyProfit;
@@ -55,14 +55,14 @@ namespace GroupFinal.Classes
         //Class to subtract from the total
         public void DeductBalance(double amountToSubtract)
         {
-            totalBudget -= amountToSubtract;
+            storeBalance -= amountToSubtract;
             totalDailyLoss -= amountToSubtract;
             UpdateNetGains();
         }
         //Class to add to the total
         public void AddBalance(double amountToAdd)
         {
-            totalBudget += amountToAdd;
+            storeBalance += amountToAdd;
             totalDailyProfit += amountToAdd;
             UpdateNetGains();
         }
