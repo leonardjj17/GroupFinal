@@ -7,12 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace GroupFinal.Views
 {
-    public partial class Financial : System.Web.UI.Page
+    public partial class Inventory : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblStoreNumber.Text = Convert.ToString(Session["storeNum"]);
-            lblStoreBalance.Text = Convert.ToString(Session["storeBalance"]);
+
         }
     }
 }
