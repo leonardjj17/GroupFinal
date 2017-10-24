@@ -8,7 +8,7 @@ namespace GroupFinal
     public class Employee
     {
         //variable declarations
-        private string employeeID;
+        private int employeeID;
         private string employeeFirst;
         private string employeeLast;
         private string employeePhone;
@@ -16,11 +16,14 @@ namespace GroupFinal
         private DateTime employeeHireDate;
         private string employeeStatus;
         private int employeeOrders;
+        private string employeeLogin;
         private string employeePassword;
+        private string storeNum;
+
         //empty constructor
         public Employee()
         {
-            employeeID = "";
+            employeeID = 0;
             employeeFirst = "";
             employeeLast = "";
             employeePhone = "";
@@ -28,9 +31,12 @@ namespace GroupFinal
             employeeHireDate = DateTime.Now;
             employeeStatus = "";
             employeeOrders = 0;
+            employeeLogin = "";
+            employeePassword = "";
+            storeNum = "";
         }
         //constructor with all the variables
-        public Employee(string employeeID, string employeeFirst, string employeeLast, string employeePhone, string employeeRole, DateTime employeeHireDate, string employeeStatus, int employeeOrders)
+        public Employee(int employeeID, string employeeFirst, string employeeLast, string employeePhone, string employeeRole, DateTime employeeHireDate, string employeeStatus, int employeeOrders, string employeeLogin, string employeePassword, string storeNum)
         {
             this.employeeID = employeeID;
             this.employeeFirst = employeeFirst;
@@ -40,9 +46,12 @@ namespace GroupFinal
             this.employeeHireDate = employeeHireDate;
             this.employeeStatus = employeeStatus;
             this.employeeOrders = employeeOrders;
+            this.employeeLogin = employeeLogin;
+            this.employeePassword = employeePassword;
+            this.storeNum = storeNum;
         }
         //get and sets for all employee variables
-        public string EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
 
         public string EmployeeFirst { get; set; }
 
@@ -58,7 +67,10 @@ namespace GroupFinal
 
         public int EmployeeOrders { get; set; }
 
-        public string EmployeePassword { get; set; }
-        public string EmployeeStoreNum { get; set; }
+        public string Login { get; set; }
+        
+        public string Password { get; set; }
+        
+        public string StoreNum { get; set; }
     }
 }

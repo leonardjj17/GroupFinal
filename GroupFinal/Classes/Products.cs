@@ -11,7 +11,10 @@ namespace GroupFinal
         private int productID;
         private double productPrice;
         private string productType;
-        private int productQuantity;
+        private int productQty;
+        private double productCost;
+        private double productMenuPrice;
+        private string productDetail;
 
         //empty constructor
         public Products()
@@ -19,21 +22,33 @@ namespace GroupFinal
 
             productPrice = 0.0;
             productType = "";
-            productQuantity = 0;
+            productQty = 0;
         }
         //constructor with all the variables
-        public Products(double productPrice, string productType, int productQuantity)
+        public Products(int productID, double productPrice, string productType, int productQuantity, double productCost, double productMenuPrice, string productDetail)
         {
+            this.productID = productID;
             this.productPrice = productPrice;
             this.productType = productType;
-            this.productQuantity = productQuantity;
+            this.productQty = productQuantity;
+            this.productCost = productCost;
+            this.productMenuPrice = productMenuPrice;
+            this.productDetail = productDetail;
         }
 
         //get and sets for all variables
+        public int ProductID { get; set; }
+
         public double ProductPrice { get; set; }
 
         public string ProductType { get; set; }
 
-        public int ProductQuantity { get; set; }
+        public int ProductQty { get; set; }
+
+        public double ProductCost { get; set; }
+
+        public double ProductMenuPrice { get; set; }
+
+        public string ProductDetail { get; set; }
     }
 }
