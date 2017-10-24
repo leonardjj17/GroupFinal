@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class Drinks
+    public class Drinks : Products
     {
         //variables
         private string drinkSize;

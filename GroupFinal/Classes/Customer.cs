@@ -7,37 +7,46 @@ namespace GroupFinal
 {
     public class Customer
     {
-        private int userID;
-        private string userFirst, userLast, userAddress, userCity, userState, userPhone, userZIP, userRole, userCC;
+        private int customerID;
+        private string customerFirst, customerLast, customerAddress, customerCity, customerState, customerPhone, customerRole, primaryStore, customerLogin, customerPassword, customerZIP;
 
         public Customer()
         {
 
         }
 
-        public Customer(int userID, string userFirst, string userLast, string userAddress, string userCity, string userState, string userZip, string userPhone, string userRole, string userCC)
+        public Customer(int customerID, string customerFirst, string customerLast, string customerAddress, string customerCity, 
+            string customerState, string customerZip, string customerPhone, string customerRole, string primaryStore, string customerLogin, string customerPassword)
+
         {
-            this.userID = UserID;
-            this.userFirst = UserFirst;
-            this.userLast = UserLast;
-            this.userAddress = UserAddress;
-            this.userCity = UserCity;
-            this.userState = UserState;
-            this.userZIP = UserZip;
-            this.userPhone = UserPhone;
-            this.userRole = UserRole;
-            this.userCC = UserCC;
+            this.customerID = CustomerID;
+            this.customerFirst = CustomerFirst;
+            this.customerLast = CustomerLast;
+            this.customerAddress = CustomerAddress;
+            this.customerCity = CustomerCity;
+            this.customerState = CustomerState;
+            this.customerZIP = CustomerZip;
+            this.customerPhone = CustomerPhone;
+            this.customerRole = CustomerRole;
+            this.primaryStore = PrimaryStore;
+            this.customerLogin = CustomerLogin;
+            this.customerPassword = CustomerPassword;
         }
 
-        public int UserID { get; set; }
-        public string UserFirst { get; set; }
-        public string UserLast { get; set; }
-        public string UserAddress { get; set; }
-        public string UserCity { get; set; }
-        public string UserState { get; set; }
-        public string UserPhone { get; set; }
-        public string UserZip { get; set; }
-        public string UserRole { get; set; }
-        public string UserCC { get; set; }
+        public int CustomerID { get; set; }
+        public string CustomerFirst { get; set; }
+        public string CustomerLast { get; set; }
+        public string CustomerAddress { get; set; }
+        public string CustomerCity { get; set; }
+        public string CustomerState { get; set; }
+        public string CustomerPhone { get; set; }
+        public string CustomerZip { get; set; }
+        public string CustomerRole { get; set; }
+        public string PrimaryStore { get; set; }
+        public string CustomerLogin { get; set; }
+        public string CustomerPassword { get; set; }
+
+
+
     }
 }

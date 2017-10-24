@@ -200,6 +200,7 @@
     <Compile Include="Classes\Drinks.cs" />
     <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
+    <Compile Include="Classes\Promotional.cs" />
     <Compile Include="Classes\Salads.cs" />
     <Compile Include="Classes\ServiceZips.cs" />
     <Compile Include="Classes\Side.cs" />
@@ -243,7 +244,7 @@
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Pizza.cs" />
     <Compile Include="Classes\Products.cs" />
-    <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Views\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
