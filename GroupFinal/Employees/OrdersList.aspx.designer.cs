@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupFinal.Views {
+namespace GroupFinal.Employees {
     
     
-    public partial class Inventory {
+    public partial class OrdersList {
         
         /// <summary>
-        /// lstIngredients control.
+        /// Panel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstIngredients;
+        protected global::System.Web.UI.WebControls.Panel Panel1;
     }
 }

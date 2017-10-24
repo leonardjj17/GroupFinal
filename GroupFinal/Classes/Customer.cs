@@ -5,17 +5,17 @@ using System.Web;
 
 namespace GroupFinal
 {
-    public class User
+    public class Customer
     {
-        private int userID, userZIP;
-        private string userFirst, userLast, userAddress, userCity, userState, userPhone, userRole, userCC;
+        private int userID;
+        private string userFirst, userLast, userAddress, userCity, userState, userPhone, userZIP, userRole, userCC;
 
-        public User()
+        public Customer()
         {
 
         }
 
-        public User(int userID, string userFirst, string userLast, string userAddress, string userCity, string userState, int userZip, string userPhone, string userRole, string userCC)
+        public Customer(int userID, string userFirst, string userLast, string userAddress, string userCity, string userState, string userZip, string userPhone, string userRole, string userCC)
         {
             this.userID = UserID;
             this.userFirst = UserFirst;
@@ -36,7 +36,7 @@ namespace GroupFinal
         public string UserCity { get; set; }
         public string UserState { get; set; }
         public string UserPhone { get; set; }
-        public int UserZip { get; set; }
+        public string UserZip { get; set; }
         public string UserRole { get; set; }
         public string UserCC { get; set; }
     }

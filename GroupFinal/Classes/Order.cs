@@ -7,38 +7,6 @@ namespace GroupFinal.Classes
 {
     public class Order
     {
-        //variable declarations
-        private int orderID;
-        private string customerFirst;
-        private string customerLast;
-        private double orderTotal;
-        private string storeNum;
-        private string isFavorite;
-        private string orderType;
-
-        //empty constructor
-        public Order()
-        {
-            orderID = 0;
-            customerFirst = "";
-            customerLast = "";
-            orderTotal = 0.0;
-            storeNum = "";
-            isFavorite = "";
-            orderType = "";
-        }
-
-        //constructor with all the variables
-        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType)
-        {
-            this.orderID = orderID;
-            this.customerFirst = customerFirst;
-            this.customerLast = customerLast;
-            this.orderTotal = orderTotal;
-            this.storeNum = storeNum;
-            this.isFavorite = isFavorite;
-            this.orderType = orderType;
-        }
 
         //basic gets and sets for all variables
         public int OrderID { get; set; }
@@ -54,5 +22,29 @@ namespace GroupFinal.Classes
         public string IsFavorite { get; set; }
 
         public string OrderType { get; set; }
+
+        //empty constructor
+        public Order()
+        {
+            OrderID = 0;
+            CustomerFirst = "";
+            CustomerLast = "";
+            OrderTotal = 0.0;
+            StoreNum = "";
+            IsFavorite = "";
+            OrderType = "";
+        }
+
+        //constructor with all the variables
+        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType)
+        {
+            this.OrderID = orderID;
+            this.CustomerFirst = customerFirst;
+            this.CustomerLast = customerLast;
+            this.OrderTotal = orderTotal;
+            this.StoreNum = storeNum;
+            this.IsFavorite = isFavorite;
+            this.OrderType = orderType;
+        }
     }
 }
