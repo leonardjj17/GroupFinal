@@ -221,7 +221,7 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];

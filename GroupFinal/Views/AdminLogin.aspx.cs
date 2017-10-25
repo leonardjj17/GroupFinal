@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using GroupFinal.DA;
 
 namespace GroupFinal.Views
 {
@@ -14,15 +15,28 @@ namespace GroupFinal.Views
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click1(object sender, EventArgs e)
         {
             int storeNumber;
-            string employeeID, password;
+            string login, password;
 
             storeNumber = Convert.ToInt32(txtStoreNumber.Text);
-            employeeID = txtEmployeeID.Text;
+            login = txtAdminLogin.Text;
             password = txtPassword.Text;
-        }
 
+            List<Employee> allAdmins = EmployeeDA.GetAllManagers();
+
+            foreach (Employee admin in allAdmins)
+            {
+                if((storeNumber == Convert.ToInt16(admin.StoreNum)) &&
+                    login == Convert.ToString(admin.Login) &&
+                    password == Convert.ToString(admin.Password))               
+                {
+                    Response.Redirect("~/Default.aspx");
+                }
+            }
+
+            
+        }
     }
 }
