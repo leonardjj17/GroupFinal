@@ -7,6 +7,6 @@ namespace GroupFinal.Classes
 {
     public class Alcohol
     {
-        public string alcohol
+        public string alcohol;
     }
 }

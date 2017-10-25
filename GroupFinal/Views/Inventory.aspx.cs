@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static GroupFinal.Database.ProductsDA;
+using GroupFinal.DA;
+using GroupFinal.Database;
 
 namespace GroupFinal.Views
 {
@@ -12,9 +13,9 @@ namespace GroupFinal.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Products> allProducts = GetAllIngredients();
+            List<Products> allProducts = ProductsDA.GetAllIngredients();
 
-            lstIngredients.Text = Convert.ToString(allProducts);
+            lblIngredients.Text = Convert.ToString(allProducts);
         }
     }
 }
