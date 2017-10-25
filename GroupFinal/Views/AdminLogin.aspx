@@ -7,10 +7,10 @@
     <br />
     <br />
     <br />
-    <asp:Label ID="Label2" runat="server" Text="Employee ID: "></asp:Label>
+    <asp:Label ID="Label2" runat="server" Text="Admin Login:"></asp:Label>
     &nbsp;&nbsp;
-    <asp:TextBox ID="txtEmployeeID" runat="server"></asp:TextBox>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtEmployeeID" Display="Dynamic" ErrorMessage="Employee ID is Required"></asp:RequiredFieldValidator>
+    <asp:TextBox ID="txtAdminLogin" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtAdminLogin" Display="Dynamic" ErrorMessage="Login Username is Required"></asp:RequiredFieldValidator>
     <br />
     <br />
     <br />
@@ -21,6 +21,7 @@
     <br />
     <br />
     <br />
-    <input id="btnLogin" type="submit" value="Login" /><br />
+    <asp:Button ID="btnLogin" runat="server" OnClick="btnLogin_Click1" Text="Login" />
+    <br />
     <br />
 </asp:Content>

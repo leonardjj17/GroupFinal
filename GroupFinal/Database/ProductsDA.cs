@@ -75,9 +75,10 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productMenuPrice"];
-                    p.ProductCost = (double)read["productCost"];
                     p.ProductQty = (int)read["productQty"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
+
 
                     allIngredients.Add(p);
                 }
@@ -88,7 +89,7 @@ namespace GroupFinal.Database
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message + " " +ex.StackTrace);
             }
             finally
             {
@@ -103,7 +104,7 @@ namespace GroupFinal.Database
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Products WHERE productType = 'sides'";
+            String query = "SELECT * FROM Products WHERE productType = 'sides`";
             SqlCommand cmd = new SqlCommand(query, connection);
 
 

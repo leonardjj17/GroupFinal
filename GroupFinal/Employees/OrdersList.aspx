@@ -4,6 +4,16 @@
         Order list for store</p>
     <p>
         &nbsp;</p>
-    <asp:Panel ID="Panel1" runat="server">
-    </asp:Panel>
+    <table>
+        <tr>
+            <th>OrderID</th>
+            <th>Customer Name</th>
+            <th>Order Total</th>
+            <th>Order Type</th>
+            <th>Action</th>
+        </tr>
+        <asp:Panel ID="pnlOrders" runat="server">
+        </asp:Panel>
+    </table>
+
 </asp:Content>
