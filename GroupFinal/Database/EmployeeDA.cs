@@ -22,7 +22,7 @@ namespace GroupFinal.DA
             }
             if (login == null) return null;
 
-            String query = "SELECT * FROM Employees WHERE Role IN ('Employee', 'Manager') AND login = @login";
+            String query = "SELECT * FROM Employee WHERE Role IN ('cook','bartender','delivery driver', 'store manager') AND login = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
 
@@ -35,7 +35,7 @@ namespace GroupFinal.DA
                 e.EmployeeFirst = (String)read["employeeFirst"];
                 e.EmployeeLast = (String)read["employeeLast"];
                 e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                e.EmployeeStatus = (String)read["employeeRole"];
+                e.EmployeeStatus = (String)read["Role"];
                 e.EmployeeRole = (String)read["role"];
                 e.Login = (String)read["login"];
                 e.Password = (String)read["password"];
@@ -44,11 +44,11 @@ namespace GroupFinal.DA
             }
             catch (SqlException ex)
             {
-
+                return null;
             }
             catch (Exception ex)
             {
-
+                return null;
             }
             finally
             {
@@ -63,7 +63,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
      
-            String query = "SELECT * FROM Employees";
+            String query = "SELECT * FROM Employee";
             SqlCommand cmd = new SqlCommand(query, connection);
        
 
@@ -109,7 +109,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager') AND storeNum = @storeNum";
+            String query = "SELECT * FROM Employee where role NOT LIKE ('store manager') AND storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@storeNum", storeNum);
 
@@ -122,15 +122,15 @@ namespace GroupFinal.DA
                 {
                     Employee e = new Employee();
 
-                    //e.EmployeeID = (int)read["employeeID"];
-                    //e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
                     e.EmployeeStatus = (String)read["empl"];
                     e.EmployeeRole = (String)read["role"];
-                    //e.Login = (String)read["login"];
-                    //e.password = (String)read["password"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
 
                     allEmployees.Add(e);
                 }
@@ -150,13 +150,13 @@ namespace GroupFinal.DA
             return allEmployees;
         }
 
-        public static List<Employee> GetAllEmployeeExceptManager()
+        public static List<Employee> GetAllEmployeesExceptManager()
         {
             List<Employee> allEmployees = new List<Employee>();
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager')";
+            String query = "SELECT * FROM Employee where role NOT LIKE ('store manager')";
             SqlCommand cmd = new SqlCommand(query, connection);
             
 
@@ -169,15 +169,15 @@ namespace GroupFinal.DA
                 {
                     Employee e = new Employee();
 
-                    //e.EmployeeID = (int)read["employeeID"];
-                    //e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
                     e.EmployeeStatus = (String)read["empl"];
                     e.EmployeeRole = (String)read["role"];
-                    //e.Login = (String)read["login"];
-                    //e.password = (String)read["password"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
 
                     allEmployees.Add(e);
                 }
@@ -196,5 +196,97 @@ namespace GroupFinal.DA
             }
             return allEmployees;
         }
+
+        public static List<Employee> GetAllManagers()
+        {
+            List<Employee> allManagers = new List<Employee>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Employee where role LIKE ('store manager')";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Employee e = new Employee();
+
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+
+                    allManagers.Add(e);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allManagers;
+        }
+
+        public static Employee GetEmployeeByID(int employeeID)
+        {
+            Employee e = new Employee();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Employee where employeeID = @employeeID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@employeeID", employeeID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+               
+
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return e;
+        }
     }
+
+
 }

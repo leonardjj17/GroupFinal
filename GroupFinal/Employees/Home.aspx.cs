@@ -1,14 +1,25 @@
-﻿using System;
+﻿using GroupFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Employees_Home : System.Web.UI.Page
+namespace GroupFinal.Employees
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class Home : System.Web.UI.Page
     {
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Employee employee = (Employee)Session["employee"];
+            if (Session["employee"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
+            //lblName.Text = employee.EmployeeFirst;
+        }
     }
 }

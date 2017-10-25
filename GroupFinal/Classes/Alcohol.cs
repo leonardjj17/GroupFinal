@@ -5,8 +5,9 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class Alcohol
+    public class Alcohol : Products
     {
-        public string alcohol;
+        public string alcoholType;
+        public double alcoholPrice;
     }
 }

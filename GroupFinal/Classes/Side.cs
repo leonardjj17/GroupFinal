@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class Side
+    public class Side : Products
     {
         private string sideType;
         private double sidePrice;

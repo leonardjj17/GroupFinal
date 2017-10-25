@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GroupFinal.DA;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,16 +17,21 @@ namespace GroupFinal.Employees
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            String login = txtUsername.Text;
-            String password = txtPassword.Text;
+            string login = txtUsername.Text;
+            string password = txtPassword.Text;
 
 
             //find out if username exists had has correct password
-
-            if (true)
+            Employee employee = EmployeeDA.GetEmployeeByLogin(login);
+            if (employee != null)
             {
-                Session["login"] = login;
-                Response.Redirect("Home.aspx");
+                if (password == employee.Password)
+                {
+                    Session["employee"] = employee;
+                    Session["role"] = employee.EmployeeRole;
+                    Session["storeNum"] = employee.StoreNum;
+                    Response.Redirect("Home.aspx");
+                }
             }
         }
     }
