@@ -12,7 +12,7 @@ namespace GroupFinal.Classes
 
         public OrderList(string storeID)
         {
-            this.orders = OrderDA.getOrdersByStoreNum(storeID);
+            this.orders = OrderDA.GetAllOrdersByStoreNum(storeID);
         }
         public List<Order> getOrders()
         {
@@ -21,12 +21,12 @@ namespace GroupFinal.Classes
         public void addOrder(Order order)
         {
             this.orders.Add(order);
-            OrderDA.addOrder(order);
+            //OrderDA.addOrder(order);
         }
         public void removeOrder(Order order)
         {
             this.orders.Remove(order);
-            OrderDA.removeOrder(order);
+            //OrderDA.removeOrder(order);
         }
     }
 }

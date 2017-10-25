@@ -158,7 +158,7 @@ namespace GroupFinal.Database
             return allCustomers;
         }
 
-        public static List<Customer> GetCustomerByID(int customerID)
+        public static Customer GetCustomerByID(int customerID)
         {
             Customer aCustomer = new Customer();
 
