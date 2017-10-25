@@ -22,7 +22,7 @@ namespace GroupFinal.DA
             }
             if (login == null) return null;
 
-            String query = "SELECT * FROM Employees WHERE Role IN ('Employee', 'Manager') AND login = @login";
+            String query = "SELECT * FROM Employee WHERE Role IN ('cook','bartender','delivery driver', 'store manager') AND login = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
 
@@ -63,7 +63,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
      
-            String query = "SELECT * FROM Employees";
+            String query = "SELECT * FROM Employee";
             SqlCommand cmd = new SqlCommand(query, connection);
        
 
@@ -109,7 +109,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager') AND storeNum = @storeNum";
+            String query = "SELECT * FROM Employee where role NOT LIKE ('store manager') AND storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@storeNum", storeNum);
 
@@ -156,7 +156,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where role NOT LIKE ('store manager')";
+            String query = "SELECT * FROM Employee where role NOT LIKE ('store manager')";
             SqlCommand cmd = new SqlCommand(query, connection);
             
 
@@ -203,7 +203,7 @@ namespace GroupFinal.DA
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where role LIKE ('store manager')";
+            String query = "SELECT * FROM Employee where role LIKE ('store manager')";
             SqlCommand cmd = new SqlCommand(query, connection);
 
 
@@ -244,13 +244,13 @@ namespace GroupFinal.DA
             return allManagers;
         }
 
-        public static List<Employee> GetEmployeeByID(int employeeID)
+        public static Employee GetEmployeeByID(int employeeID)
         {
             Employee e = new Employee();
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Employees where employeeID = @employeeID";
+            String query = "SELECT * FROM Employee where employeeID = @employeeID";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@employeeID", employeeID);
 
