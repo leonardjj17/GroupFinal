@@ -188,6 +188,7 @@
     <Content Include="Views\Financial.aspx" />
     <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
+    <Content Include="Views\OrderReciept.aspx" />
     <Content Include="Views\PizzaMaster.aspx" />
     <Content Include="Views\PizzaMasterMobile.aspx" />
     <Content Include="Web.config" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="Views\Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderReciept.aspx.cs">
+      <DependentUpon>OrderReciept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderReciept.aspx.designer.cs">
+      <DependentUpon>OrderReciept.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaMaster.aspx.cs">
       <DependentUpon>PizzaMaster.aspx</DependentUpon>
