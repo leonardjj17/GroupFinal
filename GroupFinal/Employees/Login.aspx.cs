@@ -25,11 +25,11 @@ namespace GroupFinal.Employees
             Employee employee = EmployeeDA.GetEmployeeByLogin(login);
             if (employee != null)
             {
-                if (password == employee.EmployeePassword)
+                if (password == employee.Password)
                 {
                     Session["employee"] = employee;
                     Session["role"] = employee.EmployeeRole;
-                    Session["storeNum"] = employee.EmployeeStoreNum;
+                    Session["storeNum"] = employee.StoreNum;
                     Response.Redirect("Home.aspx");
                 }
             }
