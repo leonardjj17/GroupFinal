@@ -22,5 +22,12 @@ namespace GroupFinal.Classes
             this.promotionalSize = promotionalSize;
             this.promotionalPrice = promotionalPrice;
         }
+
+        public string PromotionalType { get; set; }
+
+        public string PromotionalSize { get; set; }
+
+        public double PromotionalPrice { get; set; }
+
     }
 }
