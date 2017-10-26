@@ -28,13 +28,20 @@ namespace GroupFinal.Employees
                 double orderTotal = order.OrderTotal;
                 string orderType = order.OrderType;
                 string delete = null;
-                if ((string)Session["role"] == "store manager") {
+                if ((string)Session["role"] == "store manager")
+                {
                     delete = "<td><form action='delete.aspx' method='post'><input type='hidden' id='id' value='"
                         + orderID + "'><input type='submit' value=Delete></form></td>";
 
                 }
+                else
+                {
+                    delete = "<td><form action='ManagerLogin.aspx' method='post'><input type='hidden' id='id' value='"
+                        + orderID + "'><input type='submit' value=Delete></form></td>";
+                }
                 lblOrder.Text = "<tr><td>" + orderID + "</td><td>" + customerName + "</td><td>"
                     + orderTotal + "</td><td>" + orderType + "</td>" + delete + "</tr>";
+                pnlOrders.Controls.Add(lblOrder);
             }
 
         }
