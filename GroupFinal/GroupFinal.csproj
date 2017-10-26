@@ -130,6 +130,7 @@
     <Content Include="App_Data\OsheaDB.mdf" />
     <Content Include="App_Data\OsheaDB_log.ldf" />
     <Content Include="Employees\Home.aspx" />
+    <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="Orders\Orders.aspx" />
@@ -185,9 +186,10 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\EmployeeListing.aspx" />
-    <Content Include="Views\Financial.aspx" />
+    <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
+    <Content Include="Views\OrderReciept.aspx" />
     <Content Include="Views\PizzaMaster.aspx" />
     <Content Include="Views\PizzaMasterMobile.aspx" />
     <Content Include="Web.config" />
@@ -219,6 +221,13 @@
     <Compile Include="Employees\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\ManagerLogin.aspx.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\ManagerLogin.aspx.designer.cs">
+      <DependentUpon>ManagerLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employees\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -300,12 +309,12 @@
     <Compile Include="Views\EmployeeListing.aspx.designer.cs">
       <DependentUpon>EmployeeListing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Financial.aspx.cs">
-      <DependentUpon>Financial.aspx</DependentUpon>
+    <Compile Include="Views\FinancialView.aspx.cs">
+      <DependentUpon>FinancialView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Financial.aspx.designer.cs">
-      <DependentUpon>Financial.aspx</DependentUpon>
+    <Compile Include="Views\FinancialView.aspx.designer.cs">
+      <DependentUpon>FinancialView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
@@ -320,6 +329,13 @@
     </Compile>
     <Compile Include="Views\Inventory.aspx.designer.cs">
       <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderReciept.aspx.cs">
+      <DependentUpon>OrderReciept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderReciept.aspx.designer.cs">
+      <DependentUpon>OrderReciept.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaMaster.aspx.cs">
       <DependentUpon>PizzaMaster.aspx</DependentUpon>

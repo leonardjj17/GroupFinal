@@ -7,32 +7,22 @@ namespace GroupFinal.Classes
 {
     public class Financial
     {
-        //the only thing I figure we needed for right now was storeBalance
+        //variables
         private double storeBalance;
         private string storeNum;
-        private double totalDailyLoss;
-        private double totalDailyProfit;
-        private double totalDailyNetGain;
-        private int day;
-        private int month;
-        private int year;
+        
 
         //constructors
         public Financial()
         {
 
         }
-        public Financial(double storeBalance, string storeNum, double totalDailyLoss, double totalDailyProfit, double totalDailyNetGain, int day, int month, int year)
+        public Financial(double storeBalance, string storeNum)
         {
 
             this.storeBalance = storeBalance;
             this.storeNum = storeNum;
-            this.totalDailyLoss = totalDailyLoss;
-            this.totalDailyProfit = totalDailyProfit;
-            this.totalDailyNetGain = totalDailyNetGain;
-            this.day = day;
-            this.month = month;
-            this.year = year;
+            
         }
         
         //gets and sets for variables
@@ -40,36 +30,18 @@ namespace GroupFinal.Classes
 
         public string StoreNum { get; set; }
 
-        public double TotalDailyLoss { get; set; }
-
-        public double TotalDailyProfit { get; set; }
-
-        public double TotalDailyNetGain { get; set; }
-
-        public int Day { get; set; }
-
-        public int Month { get; set; }
-
-        public int Year { get; set; }
 
         //Class to subtract from the total
         public void DeductBalance(double amountToSubtract)
         {
             storeBalance -= amountToSubtract;
-            totalDailyLoss -= amountToSubtract;
-            UpdateNetGains();
+            
         }
         //Class to add to the total
         public void AddBalance(double amountToAdd)
         {
             storeBalance += amountToAdd;
-            totalDailyProfit += amountToAdd;
-            UpdateNetGains();
-        }
-        //Class that updates the totalDailyNetGain variable everytime it is called, should be called anytime you change the dailyProfit or the dailyLoss
-        public void UpdateNetGains()
-        {
-            totalDailyNetGain = totalDailyProfit - totalDailyLoss;
+            
         }
     }
 }

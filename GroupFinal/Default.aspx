@@ -17,6 +17,8 @@
             <h2>even more stuff</h2>
             
         </div>
+        <a href="Employees/Login.aspx">Employees</a>
+        <a href="Views/Financial.aspx">Financial</a>
     </div>
 
 </asp:Content>

@@ -10,60 +10,60 @@
 namespace GroupFinal.Views {
     
     
-    public partial class Inventory {
+    public partial class OrderReciept {
         
         /// <summary>
-        /// lblIngredientName control.
+        /// lblFirst control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIngredientName;
+        protected global::System.Web.UI.WebControls.Label lblFirst;
         
         /// <summary>
-        /// lblItemCost control.
+        /// lblLast control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblItemCost;
+        protected global::System.Web.UI.WebControls.Label lblLast;
         
         /// <summary>
-        /// lblMenuPrice control.
+        /// lblOrderTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMenuPrice;
+        protected global::System.Web.UI.WebControls.Label lblOrderTotal;
         
         /// <summary>
-        /// lblQuantity control.
+        /// lblStoreNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
+        protected global::System.Web.UI.WebControls.Label lblStoreNumber;
         
         /// <summary>
-        /// lstIngredients control.
+        /// lblIsFavorite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstIngredients;
+        protected global::System.Web.UI.WebControls.Label lblIsFavorite;
         
         /// <summary>
-        /// btnSelect control.
+        /// lblOrderType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelect;
+        protected global::System.Web.UI.WebControls.Label lblOrderType;
     }
 }
