@@ -28,6 +28,5 @@ namespace GroupFinal.Classes
         public string PromotionalSize { get; set; }
 
         public double PromotionalPrice { get; set; }
-
     }
 }
