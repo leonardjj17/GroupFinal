@@ -13,6 +13,7 @@ namespace GroupFinal.DA
 
         public static Employee GetEmployeeByLogin(String login)
         {
+            if (login == null) return null;
             Employee e = new Employee();
 
             SqlConnection connection = Connection.getConnection();
@@ -20,9 +21,9 @@ namespace GroupFinal.DA
             {
                 connection.Open();
             }
-            if (login == null) return null;
 
-            String query = "SELECT * FROM Employee WHERE Role IN ('cook','bartender','delivery driver', 'store manager') AND login = @login";
+            //String query = "SELECT * FROM Employee WHERE Role IN ('cook','bartender','delivery driver', 'store manager') AND Login = @login";
+            String query = "SELECT * FROM Employee WHERE login = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
 
@@ -30,16 +31,20 @@ namespace GroupFinal.DA
             {
                 SqlDataReader read = cmd.ExecuteReader();
 
-                e.EmployeeID = (int)read["employeeID"];
-                e.StoreNum = (String)read["storeNum"];
-                e.EmployeeFirst = (String)read["employeeFirst"];
-                e.EmployeeLast = (String)read["employeeLast"];
-                e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                e.EmployeeStatus = (String)read["Role"];
-                e.EmployeeRole = (String)read["role"];
-                e.Login = (String)read["login"];
-                e.Password = (String)read["password"];
-                
+                if (read.Read())
+                {
+
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["Role"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+                }
+                else return null;
 
             }
             catch (SqlException ex)
@@ -259,18 +264,16 @@ namespace GroupFinal.DA
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
 
-               
 
-                    e.EmployeeID = (int)read["employeeID"];
-                    e.StoreNum = (String)read["storeNum"];
-                    e.EmployeeFirst = (String)read["employeeFirst"];
-                    e.EmployeeLast = (String)read["employeeLast"];
-                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
-                    e.EmployeeRole = (String)read["role"];
-                    e.Login = (String)read["login"];
-                    e.Password = (String)read["password"];
-
+                e.EmployeeID = (int)read["employeeID"];
+                e.StoreNum = (String)read["storeNum"];
+                e.EmployeeFirst = (String)read["employeeFirst"];
+                e.EmployeeLast = (String)read["employeeLast"];
+                e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                e.EmployeeStatus = (String)read["empl"];
+                e.EmployeeRole = (String)read["role"];
+                e.Login = (String)read["login"];
+                e.Password = (String)read["password"];
             }
             catch (SqlException ex)
             {

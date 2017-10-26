@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
  
         <h1>Welcome, <asp:Label ID="lblName" runat="server" Text="User"></asp:Label></h1>
-        <a href="OrderList.aspx">Orders</a>
+        <a href="OrdersList.aspx">Orders</a>
 
 </asp:Content>
 
