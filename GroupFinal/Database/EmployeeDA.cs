@@ -103,7 +103,7 @@ namespace GroupFinal.DA
             }
             return allEmployees;
         }
-        public static List<Employee> GetAllEmployeeExceptManagerByStoreNumber(int storeNum)
+        public static List<Employee> GetAllEmployeesExceptManagerByStoreNumber(int storeNum)
         {
             List<Employee> allEmployees = new List<Employee>();
 
