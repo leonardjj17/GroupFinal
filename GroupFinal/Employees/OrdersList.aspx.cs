@@ -27,14 +27,29 @@ namespace GroupFinal.Employees
                 string customerName = order.CustomerFirst + " " + order.CustomerLast;
                 double orderTotal = order.OrderTotal;
                 string orderType = order.OrderType;
+                
+
+                string assignDriver = "<td><form action='AssignDriver.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
+                    + orderID + "'><input type='submit' value='Assign Driver'></form></td>";
+
                 string delete = null;
-                if ((string)Session["role"] == "store manager") {
-                    delete = "<td><form action='delete.aspx' method='post'><input type='hidden' id='id' value='"
-                        + orderID + "'><input type='submit' value=Delete></form></td>";
+                if ((string)Session["role"] == "store manager")
+                {
+                    delete = "<td><form action='Delete.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
+                        + orderID + "'><input type='submit' value='Delete'></form></td>";
 
                 }
+                else
+                {
+                    delete = "<td><form action='ManagerLogin.aspx' method='post' target='_blank'><input type='hidden' id='id' value='"
+                        + orderID + "'><input type='submit' value=Delete></form></td>";
+                }
+
+
                 lblOrder.Text = "<tr><td>" + orderID + "</td><td>" + customerName + "</td><td>"
-                    + orderTotal + "</td><td>" + orderType + "</td>" + delete + "</tr>";
+                    + orderTotal + "</td><td>" + orderType + "</td>" + assignDriver + delete + "</tr>";
+                pnlOrders.Controls.Add(lblOrder);
+
             }
 
         }
