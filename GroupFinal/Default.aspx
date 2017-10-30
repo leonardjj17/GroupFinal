@@ -5,20 +5,14 @@
   
 
     <div class="row">
-        <div class="col-md-4">
-            <h2>some stuff</h2>
+            <h2>Welcome to O'Shea Shenanigan's Pub & Pizzeria. The most authentic Irish Pizza in the country.</h2>
            
         </div>
-        <div class="col-md-4">
-            <h2>more stuff</h2>
+        
+            <h2></h2>
             
-        </div>
-        <div class="col-md-4">
-            <h2>even more stuff</h2>
             
-        </div>
-        <a href="Employees/Login.aspx">Employees</a>
-        <a href="Views/Financial.aspx">Financial</a>
-    </div>
+        
+       
 
 </asp:Content>
