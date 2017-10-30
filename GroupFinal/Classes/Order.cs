@@ -46,5 +46,13 @@ namespace GroupFinal.Classes
             this.IsFavorite = isFavorite;
             this.OrderType = orderType;
         }
+        //method to call at the end of a delivery to make sure that order total is increased if it's a delivery
+        public void checkDeliveryPrice()
+        {
+            if (OrderType == "delivery")
+            {
+                OrderTotal += 2.00;
+            }
+        }
     }
 }
