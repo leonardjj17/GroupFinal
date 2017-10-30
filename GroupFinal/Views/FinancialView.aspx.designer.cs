@@ -10,7 +10,7 @@
 namespace GroupFinal.Views {
     
     
-    public partial class Financial {
+    public partial class FinancialView {
         
         /// <summary>
         /// lblStoreNumber control.

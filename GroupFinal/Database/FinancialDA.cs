@@ -58,7 +58,7 @@ namespace GroupFinal.Database
 
             SqlConnection connection = Connection.getConnection();
 
-            String query = "SELECT * FROM Orders WHERE storeNum = @storeNum";
+            String query = "SELECT * FROM Financial WHERE storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@storeNum", storeNum);
 
@@ -66,18 +66,20 @@ namespace GroupFinal.Database
             {
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
-                
-                storeBalance.StoreNum = (String)read["storeNum"];
-                storeBalance.StoreBalance = (double)read["storeBalance"];
 
+                if (read.Read())
+                {
+                    storeBalance.StoreNum = (String)read["storeNum"];
+                    storeBalance.StoreBalance = Convert.ToDouble(read["storeBalance"]);
+                }
             }
             catch (SqlException ex)
             {
-
+                Console.WriteLine(ex.Message + " " + ex.StackTrace);
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message + " " + ex.StackTrace);   
             }
             finally
             {
