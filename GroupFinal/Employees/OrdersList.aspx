@@ -10,7 +10,8 @@
             <th>Customer Name</th>
             <th>Order Total</th>
             <th>Order Type</th>
-            <th>Action</th>
+            <th>Driver</th>
+            <th>Delete</th>
         </tr>
         <asp:Panel ID="pnlOrders" runat="server">
         </asp:Panel>
