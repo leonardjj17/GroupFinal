@@ -11,7 +11,7 @@ namespace GroupFinal.Views
 {
 
 
-    public partial class PizzaMasterMobile
+    public partial class Specials
     {
     }
 }
