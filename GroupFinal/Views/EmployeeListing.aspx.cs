@@ -18,5 +18,10 @@ namespace GroupFinal.Views
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
