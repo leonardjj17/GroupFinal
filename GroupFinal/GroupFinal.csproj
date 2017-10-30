@@ -132,6 +132,7 @@
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
+    <Content Include="images\blankPizza.png" />
     <Content Include="Orders\Orders.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -191,6 +192,7 @@
     <Content Include="Views\OrderReciept.aspx" />
     <Content Include="Views\PizzaMaster.aspx" />
     <Content Include="Views\PizzaMasterMobile.aspx" />
+    <Content Include="Views\PizzaView.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -342,6 +344,13 @@
     </Compile>
     <Compile Include="Views\PizzaMasterMobile.aspx.designer.cs">
       <DependentUpon>PizzaMasterMobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PizzaView.aspx.cs">
+      <DependentUpon>PizzaView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PizzaView.aspx.designer.cs">
+      <DependentUpon>PizzaView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
