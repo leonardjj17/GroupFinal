@@ -127,12 +127,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\OsheaDB.mdf" />
-    <Content Include="App_Data\OsheaDB_log.ldf" />
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
+    <Content Include="images\breadsticks.png" />
+    <Content Include="images\pepsi.png" />
+    <Content Include="images\pizza.png" />
+    <Content Include="images\shirt.jpg" />
+    <Content Include="images\specials.png" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\OrderType.aspx" />
@@ -387,7 +390,9 @@
       <DependentUpon>Specials.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
