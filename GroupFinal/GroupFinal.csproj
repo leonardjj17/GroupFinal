@@ -226,6 +226,9 @@
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Employees\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employees\ManagerLogin.aspx.cs">
       <DependentUpon>ManagerLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
