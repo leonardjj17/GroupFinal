@@ -11,7 +11,7 @@ namespace GroupFinal.Views
 {
 
 
-    public partial class PizzaMaster
+    public partial class PromoItems
     {
     }
 }

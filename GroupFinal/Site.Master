@@ -63,15 +63,22 @@
         <header class="jumbotron">
         <h1>O'Shea Shenanigan's Pub & Pizza</h1>
      </header>
-    </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 Welcome to O'Shea Shenanigan's Pub & Pizza </br>
 
-
+                
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
+                <nav>
+                    <ul class=".list-inline">
+                        <li><a href="~/">Home Page</a></li>
+                        <li><a href="~/Views/About">About Us</a></li>
+                        <li><a href="~/Views/Contact">Contact Us</a></li>
+                        <li><a href="~/Views/EmployeeListing">Employee Listing</a></li>
+                    </ul>
+                </nav>
                 <p>&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</p>
             </footer>
         </div>
