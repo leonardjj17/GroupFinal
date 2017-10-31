@@ -133,6 +133,11 @@
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
+    <Content Include="images\breadsticks.png" />
+    <Content Include="images\pepsi.png" />
+    <Content Include="images\pizza.png" />
+    <Content Include="images\shirt.jpg" />
+    <Content Include="images\specials.png" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\OrderType.aspx" />
