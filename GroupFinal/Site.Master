@@ -55,7 +55,6 @@
                         <li><a runat="server" href="~/">Main</a></li>
                         <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
                         <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
-                        <li><a runat="server" href="~/Views/EmployeeListing">Employee Listing</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,18 +64,18 @@
      </header>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                Welcome to O'Shea Shenanigan's Pub & Pizza </br>
+                Welcome to O'Shea Shenanigan's Pub & Pizzeria </br>
 
                 
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <nav>
-                    <ul class=".list-inline">
-                        <li><a href="~/">Home Page</a></li>
-                        <li><a href="~/Views/About">About Us</a></li>
-                        <li><a href="~/Views/Contact">Contact Us</a></li>
-                        <li><a href="~/Views/EmployeeListing">Employee Listing</a></li>
+                <nav class="nav">
+                    <ul class="list-inline">
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/">Home Page</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/About">About Us</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Contact">Contact Us</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login.aspx">Employee's login here</a></li>
                     </ul>
                 </nav>
                 <p>&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</p>
