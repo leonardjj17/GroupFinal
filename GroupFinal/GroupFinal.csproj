@@ -133,6 +133,7 @@
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
+    <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="Orders\Orders.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="Employees\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\AssignDriver.aspx.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\AssignDriver.aspx.designer.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
     </Compile>
     <Compile Include="Orders\Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
