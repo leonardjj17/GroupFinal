@@ -1,4 +1,5 @@
-﻿using GroupFinal.Classes;
+﻿
+using GroupFinal.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,12 @@ namespace GroupFinal.Employees
                 Response.Redirect("Login.aspx");
             }
 
-            //lblName.Text = employee.EmployeeFirst;
+            lblUserName.Text = employee.EmployeeFirst;
+            //Linkbutton data to make sure it's only visible if you're a manager
+            if (employee.EmployeeRole == "store manager")
+            {
+                lnkEmployeeListing.Visible.Equals(true);
+            }
         }
     }
 }

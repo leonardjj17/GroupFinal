@@ -6911,3 +6911,12 @@ td.visible-print {
     height: 413px;
     width: 1189px;
 }
+
+.center{
+    text-align: center;
+    color: pink;
+    font-size: 48pt;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+

@@ -9,9 +9,7 @@ namespace GroupFinal.DA
     public class EmployeeDA
 
     {
-    
-
-        public static Employee GetEmployeeByLogin(String login)
+            public static Employee GetEmployeeByLogin(String login)
         {
             if (login == null) return null;
             Employee e = new Employee();
@@ -108,7 +106,7 @@ namespace GroupFinal.DA
             }
             return allEmployees;
         }
-        public static List<Employee> GetAllEmployeesExceptManagerByStoreNumber(int storeNum)
+        public static List<Employee> GetAllEmployeesExceptManagerByStoreNumber(String storeNum)
         {
             List<Employee> allEmployees = new List<Employee>();
 
@@ -219,8 +217,8 @@ namespace GroupFinal.DA
 
                 while (read.Read())
                 {
-                    Employee e = new Employee();
-
+                Employee e = new Employee();
+                    
                     e.EmployeeID = (int)read["employeeID"];
                     e.StoreNum = (String)read["storeNum"];
                     e.EmployeeFirst = (String)read["employeeFirst"];
@@ -264,16 +262,18 @@ namespace GroupFinal.DA
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
 
-
-                e.EmployeeID = (int)read["employeeID"];
-                e.StoreNum = (String)read["storeNum"];
-                e.EmployeeFirst = (String)read["employeeFirst"];
-                e.EmployeeLast = (String)read["employeeLast"];
-                e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                e.EmployeeStatus = (String)read["empl"];
-                e.EmployeeRole = (String)read["role"];
-                e.Login = (String)read["login"];
-                e.Password = (String)read["password"];
+                if (read.Read())
+                {
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+                }
             }
             catch (SqlException ex)
             {
@@ -289,7 +289,52 @@ namespace GroupFinal.DA
             }
             return e;
         }
-    }
+    
 
+        public static List<Employee> GetDriversByStoreNumber(String storeNum)
+        {
+            List<Employee> employees = new List<Employee>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Employee WHERE role = 'delivery driver' AND storeNum = @storeNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", storeNum);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+                Employee e = new Employee();
+
+                if (read.Read())
+                {
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+                }
+                employees.Add(e);
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return employees;
+        }
+    }
 
 }

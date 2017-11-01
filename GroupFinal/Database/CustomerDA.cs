@@ -28,18 +28,20 @@ namespace GroupFinal.Database
             {
                 SqlDataReader read = cmd.ExecuteReader();
 
-                c.CustomerID = (int)read["customerID"];
-                c.PrimaryStore = (String)read["primaryStore"];
-                c.CustomerFirst = (String)read["customerFirst"];
-                c.CustomerLast = (String)read["customerLast"];
-                c.CustomerAddress = (String)read["customerAddress"];
-                c.CustomerCity = (String)read["customerCity"];
-                c.CustomerState = (String)read["customerState"];
-                c.CustomerZip = (String)read["customerZip"];
-                c.CustomerRole = (String)read["role"];
-                c.CustomerLogin = (String)read["login"];
-                c.CustomerPassword = (String)read["password"];
-
+                if (read.Read())
+                {
+                    c.CustomerID = (int)read["customerID"];
+                    c.PrimaryStore = (String)read["primaryStore"];
+                    c.CustomerFirst = (String)read["customerFirst"];
+                    c.CustomerLast = (String)read["customerLast"];
+                    c.CustomerAddress = (String)read["customerAddress"];
+                    c.CustomerCity = (String)read["customerCity"];
+                    c.CustomerState = (String)read["customerState"];
+                    c.CustomerZip = (String)read["customerZip"];
+                    c.CustomerRole = (String)read["role"];
+                    c.CustomerLogin = (String)read["login"];
+                    c.CustomerPassword = (String)read["password"];
+                }
             }
             catch (SqlException ex)
             {
@@ -173,7 +175,8 @@ namespace GroupFinal.Database
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
 
-               
+                if (read.Read())
+                {
                     aCustomer.CustomerID = (int)read["customerID"];
                     aCustomer.CustomerFirst = (String)read["customerFirst"];
                     aCustomer.CustomerLast = (String)read["customerLast"];
@@ -186,6 +189,7 @@ namespace GroupFinal.Database
                     aCustomer.CustomerLogin = (String)read["Login"];
                     aCustomer.CustomerPassword = (String)read["Password"];
                     aCustomer.PrimaryStore = (String)read["primaryStore"];
+                }
 
             }
             catch (SqlException ex)

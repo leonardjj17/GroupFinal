@@ -127,14 +127,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\OsheaDB.mdf" />
-    <Content Include="App_Data\OsheaDB_log.ldf" />
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
-    <Content Include="images\blankPizza.png" />
-    <Content Include="Orders\Orders.aspx" />
+    <Content Include="images\breadsticks.png" />
+    <Content Include="images\pepsi.png" />
+    <Content Include="images\pizza.png" />
+    <Content Include="images\shirt.jpg" />
+    <Content Include="images\specials.png" />
+    <Content Include="Views\CartView.aspx" />
+    <Content Include="Views\FinancialView.aspx" />
+    <Content Include="Views\Menu.aspx" />
+    <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -186,14 +191,16 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Drinks.aspx" />
     <Content Include="Views\EmployeeListing.aspx" />
-    <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
     <Content Include="Views\OrderReciept.aspx" />
-    <Content Include="Views\PizzaMaster.aspx" />
-    <Content Include="Views\PizzaMasterMobile.aspx" />
+    <Content Include="Views\orderType.aspx" />
     <Content Include="Views\PizzaView.aspx" />
+    <Content Include="Views\PromoItems.aspx" />
+    <Content Include="Views\Sides.aspx" />
+    <Content Include="Views\Specials.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -201,6 +208,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Alcohol.cs" />
+    <Compile Include="Classes\Cart.cs" />
     <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drinks.cs" />
     <Compile Include="Classes\Financial.cs" />
@@ -224,6 +232,9 @@
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Employees\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employees\ManagerLogin.aspx.cs">
       <DependentUpon>ManagerLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,12 +256,19 @@
     <Compile Include="Employees\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Orders\Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="Views\FinancialView.aspx.cs">
+      <DependentUpon>FinancialView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Orders\Orders.aspx.designer.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
+    <Compile Include="Views\FinancialView.aspx.designer.cs">
+      <DependentUpon>FinancialView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -304,19 +322,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Drinks.aspx.cs">
+      <DependentUpon>Drinks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Drinks.aspx.designer.cs">
+      <DependentUpon>Drinks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\EmployeeListing.aspx.cs">
       <DependentUpon>EmployeeListing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\EmployeeListing.aspx.designer.cs">
       <DependentUpon>EmployeeListing.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\FinancialView.aspx.cs">
-      <DependentUpon>FinancialView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\FinancialView.aspx.designer.cs">
-      <DependentUpon>FinancialView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
@@ -339,19 +357,12 @@
     <Compile Include="Views\OrderReciept.aspx.designer.cs">
       <DependentUpon>OrderReciept.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\PizzaMaster.aspx.cs">
-      <DependentUpon>PizzaMaster.aspx</DependentUpon>
+    <Compile Include="Views\orderType.aspx.cs">
+      <DependentUpon>orderType.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\PizzaMaster.aspx.designer.cs">
-      <DependentUpon>PizzaMaster.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PizzaMasterMobile.aspx.cs">
-      <DependentUpon>PizzaMasterMobile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\PizzaMasterMobile.aspx.designer.cs">
-      <DependentUpon>PizzaMasterMobile.aspx</DependentUpon>
+    <Compile Include="Views\orderType.aspx.designer.cs">
+      <DependentUpon>orderType.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaView.aspx.cs">
       <DependentUpon>PizzaView.aspx</DependentUpon>
@@ -360,8 +371,31 @@
     <Compile Include="Views\PizzaView.aspx.designer.cs">
       <DependentUpon>PizzaView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\PromoItems.aspx.cs">
+      <DependentUpon>PromoItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\PromoItems.aspx.designer.cs">
+      <DependentUpon>PromoItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sides.aspx.cs">
+      <DependentUpon>Sides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Sides.aspx.designer.cs">
+      <DependentUpon>Sides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Specials.aspx.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Specials.aspx.designer.cs">
+      <DependentUpon>Specials.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
