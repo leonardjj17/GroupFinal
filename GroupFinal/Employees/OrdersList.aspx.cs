@@ -18,41 +18,54 @@ namespace GroupFinal.Employees
             }
             string storeNum = (string)Session["storeNum"];
 
-            OrderList orders = new OrderList(storeNum);
-            foreach (Order order in orders.getOrders())
+            if (Request.Form.Get("action") == "assign")
             {
-                Label lblOrder = new Label();
+                Response.Redirect("AssignDriver.aspx?id=" + Request.Form.Get("id"));
+            }
 
-                int orderID = order.OrderID;
-                string customerName = order.CustomerFirst + " " + order.CustomerLast;
-                double orderTotal = order.OrderTotal;
-                string orderType = order.OrderType;
-                
-
-                string assignDriver = "<td><form action='AssignDriver.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
-                    + orderID + "'><input type='submit' value='Assign Driver'></form></td>";
-
-                string delete = null;
-                if ((string)Session["role"] == "store manager")
+            else
+            {
+                OrderList orders = new OrderList(storeNum);
+                foreach (Order order in orders.getOrders())
                 {
-                    delete = "<td><form action='Delete.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
-                        + orderID + "'><input type='submit' value='Delete'></form></td>";
+                    Label lblOrder = new Label();
+
+                    int orderID = order.OrderID;
+                    string customerName = order.CustomerFirst + " " + order.CustomerLast;
+                    double orderTotal = order.OrderTotal;
+                    string orderType = order.OrderType;
+
+                    string assignDriver = "<td></td>";
+                    if (orderType == "delivery")
+                    {
+                        //assignDriver = "<td><form action='OrdersList.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
+                        //    + orderID + "'><input type='submit' value='Assign Driver'></form></td>";
+                        assignDriver = "<td><form action='AssignDriver.aspx' method='post'><input type='hidden' name='id' value='"
+                            + orderID + "'><input type='hidden' name='action' value='assign'><input type='submit' value='Assign Driver'></form></td>";
+                    }
+                    string delete = null;
+                    if ((string)Session["role"] == "store manager")
+                    {
+                        delete = "<td><form action='Delete.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
+                            + orderID + "'><input type='submit' value='Delete'></form></td>";
+
+                    }
+                    else
+                    {
+                        delete = "<td><form action='ManagerLogin.aspx' method='post' target='_blank'><input type='hidden' id='id' value='"
+                            + orderID + "'><input type='submit' value=Delete></form></td>";
+                    }
+
+
+                    lblOrder.Text = "<tr><td>" + orderID + "</td><td>" + customerName + "</td><td>"
+                        + orderTotal + "</td><td>" + orderType + "</td>" + assignDriver + delete + "</tr>";
+                    pnlOrders.Controls.Add(lblOrder);
 
                 }
-                else
-                {
-                    delete = "<td><form action='ManagerLogin.aspx' method='post' target='_blank'><input type='hidden' id='id' value='"
-                        + orderID + "'><input type='submit' value=Delete></form></td>";
-                }
-
-
-                lblOrder.Text = "<tr><td>" + orderID + "</td><td>" + customerName + "</td><td>"
-                    + orderTotal + "</td><td>" + orderType + "</td>" + assignDriver + delete + "</tr>";
-                pnlOrders.Controls.Add(lblOrder);
-
             }
 
         }
+        
     }
 }
  
