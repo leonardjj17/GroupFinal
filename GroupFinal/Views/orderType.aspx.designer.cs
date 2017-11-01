@@ -10,7 +10,7 @@
 namespace GroupFinal.Views {
     
     
-    public partial class OrderType {
+    public partial class orderType {
         
         /// <summary>
         /// form1 control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="OrderTypes.aspx.cs" Inherits="GroupFinal.Views.OrderType" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderType.aspx.cs" Inherits="GroupFinal.Views.orderType" %>
 
 <!DOCTYPE html>
 

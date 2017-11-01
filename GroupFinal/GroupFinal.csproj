@@ -196,7 +196,7 @@
     <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
     <Content Include="Views\OrderReciept.aspx" />
-    <Content Include="Views\OrderTypes.aspx" />
+    <Content Include="Views\orderType.aspx" />
     <Content Include="Views\PizzaView.aspx" />
     <Content Include="Views\PromoItems.aspx" />
     <Content Include="Views\Sides.aspx" />
@@ -357,12 +357,12 @@
     <Compile Include="Views\OrderReciept.aspx.designer.cs">
       <DependentUpon>OrderReciept.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\OrderTypes.aspx.cs">
-      <DependentUpon>OrderTypes.aspx</DependentUpon>
+    <Compile Include="Views\orderType.aspx.cs">
+      <DependentUpon>orderType.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\OrderTypes.aspx.designer.cs">
-      <DependentUpon>OrderTypes.aspx</DependentUpon>
+    <Compile Include="Views\orderType.aspx.designer.cs">
+      <DependentUpon>orderType.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaView.aspx.cs">
       <DependentUpon>PizzaView.aspx</DependentUpon>
