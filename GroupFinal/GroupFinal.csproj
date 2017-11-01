@@ -136,6 +136,7 @@
     <Content Include="images\pizza.png" />
     <Content Include="images\shirt.jpg" />
     <Content Include="images\specials.png" />
+    <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\OrderType.aspx" />
@@ -208,6 +209,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Alcohol.cs" />
+    <Compile Include="Classes\Cart.cs" />
     <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drinks.cs" />
     <Compile Include="Classes\Financial.cs" />
@@ -255,15 +257,6 @@
     <Compile Include="Employees\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employees\AssignDriver.aspx.cs">
-      <DependentUpon>AssignDriver.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employees\AssignDriver.aspx.designer.cs">
-      <DependentUpon>AssignDriver.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orders\Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
     <Compile Include="Views\FinancialView.aspx.cs">
       <DependentUpon>FinancialView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
