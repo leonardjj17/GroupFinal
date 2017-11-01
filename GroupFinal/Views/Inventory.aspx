@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="GroupFinal.Views.Inventory" %>
+﻿<%@ Page Title="Inventory" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="GroupFinal.Views.Inventory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     Select a Ingredient from our inventory to see more<br />
     <br />
