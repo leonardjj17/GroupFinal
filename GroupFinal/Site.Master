@@ -47,14 +47,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">O'Shea Shenanigan's</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Main</a></li>
-                        <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
-                        <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
+                        <li><a runat="server" href="~/Views/Menu.aspx">Menu</a></li>
+                        <li><a runat="server" href="~/Views/About.aspx">About Shenanigan's</a></li>
+                        <li><a runat="server" href="~/Views/Contact.aspx">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +66,7 @@
      </header>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                Welcome to O'Shea Shenanigan's Pub & Pizzeria </br>
+                Welcome to O'Shea Shenanigan's Pub & Pizzeria <br>
 
                 
             </asp:ContentPlaceHolder>
@@ -73,6 +75,7 @@
                 <nav class="nav">
                     <ul class="list-inline">
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/">Home Page</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Menu.aspx">Menu</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/About">About Us</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Contact">Contact Us</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login.aspx">Employee's login here</a></li>
