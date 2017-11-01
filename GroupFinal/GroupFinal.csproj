@@ -139,9 +139,7 @@
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
-    <Content Include="Views\OrderType.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
-    <Content Include="Orders\Orders.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -198,6 +196,7 @@
     <Content Include="Views\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
     <Content Include="Views\OrderReciept.aspx" />
+    <Content Include="Views\OrderTypes.aspx" />
     <Content Include="Views\PizzaView.aspx" />
     <Content Include="Views\PromoItems.aspx" />
     <Content Include="Views\Sides.aspx" />
@@ -270,13 +269,6 @@
     </Compile>
     <Compile Include="Views\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\OrderType.aspx.cs">
-      <DependentUpon>OrderType.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\OrderType.aspx.designer.cs">
-      <DependentUpon>OrderType.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -364,6 +356,13 @@
     </Compile>
     <Compile Include="Views\OrderReciept.aspx.designer.cs">
       <DependentUpon>OrderReciept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderTypes.aspx.cs">
+      <DependentUpon>OrderTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderTypes.aspx.designer.cs">
+      <DependentUpon>OrderTypes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\PizzaView.aspx.cs">
       <DependentUpon>PizzaView.aspx</DependentUpon>

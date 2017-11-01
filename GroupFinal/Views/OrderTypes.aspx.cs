@@ -10,7 +10,7 @@ namespace GroupFinal.Views
 {
     public partial class OrderTypes : System.Web.UI.Page
     {
-        Order OrderType = null;
+        Order o = new Order();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -19,17 +19,17 @@ namespace GroupFinal.Views
 
         protected void rdoDelivery_CheckedChanged(object sender, EventArgs e)
         {
-            OrderType = delivery;
+            o.OrderType = "delivery";
         }
 
         protected void rdoCarryOut_CheckedChanged(object sender, EventArgs e)
         {
-            OrderType = "carryout";
+            o.OrderType = "carryout";
         }
 
         protected void btnOrderType_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/Views/Menu.aspx");
         }
     }
 }

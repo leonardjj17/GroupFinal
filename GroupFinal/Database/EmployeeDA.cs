@@ -9,9 +9,7 @@ namespace GroupFinal.DA
     public class EmployeeDA
 
     {
-    
-
-        public static Employee GetEmployeeByLogin(String login)
+            public static Employee GetEmployeeByLogin(String login)
         {
             if (login == null) return null;
             Employee e = new Employee();
