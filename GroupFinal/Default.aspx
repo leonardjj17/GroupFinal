@@ -7,9 +7,7 @@
     <div class="row">
             <h2>Welcome to O'Shea Shenanigan's Pub & Pizzeria. The most authentic Irish Pizza in the country.</h2>
            
-        </div>
-        
-            <h2></h2>
+        </div>        
             
             
         
