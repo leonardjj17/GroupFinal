@@ -107,10 +107,12 @@ namespace GroupFinal.Database
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
 
-               
-                driver.OrderNum = (int)read["orderNum"];
-                driver.EmployeeNum = (int)read["employeeNum"];
+                if (read.Read())
+                {
 
+                    driver.OrderNum = (int)read["orderNum"];
+                    driver.EmployeeNum = (int)read["employeeNum"];
+                }
             
             }
             catch (SqlException ex)

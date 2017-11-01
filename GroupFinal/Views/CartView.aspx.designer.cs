@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GroupFinal.Orders
+namespace GroupFinal.Views
 {
 
 
-    public partial class OrderType
+    public partial class CartView
     {
     }
 }
