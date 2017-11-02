@@ -256,6 +256,13 @@
     <Compile Include="Employees\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\CartView.aspx.cs">
+      <DependentUpon>CartView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CartView.aspx.designer.cs">
+      <DependentUpon>CartView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\FinancialView.aspx.cs">
       <DependentUpon>FinancialView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
