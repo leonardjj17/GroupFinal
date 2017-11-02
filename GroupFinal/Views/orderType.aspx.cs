@@ -11,6 +11,7 @@ namespace GroupFinal.Views
 {
     public partial class orderType : System.Web.UI.Page
     {
+        
         Order o = new Order();
         ServiceZips zip = new ServiceZips();
         protected void Page_Load(object sender, EventArgs e)
@@ -44,6 +45,7 @@ namespace GroupFinal.Views
                 {
                     zip.StoreNum = z.StoreNum;
                     exist = true;
+                    //store = zip.StoreNum;
                 }
                 else
                 {
