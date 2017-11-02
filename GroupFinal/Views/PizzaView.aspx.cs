@@ -13,7 +13,33 @@ namespace GroupFinal.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            List<Products> allCrusts = ProductsDA.GetPizzaCrust();
+            List<Products> allSauces = ProductsDA.GetPizzaSauce();
+            List<Products> allToppings = ProductsDA.GetAllIngredients();
 
+            foreach(Products crusts in allCrusts)
+            {
+                CheckBox newCrust = new CheckBox();
+                newCrust.Text = crusts.ProductDetail;
+
+                pnlCrusts.Controls.Add(newCrust);
+            }
+
+            foreach(Products sauces in allSauces)
+            {
+                CheckBox newSauce = new CheckBox();
+                newSauce.Text = sauces.ProductDetail;
+
+                pnlSauce.Controls.Add(newSauce);
+            }
+
+            foreach(Products toppings in allToppings)
+            {
+                CheckBox newTopping = new CheckBox();
+                newTopping.Text = toppings.ProductDetail;
+
+                pnlToppings.Controls.Add(newTopping);
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -41,7 +67,7 @@ namespace GroupFinal.Views
             }
 
             //check for crust type
-            foreach(ListItem crust in rdoCrustList.Items)
+/*            foreach(ListItem crust in rdoCrustList.Items)
             {
                 if(crust.Selected)
                 {
@@ -49,7 +75,7 @@ namespace GroupFinal.Views
                     pizzaCost += 1.25;
                 }
             }
-
+            
             //check for selection in rdoSauceList
             foreach(ListItem sauce in rdoSauceList.Items)
             {
@@ -59,7 +85,7 @@ namespace GroupFinal.Views
                     pizzaCost += 0.75;
                 }
             }
-
+            */
             
             //check for cheese type
             if(rdoNone.Checked)
@@ -72,6 +98,7 @@ namespace GroupFinal.Views
             }
 
             //check for toppings
+            /*
             foreach(ListItem toppings in chkToppingsList.Items)
             {
                 if(toppings.Selected)
@@ -83,7 +110,7 @@ namespace GroupFinal.Views
 
             }
             newPizza.PizzaToppings = pizzaToppings;
-
+            */
 
             //check for extras
             if (chkExtraCheese.Checked)

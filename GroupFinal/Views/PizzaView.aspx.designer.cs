@@ -58,40 +58,22 @@ namespace GroupFinal.Views {
         protected global::System.Web.UI.WebControls.RadioButton rdoLarge;
         
         /// <summary>
-        /// rdoCrustList control.
+        /// pnlCrusts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoCrustList;
+        protected global::System.Web.UI.WebControls.Panel pnlCrusts;
         
         /// <summary>
-        /// SqlDataSource3 control.
+        /// pnlSauce control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
-        
-        /// <summary>
-        /// rdoSauceList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdoSauceList;
-        
-        /// <summary>
-        /// SqlDataSource2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Panel pnlSauce;
         
         /// <summary>
         /// pnlCheese control.
@@ -121,22 +103,13 @@ namespace GroupFinal.Views {
         protected global::System.Web.UI.WebControls.RadioButton rdoRegular;
         
         /// <summary>
-        /// chkToppingsList control.
+        /// pnlToppings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chkToppingsList;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Panel pnlToppings;
         
         /// <summary>
         /// pnlExtras control.
