@@ -142,6 +142,90 @@ namespace GroupFinal.Database
             return allIngredients;
         }
 
+        public static List<Products> GetPizzaCrust()
+        {
+            List<Products> allCrusts = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "Select * from Products Where productType = 'crust'";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while(read.Read())
+                {
+                    Products p = new Products();
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
+
+                    allCrusts.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allCrusts;
+        }
+
+        public static List<Products> GetPizzaSauce()
+        {
+            List<Products> allSauce = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "Select * from Products Where productType = 'sauce'";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
+
+                    allSauce.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allSauce;
+        }
+
         public static List<Products> GetAllSalads()
         {
             List<Products> allIngredients = new List<Products>();

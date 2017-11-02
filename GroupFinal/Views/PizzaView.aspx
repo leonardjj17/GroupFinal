@@ -12,29 +12,14 @@
     </asp:Panel>
     <br />
     Select your Crust<br />
-    <asp:RadioButtonList ID="rdoCrustList" runat="server" DataSourceID="SqlDataSource3" DataTextField="productDetail" DataValueField="productDetail">
-    </asp:RadioButtonList>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644ConnectionString %>" SelectCommand="SELECT [productDetail] FROM [Products] WHERE ([productType] = @productType)">
-        <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="crust" Name="productType" QueryStringField="crust" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    <asp:Panel ID="pnlCrusts" runat="server" Width="200px">
+    </asp:Panel>
     <br />
     <br />
     Select your Sauce
     <br />
-    <asp:RadioButtonList ID="rdoSauceList" runat="server" 
-        DataSourceID="SqlDataSource2" DataTextField="productDetail" 
-        DataValueField="productDetail">
-    </asp:RadioButtonList>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:OsheaDB2644ConnectionString %>" 
-        SelectCommand="SELECT [productDetail] FROM [Products] WHERE ([productType] = @productType)">
-        <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="sauce" Name="productType" 
-                QueryStringField="sauce" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    <asp:Panel ID="pnlSauce" runat="server" Width="200px">
+    </asp:Panel>
     <br />
     Select your Cheese<br />
     <asp:Panel ID="pnlCheese" runat="server" Width="200px">
@@ -45,13 +30,10 @@
     </asp:Panel>
     <br />
     <br />
-    Select your toppings<asp:CheckBoxList ID="chkToppingsList" runat="server" DataSourceID="SqlDataSource1" DataTextField="productDetail" DataValueField="productDetail">
-    </asp:CheckBoxList>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644ConnectionString %>" SelectCommand="SELECT [productDetail] FROM [Products] WHERE ([productType] = @productType)">
-        <SelectParameters>
-            <asp:QueryStringParameter DefaultValue="ingredients" Name="productType" QueryStringField="ingredients" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    Select your toppings<br />
+    <asp:Panel ID="pnlToppings" runat="server" Width="200px">
+    </asp:Panel>
+    <br />
     <br />
     Can we tempt you?<br />
     <asp:Panel ID="pnlExtras" runat="server" Width="200px">
