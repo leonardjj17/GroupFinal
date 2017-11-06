@@ -4,7 +4,7 @@
 
   
 
-    <div class="row">
+    <div class="row-fluid">
             <h2>Welcome to O'Shea Shenanigan's Pub & Pizzeria. The most authentic Irish Pizza in the country.</h2>
            
         </div>        

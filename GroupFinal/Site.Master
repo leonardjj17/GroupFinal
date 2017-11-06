@@ -31,6 +31,7 @@
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+     <div class="wrapper">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -52,9 +53,11 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+        
+           <header>
+               
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+           <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -72,9 +75,13 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <header class="jumbotron">
-        <h1>O'Shea Shenanigan's Pub & Pizza</h1>
+               </nav>
+      <div class="container">
+     <div class="jumbotron">
+          <h1>O'Shea Shenanigan's Pub & Pizza</h1>
+     </div>
+     
+</div>     
      </header>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -98,5 +105,6 @@
         </div>
 
     </form>
+         </div>
 </body>
 </html>
