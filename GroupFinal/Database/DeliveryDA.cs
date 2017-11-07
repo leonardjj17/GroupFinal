@@ -58,7 +58,7 @@ namespace GroupFinal.Database
 
             String query = "SELECT * FROM Delivery WHERE employeeNum = @employeeID";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("employeeID", @employeeID);
+            cmd.Parameters.AddWithValue("@employeeID", employeeID);
 
 
             try
@@ -91,15 +91,55 @@ namespace GroupFinal.Database
             return allDeliveries;
         }
 
-        public static Delivery GetDeliveryDriverByOrder(int orderID)
+        public static Delivery GetDeliveryByOrderID(int orderID)
         {
-            Delivery driver = new Delivery();
+            List<Delivery> allDeliveries = new List<Delivery>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Delivery WHERE orderNum = @orderNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@orderNum", orderID);
+            
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    Delivery d = new Delivery();
+
+                    d.OrderNum = (int)read["orderNum"];
+                    d.EmployeeNum = (int)read["employeeNum"];
+
+                    return d;
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return null;
+        }
+
+        public static int GetDeliveryDriverByOrder(int orderID)
+        {
+            int driver;
 
             SqlConnection connection = Connection.getConnection();
 
             String query = "SELECT * FROM Delivery WHERE orderNum = @orderID";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("orderID", @orderID);
+            cmd.Parameters.AddWithValue("@orderID", @orderID);
 
 
             try
@@ -110,8 +150,7 @@ namespace GroupFinal.Database
                 if (read.Read())
                 {
 
-                    driver.OrderNum = (int)read["orderNum"];
-                    driver.EmployeeNum = (int)read["employeeNum"];
+                    return (int)read["employeeNum"];
                 }
             
             }
@@ -127,13 +166,13 @@ namespace GroupFinal.Database
             {
                 connection.Close();
             }
-            return driver;
+            return -1;
         }
         public static void AddDriverToOrder(Order order, Employee driver)
         {
             SqlConnection connection = Connection.getConnection();
 
-            String query = "UPDATE Orders SET employeeNum = @employeeNum WHERE orderNum = @orderNum";
+            String query = "INSERT INTO Delivery (orderNum, employeeNum) VALUES (@orderNum, @employeeNum)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@orderNum", order.OrderID);
             cmd.Parameters.AddWithValue("@employeeNum", driver.EmployeeID);
@@ -143,6 +182,35 @@ namespace GroupFinal.Database
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void UpdateDriverForOrder (Order order, Employee driver)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "UPDATE Delivery SET employeeNum = @employeeNum WHERE orderNum = @orderNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@orderNum", order.OrderID);
+            cmd.Parameters.AddWithValue("@employeeNum", driver.EmployeeID);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
             }
             catch (SqlException ex)
             {

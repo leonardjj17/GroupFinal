@@ -30,7 +30,7 @@ namespace GroupFinal.DA
                     o.OrderID = (int)read["orderID"];
                     o.CustomerFirst = (String)read["customerFirst"];
                     o.CustomerLast = (String)read["customerLast"];
-                    o.OrderTotal = (double)read["orderTotal"];
+                    o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
@@ -74,7 +74,7 @@ namespace GroupFinal.DA
                     o.OrderID = (int)read["orderID"];
                     o.CustomerFirst = (String)read["customerFirst"];
                     o.CustomerLast = (String)read["customerLast"];
-                    o.OrderTotal = (double)read["orderTotal"];
+                    o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];

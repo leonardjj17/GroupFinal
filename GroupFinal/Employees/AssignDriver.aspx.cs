@@ -1,4 +1,5 @@
-﻿using GroupFinal.DA;
+﻿using GroupFinal.Classes;
+using GroupFinal.DA;
 using GroupFinal.Database;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace GroupFinal.Employees
 
             Label lblStoreID = new Label();
             orderID.Value = Request.QueryString.Get("id");
-            
+            int driverID = DeliveryDA.GetDeliveryDriverByOrder(Convert.ToInt32(orderID.Value));
 
             List<Employee> drivers = EmployeeDA.GetDriversByStoreNumber(storeNum);
             foreach (Employee driver in drivers)
@@ -32,6 +33,10 @@ namespace GroupFinal.Employees
                 string name = driver.EmployeeFirst + " " + driver.EmployeeLast;
                 int employeeID = driver.EmployeeID;
                 ListItem listItem = new ListItem(name, Convert.ToString(employeeID));
+                if (employeeID == driverID)
+                {
+                    listItem.Selected = true;
+                }
                 driverList.Items.Add(listItem);
 
 
@@ -40,7 +45,17 @@ namespace GroupFinal.Employees
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            DeliveryDA.AddDriverToOrder(OrderDA.getOrderByID(Convert.ToInt32(orderID)), EmployeeDA.GetEmployeeByID(Convert.ToInt32(driverList.SelectedValue)));
+            Order order = OrderDA.getOrderByID(Convert.ToInt32(orderID.Value));
+            Employee employee = EmployeeDA.GetEmployeeByID(Convert.ToInt32(driverList.SelectedValue));
+            if (DeliveryDA.GetDeliveryByOrderID(order.OrderID) != null)
+            {
+                DeliveryDA.UpdateDriverForOrder(order, employee);
+            }
+            else
+            {
+                DeliveryDA.AddDriverToOrder(order, employee);
+            }
+            Response.Redirect("OrdersList.aspx");
         }
     }
 }

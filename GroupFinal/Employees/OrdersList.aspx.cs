@@ -1,4 +1,6 @@
 ﻿using GroupFinal.Classes;
+using GroupFinal.DA;
+using GroupFinal.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,47 +27,108 @@ namespace GroupFinal.Employees
 
             else
             {
+                TableHeaderRow header = new TableHeaderRow();
+                TableHeaderCell horderId = new TableHeaderCell();
+                TableHeaderCell hcustName = new TableHeaderCell();
+                TableHeaderCell horderTotal = new TableHeaderCell();
+                TableHeaderCell horderType = new TableHeaderCell();
+                TableHeaderCell hdriver = new TableHeaderCell();
+                TableHeaderCell hassign = new TableHeaderCell();
+                TableHeaderCell hdelete = new TableHeaderCell();
+                horderId.Text = "OrderID";
+                hcustName.Text = "CustomerName";
+                horderTotal.Text = "Order Total";
+                horderType.Text = "Order Type";
+                hdriver.Text = "Driver";
+                hassign.Text = "(Re)Assign Driver";
+                hdelete.Text = "Delete";
+                header.Controls.Add(horderId);
+                header.Controls.Add(hcustName);
+                header.Controls.Add(horderTotal);
+                header.Controls.Add(horderType);
+                header.Controls.Add(hdriver);
+                header.Controls.Add(hassign);
+                header.Controls.Add(hdelete);
+                table.Controls.Add(header);
+
                 OrderList orders = new OrderList(storeNum);
                 foreach (Order order in orders.getOrders())
                 {
-                    Label lblOrder = new Label();
+                    TableRow row = new TableRow();
+                    TableCell corderID = new TableCell();
+                    TableCell ccustomerName = new TableCell();
+                    TableCell corderTotal = new TableCell();
+                    TableCell corderType = new TableCell();
+                    TableCell cdriver = new TableCell();
+                    TableCell cassign = new TableCell();
+                    TableCell cdelete = new TableCell();
 
-                    int orderID = order.OrderID;
-                    string customerName = order.CustomerFirst + " " + order.CustomerLast;
-                    double orderTotal = order.OrderTotal;
-                    string orderType = order.OrderType;
+                    corderID.Text = Convert.ToString(order.OrderID);
+                    ccustomerName.Text = order.CustomerFirst + " " + order.CustomerLast;
+                    corderTotal.Text = Convert.ToString(order.OrderTotal);
+                    corderType.Text = order.OrderType;
+                    
+                    cdriver.Text = "N/A";
 
-                    string assignDriver = "<td></td>";
-                    if (orderType == "delivery")
+                    if (order.OrderType == "delivery")
                     {
-                        //assignDriver = "<td><form action='OrdersList.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
-                        //    + orderID + "'><input type='submit' value='Assign Driver'></form></td>";
-                        assignDriver = "<td><form action='AssignDriver.aspx' method='post'><input type='hidden' name='id' value='"
-                            + orderID + "'><input type='hidden' name='action' value='assign'><input type='submit' value='Assign Driver'></form></td>";
+                        Employee employee = EmployeeDA.GetEmployeeByID(DeliveryDA.GetDeliveryDriverByOrder(order.OrderID));
+
+                        if (employee != null)
+                        {
+                            cdriver.Text = employee.EmployeeFirst + " " + employee.EmployeeLast;
+                        }
+                        else cdriver.Text = "Unassigned";
+                        Button btnAssign = new Button();
+                        btnAssign.Text = "Assign Driver";
+                        btnAssign.Click += (senderer, ee) =>
+                        {
+                            Response.Redirect("AssignDriver.aspx?action=assign&id=" + order.OrderID);
+                        };
+                        
+                        cassign.Controls.Add(btnAssign);
+                        
+                        //assignDriver = "<td><form action='AssignDriver.aspx' method='post'><input type='hidden' name='id' value='"
+                        //    + orderID + "'><input type='hidden' name='action' value='assign'><input type='submit' value='Assign Driver'></form></td>";
                     }
-                    string delete = null;
+                    else cassign.Text = "";
+                    
+                    Button btnDelete = new Button();
+                    btnDelete.Text = "Delete Order";
                     if ((string)Session["role"] == "store manager")
                     {
-                        delete = "<td><form action='Delete.aspx' method='post' target='_blank'><input type='hidden' name='id' value='"
-                            + orderID + "'><input type='submit' value='Delete'></form></td>";
-
+                        btnDelete.Click += (senderer, ee) =>
+                        {
+                            Response.Redirect("Delete.aspx");
+                        };
+                        
                     }
                     else
                     {
-                        delete = "<td><form action='ManagerLogin.aspx' method='post' target='_blank'><input type='hidden' id='id' value='"
-                            + orderID + "'><input type='submit' value=Delete></form></td>";
+                        btnDelete.Click += (senderer, ee) =>
+                        {
+                            Response.Redirect("ManagerLogin.aspx");
+                        };
                     }
+                    cdelete.Controls.Add(btnDelete);
 
+                    row.Controls.Add(corderID);
+                    row.Controls.Add(ccustomerName);
+                    row.Controls.Add(corderTotal);
+                    row.Controls.Add(corderType);
+                    row.Controls.Add(cdriver);
+                    row.Controls.Add(cassign);
+                    row.Controls.Add(cdelete);
+                    table.Controls.Add(row);
 
-                    lblOrder.Text = "<tr><td>" + orderID + "</td><td>" + customerName + "</td><td>"
-                        + orderTotal + "</td><td>" + orderType + "</td>" + assignDriver + delete + "</tr>";
-                    pnlOrders.Controls.Add(lblOrder);
 
                 }
             }
 
         }
+    
         
     }
 }
+ 
  
