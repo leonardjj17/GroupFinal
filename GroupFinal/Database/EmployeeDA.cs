@@ -307,7 +307,7 @@ namespace GroupFinal.DA
                 SqlDataReader read = cmd.ExecuteReader();
                 Employee e = new Employee();
 
-                if (read.Read())
+                while (read.Read())
                 {
                     e.EmployeeID = (int)read["employeeID"];
                     e.StoreNum = (String)read["storeNum"];
@@ -318,8 +318,9 @@ namespace GroupFinal.DA
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
+
+                    employees.Add(e);
                 }
-                employees.Add(e);
             }
             catch (SqlException ex)
             {

@@ -129,5 +129,33 @@ namespace GroupFinal.Database
             }
             return driver;
         }
+        public static void AddDriverToOrder(Order order, Employee driver)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "UPDATE Orders SET employeeNum = @employeeNum WHERE orderNum = @orderNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@orderNum", order.OrderID);
+            cmd.Parameters.AddWithValue("@employeeNum", driver.EmployeeID);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

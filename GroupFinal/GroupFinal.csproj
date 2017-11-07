@@ -129,6 +129,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
@@ -142,7 +143,6 @@
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
-    <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -162,6 +162,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\main_title1.png" />
     <Content Include="images\main_title_med.png" />
@@ -237,6 +238,13 @@
     <Compile Include="Database\ProductsDA.cs" />
     <Compile Include="Database\ServiceZipsDA.cs" />
     <Compile Include="Database\StoreDA.cs" />
+    <Compile Include="Employees\AssignDriver.aspx.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\AssignDriver.aspx.designer.cs">
+      <DependentUpon>AssignDriver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employees\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
