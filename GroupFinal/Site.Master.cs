@@ -9,9 +9,13 @@ namespace GroupFinal
 {
     public partial class SiteMaster : MasterPage
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["Customer"] != null)
+            {
+                Customer customer = (Customer)Session["Customer"];
+                string userName = customer.CustomerFirst + " " + customer.CustomerLast;
+            }
         }
     }
 }

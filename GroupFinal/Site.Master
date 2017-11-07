@@ -57,7 +57,7 @@
            <header>
                
         <nav class="navbar navbar-inverse navbar-fixed-top">
-           <div class="container">
+           
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -69,12 +69,26 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Views/Menu.aspx">Menu</a></li>
-                        <li><a runat="server" href="~/Views/About.aspx">About Shenanigan's</a></li>
-                        <li><a runat="server" href="~/Views/Contact.aspx">Contact Us</a></li>
+                        <li><a runat="server" href="~/Views/orderType">Place an Order</a></li>
+                        <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
+                        <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
                     </ul>
+                    <% if (Session["User"] == null)
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Customer/customerSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a runat="server" href="~/Customer/customerLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                    <% }
+    else
+    { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~Customer/customerProfile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
+                        <li><a runat="server" href="~Customer/customerSignout"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
+                    </ul>
+                    <%} %>
                 </div>
-            </div>
+            
                </nav>
       <div class="container">
      <div class="jumbotron">
@@ -90,21 +104,24 @@
                 
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <nav class="nav">
+            
+        </div>
+        <footer>
+         
+                <nav class="nav navbar-fixed-bottom">
                     <ul class="list-inline">
+                        <li class="footing">&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/">Home Page</a></li>
-                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Menu.aspx">Menu</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/orderType">Place an Order</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/About">About Us</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Contact">Contact Us</a></li>
-                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login.aspx">Employee's login here</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login">Employee's login here</a></li>
                     </ul>
                 </nav>
-                <p>&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</p>
+                
             </footer>
-        </div>
-
     </form>
+
          </div>
 </body>
 </html>
