@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Order Reciept" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderReciept.aspx.cs" Inherits="GroupFinal.Views.OrderReciept" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+<br />
     First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Label ID="lblFirst" runat="server"></asp:Label>
     <br />
