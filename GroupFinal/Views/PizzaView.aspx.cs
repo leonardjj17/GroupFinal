@@ -11,17 +11,19 @@ namespace GroupFinal.Views
 {
     public partial class PizzaView : System.Web.UI.Page
     {
+        List<Products> allCrusts = ProductsDA.GetPizzaCrust();
+        List<Products> allSauces = ProductsDA.GetPizzaSauce();
+        List<Products> allToppings = ProductsDA.GetAllIngredients();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Products> allCrusts = ProductsDA.GetPizzaCrust();
-            List<Products> allSauces = ProductsDA.GetPizzaSauce();
-            List<Products> allToppings = ProductsDA.GetAllIngredients();
+
             
 
             foreach(Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
-                newCrust.Text = " "+ crusts.ProductDetail;
+                newCrust.Text = crusts.ProductDetail;
                 newCrust.GroupName = "grpCrusts";
 
                 pnlCrusts.Controls.Add(newCrust);
@@ -31,9 +33,10 @@ namespace GroupFinal.Views
 
             foreach(Products sauces in allSauces)
             {
-                CheckBox newSauce = new CheckBox();
+                RadioButton newSauce = new RadioButton();
                 newSauce.Text = sauces.ProductDetail;
-
+                newSauce.GroupName = "grpSauce";
+                
                 pnlSauce.Controls.Add(newSauce);
                 pnlSauce.Controls.Add(new LiteralControl("<br />"));
             }
@@ -73,10 +76,52 @@ namespace GroupFinal.Views
             }
 
             //check for crust type
- 
+
+            //found logic on stack overflow checks or Controls within the Panel
+            foreach(Control crustType in pnlCrusts.Controls)
+            {
+                //Searches for the type of the control, checks for RadioButton
+                if(crustType.GetType().Name == "RadioButton")
+                {
+                    //casts the crust type control to radio button, checks if it's selected
+                    if(((RadioButton)crustType).Checked)
+                    {
+                        //sets the pizza crust type
+                        newPizza.PizzaCrust = ((RadioButton)crustType).Text;
+                    }
+                }
+            }
+
+            String currentCrust = newPizza.PizzaCrust;
+
+            foreach(Products crust in allCrusts)
+            {
+                String crustSelection = crust.ProductDetail;
+                if(currentCrust == crustSelection)
+                {
+                    pizzaCost += Convert.ToDouble(crust.ProductPrice);
+                }
+            }
             
             //check for selection in rdoSauceList
+            foreach(Control sauceType in pnlSauce.Controls)
+            {
+                if(sauceType.GetType().Name == "RadioButton")
+                {
+                    if(((RadioButton)sauceType).Checked)
+                    {
+                        newPizza.PizzaSauce = ((RadioButton)sauceType).Text;
+                    }
+                }
+            }
 
+            foreach(Products sauce in allSauces)
+            {
+                if(newPizza.PizzaSauce == sauce.ProductDetail)
+                {
+                    pizzaCost += sauce.ProductPrice;
+                }
+            }
             
             
             //check for cheese type
@@ -90,7 +135,24 @@ namespace GroupFinal.Views
             }
 
             //check for toppings
-
+            foreach(Control topping in pnlToppings.Controls)
+            {
+                if(topping.GetType().Name == "CheckBox")
+                {
+                    if(((CheckBox)topping).Checked)
+                    {
+                        string currentTopping = ((CheckBox)topping).Text;
+                        pizzaToppings += currentTopping + " ";
+                        foreach(Products top in allToppings)
+                        {
+                            if(top.ProductDetail == currentTopping)
+                            {
+                                pizzaCost += top.ProductPrice;
+                            }
+                        }
+                    }
+                }
+            }
 
             //check for extras
             if (chkExtraCheese.Checked)

@@ -6880,4 +6880,29 @@ button.close {
     display: none !important;
   }
 }
+footer .list-inline
+    { 
+   
+    font-size: .85em;
+}
+
+footer li.nav-item{
+    float: right;
+
+}
+
+.front_page {
+    width: 100%;
+    height: 400px;
+    padding-top: 10px;
+    
+   
+}
+
+.front_page p{
+    margin-left: 435px;
+    margin-right: auto;
+
+
+}
 /*# sourceMappingURL=bootstrap.css.map */

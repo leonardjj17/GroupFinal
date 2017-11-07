@@ -136,8 +136,15 @@
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\breadsticks.png" />
+    <Content Include="images\oshea_img2.jpg" />
+    <Content Include="images\oshea_img2_250x250.jpg" />
+    <Content Include="images\oshea_img3.jpg" />
+    <Content Include="images\oshea_img4.png" />
+    <Content Include="images\oshea_img5.jpg" />
+    <Content Include="images\oshea_tshirt1.jpg" />
     <Content Include="images\pepsi.png" />
     <Content Include="images\pizza.png" />
+    <Content Include="images\Shenanigans.jpg" />
     <Content Include="images\shirt.jpg" />
     <Content Include="images\specials.png" />
     <Content Include="Views\CartView.aspx" />
