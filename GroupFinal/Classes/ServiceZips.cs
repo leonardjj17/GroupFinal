@@ -7,22 +7,22 @@ namespace GroupFinal.Classes
 {
     public class ServiceZips
     {
-        private int storeNum;
+        private string storeNum;
         private string serviceZip;
 
         public ServiceZips()
         {
-            storeNum = 0;
+            storeNum = "";
             serviceZip = "";
         }
 
-        public ServiceZips(int storeNum, string serviceZip)
+        public ServiceZips(string storeNum, string serviceZip)
         {
-            this.storeNum = storeNum;
-            this.serviceZip = serviceZip;
+            this.StoreNum = storeNum;
+            this.ServiceZip = serviceZip;
         }
 
-        public int StoreNum { get; set; }
+        public string StoreNum { get; set; }
 
         public string ServiceZip { get; set; }
     }
