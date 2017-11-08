@@ -31,8 +31,8 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productPrice"];
-                    p.ProductCost = (double)read["productCost"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
                     p.ProductQty = (int)read["productQty"];
 
                     allProducts.Add(p);
@@ -160,11 +160,13 @@ namespace GroupFinal.Database
                 while(read.Read())
                 {
                     Products p = new Products();
+
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
                     p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
                     p.ProductCost = Convert.ToDouble(read["productCost"]);
+                    p.ProductQty = (int)read["productQty"];
 
                     allCrusts.Add(p);
                 }
@@ -202,11 +204,13 @@ namespace GroupFinal.Database
                 while (read.Read())
                 {
                     Products p = new Products();
+
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
                     p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
                     p.ProductCost = Convert.ToDouble(read["productCost"]);
+                    p.ProductQty = (int)read["productQty"];
 
                     allSauce.Add(p);
                 }
@@ -248,8 +252,8 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productMenuPrice"];
-                    p.ProductCost = (double)read["productCost"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
                     p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
@@ -288,12 +292,11 @@ namespace GroupFinal.Database
                 while (read.Read())
                 {
                     Products p = new Products();
-
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productMenuPrice"];
-                    p.ProductCost = (double)read["productCost"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
                     p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
@@ -322,8 +325,7 @@ namespace GroupFinal.Database
 
             String query = "SELECT * FROM Products WHERE productType = 'drinks'";
             SqlCommand cmd = new SqlCommand(query, connection);
-
-
+            
             try
             {
                 connection.Open();
@@ -336,8 +338,8 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productMenuPrice"];
-                    p.ProductCost = (double)read["productCost"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
                     p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);
@@ -380,8 +382,8 @@ namespace GroupFinal.Database
                     p.ProductID = (int)read["productID"];
                     p.ProductType = (String)read["productType"];
                     p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = (double)read["productMenuPrice"];
-                    p.ProductCost = (double)read["productCost"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
                     p.ProductQty = (int)read["productQty"];
 
                     allIngredients.Add(p);

@@ -5,18 +5,18 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class Drinks : Products
+    public class Drink : Products
     {
         //variables
         private string drinkSize;
         private string drinkType;
         private double drinkPrice;
         //constructors
-        public Drinks()
+        public Drink()
         {
 
         }
-        public Drinks(string drinkSize, string drinkType, double drinkPrice)
+        public Drink(string drinkSize, string drinkType, double drinkPrice)
         {
             this.drinkSize = drinkSize;
             this.drinkType = drinkType;

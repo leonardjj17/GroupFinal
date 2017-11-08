@@ -1,11 +1,5 @@
 ﻿<%@ Page Title="Drinks" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Drinks.aspx.cs" Inherits="GroupFinal.Views.Drinks" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    Soft drink or Hard?<asp:Panel ID="Panel1" runat="server" Width="300px">
-        <asp:RadioButton ID="rdoSoft" runat="server" GroupName="alcohol" Text="Soft Drink" Checked="True" OnCheckedChanged="RadioButton1_CheckedChanged" />
-        <br />
-        <asp:RadioButton ID="rdoHard" runat="server" GroupName="alcohol" Text="Hard Drink" />
-        <br />
-    </asp:Panel>
     <br />
     Select your Size<asp:Panel ID="pnlSize" runat="server" Width="300px">
         <asp:RadioButton ID="rdoSmall" runat="server" GroupName="drinkSize" Text="Small (12oz)" />
