@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.DA;
 using GroupFinal.Classes;
+using System.Net.Mail;
 
 namespace GroupFinal.Views
 {
@@ -27,6 +28,7 @@ namespace GroupFinal.Views
                 lblIsFavorite.Text = o.IsFavorite;
                 lblOrderType.Text = o.OrderType;
             }
+            
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Order" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="orderType.aspx.cs" Inherits="GroupFinal.Views.orderType" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <h2 class ="center">Order Type</h2>
+        <h1 class="center">
+            Order Type</h1>
         <p class="center">
             <asp:RadioButton ID="rdoDelivery" runat="server" Text="Delivery" GroupName="rdogrpOrderType" OnCheckedChanged="rdoDelivery_CheckedChanged" />
 &nbsp;&nbsp;&nbsp;

@@ -37,7 +37,7 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["Role"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
@@ -84,7 +84,7 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
@@ -130,7 +130,7 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
@@ -177,7 +177,7 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
@@ -269,10 +269,11 @@ namespace GroupFinal.DA
                     e.EmployeeFirst = (String)read["employeeFirst"];
                     e.EmployeeLast = (String)read["employeeLast"];
                     e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
-                    e.EmployeeStatus = (String)read["empl"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
+                    return e;
                 }
             }
             catch (SqlException ex)
@@ -287,7 +288,7 @@ namespace GroupFinal.DA
             {
                 connection.Close();
             }
-            return e;
+            return null;
         }
     
 
@@ -305,10 +306,11 @@ namespace GroupFinal.DA
             {
                 connection.Open();
                 SqlDataReader read = cmd.ExecuteReader();
-                Employee e = new Employee();
 
-                if (read.Read())
+
+                while (read.Read())
                 {
+                    Employee e = new Employee();
                     e.EmployeeID = (int)read["employeeID"];
                     e.StoreNum = (String)read["storeNum"];
                     e.EmployeeFirst = (String)read["employeeFirst"];
@@ -318,8 +320,9 @@ namespace GroupFinal.DA
                     e.EmployeeRole = (String)read["role"];
                     e.Login = (String)read["login"];
                     e.Password = (String)read["password"];
+
+                    employees.Add(e);
                 }
-                employees.Add(e);
             }
             catch (SqlException ex)
             {

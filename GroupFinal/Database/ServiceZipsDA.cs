@@ -29,7 +29,7 @@ namespace GroupFinal.Database
                 {
                     ServiceZips zip = new ServiceZips();
 
-                    zip.StoreNum = (int)read["storeNum"];
+                    zip.StoreNum = (string)read["storeNum"];
                     zip.ServiceZip = (String)read["serviceZip"];
 
                     allServiceZips.Add(zip);
@@ -70,7 +70,7 @@ namespace GroupFinal.Database
                 {
                     ServiceZips zip = new ServiceZips();
 
-                    zip.StoreNum = (int)read["storeNum"];
+                    zip.StoreNum = (string)read["storeNum"];
                     zip.ServiceZip = (String)read["serviceZip"];
 
                     allServiceZips.Add(zip);
