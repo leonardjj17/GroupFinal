@@ -1097,7 +1097,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #3c763d;
   text-decoration: none;
 }
 a:hover,
@@ -1651,7 +1651,10 @@ margin: 0 auto;
     nav {
         margin: 0 auto;
         width: 1200px;
-        padding: 0px 20px 0px 20px;
+        padding: 0px 0px 0px 20px;
+    }
+    .navbar-collapse{
+        
     }
 
 }
@@ -3622,7 +3625,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: #3c763d;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,
@@ -4057,7 +4060,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eee;
-  border-color: #337ab7;
+  border-color: #3c763d;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4150,7 +4153,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #3c763d;
 }
 .nav-stacked > li {
   float: none;
@@ -4221,6 +4224,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4256,6 +4260,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
+    float: right;
   }
   .navbar-collapse.in {
     overflow-y: visible;
@@ -4316,6 +4321,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top {
+
   top: 0;
   border-width: 0 0 1px;
 }
@@ -4375,10 +4381,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+
 }
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   line-height: 20px;
 }
 @media (max-width: 767px) {
@@ -4642,7 +4649,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #333;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -5010,17 +5017,16 @@ a.badge:focus {
 }
 .jumbotron {
     padding: 10px 0px 10px 10px;
-   
     margin-bottom: 20px;
     color: inherit;
-    background-color: darkgreen;
+    background-color: #222;
     margin: 0 auto;
 }
 
 
     .jumbotron h1,
     .jumbotron .h1 {
-        color: white;
+        color: green;
         font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
         font-weight: 600;
         font-size: 72pt;
@@ -6880,16 +6886,18 @@ button.close {
     display: none !important;
   }
 }
-footer .list-inline
-    { 
-   
-    font-size: .85em;
-}
 
-footer li.nav-item{
-    float: right;
+    footer .list-inline {
+        background-color: #333333;
+        color: white;
+        font-size: .85em;
+        height: 40px;
+    }
 
-}
+    footer li.nav-item {
+        float: right;
+        color: white;
+    }
 
 .front_page {
     width: 100%;
@@ -6899,10 +6907,33 @@ footer li.nav-item{
    
 }
 
-.front_page p{
-    margin-left: 435px;
-    margin-right: auto;
+.front_page h2{
+    text-align: center;
+    font-size: .95em;
+    margin: 0 auto;
 
 
 }
+.front_page p{
+    margin-left: 467px;
+    margin-right: auto;
+   
+
+
+}
+
+    .front_page img {
+        margin-top: 30px;
+
+        border: 3px solid darkgreen;
+        border-radius: 5px;
+    }
+.navbar-collapse.collapse ul{
+    padding-right: 40px;
+}
+
+nav.navbar{
+    font-size: .9em;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */
