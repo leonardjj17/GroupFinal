@@ -14,21 +14,16 @@ namespace GroupFinal.Views
         const double MEDIUM_PRICE_MULTIPLIER = 1.5;
         const double LARGE_PRICE_MULTIPLIER = 2;
 
-        List<Products> allDrinks;
-
-        protected void getDrinks()
-        {
-            List<Products> drinks = ProductsDA.GetAllDrinks();
-            List<Products> alcohol = ProductsDA.GetAllAlcohol();
-            allDrinks = new List<Products>(drinks.Count + alcohol.Count);
-            allDrinks.AddRange(drinks);
-            allDrinks.AddRange(alcohol);
-        }
-
+        List<Products> drinks;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            getDrinks();
-            foreach (Products drink in allDrinks)
+            drinks = ProductsDA.GetAllDrinks();
+            double basePrice = drinks.First().ProductPrice;
+            rdoSmall.Text = rdoSmall.Text + " (" + Math.Round(basePrice,2).ToString("C") + ")";
+            rdoMedium.Text = rdoMedium.Text + " (" + Math.Round(basePrice * MEDIUM_PRICE_MULTIPLIER, 2).ToString("C") + ")";
+            rdoLarge.Text = rdoLarge.Text + " (" + Math.Round(basePrice * LARGE_PRICE_MULTIPLIER, 2).ToString("C") + ")";
+            foreach (Products drink in drinks)
             {
                 RadioButton newDrink = new RadioButton();
                 newDrink.Text = drink.ProductDetail;
@@ -42,7 +37,7 @@ namespace GroupFinal.Views
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            getDrinks();
+            drinks = ProductsDA.GetAllDrinks();
             double pricemultiplier = 1;
             string size = "small";
             if (rdoMedium.Checked)
@@ -60,11 +55,11 @@ namespace GroupFinal.Views
             {
                 if ((rdoDrink.GetType().Name == "RadioButton") && (((CheckBox)rdoDrink).Checked))
                 {
-                    foreach (Products product in allDrinks)
+                    foreach (Products product in drinks)
                     {
                         if (product.ProductDetail == (((RadioButton)rdoDrink).Text))
                         {
-                            Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductMenuPrice * pricemultiplier,2));
+                            Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2));
 
                             //put it into the cart......
 
