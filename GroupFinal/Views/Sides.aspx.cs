@@ -27,7 +27,7 @@ namespace GroupFinal.Views
                 breadsticks.Width = 300;
                 breadsticks.Height = 200;
 
-                cinnasticks.ImageUrl = "~/images/cinnasticks.jpg";
+                cinnasticks.ImageUrl = "~/images/cinnasticks.png";
                 cinnasticks.Width = 300;
                 breadsticks.Height = 250;
 
