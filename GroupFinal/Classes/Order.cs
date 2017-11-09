@@ -21,6 +21,8 @@ namespace GroupFinal.Classes
 
         public string IsFavorite { get; set; }
 
+        public string OrderEstimation { get; set; }
+
         public string OrderType { get; set; }
         public double OrderTax { get; set; }
         public double OrderSubTotal { get; set; }
@@ -59,7 +61,14 @@ namespace GroupFinal.Classes
             if (OrderType == "delivery")
             {
                 OrderTotal += 2.00;
+                OrderEstimation = "Please allow 50 minutes for delivery";
+
             }
-        }
+
+            else if(OrderType == "carryout")
+            {
+                OrderEstimation = "Please allow 15 - 20 minutes to make your items";
+            }
+}
     }
 }

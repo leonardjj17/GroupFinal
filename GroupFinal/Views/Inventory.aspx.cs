@@ -32,7 +32,7 @@ namespace GroupFinal.Views
 
             lblIngredientName.Text = selectedProduct.ProductDetail;
             lblItemCost.Text = selectedProduct.ProductPrice.ToString("c2");
-            lblMenuPrice.Text = selectedProduct.ProductMenuPrice.ToString("c2");
+            lblMenuPrice.Text = selectedProduct.ProductPrice.ToString("c2");
             lblQuantity.Text = Convert.ToString(selectedProduct.ProductQty);
         }
     }

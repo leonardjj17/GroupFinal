@@ -137,6 +137,8 @@
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\breadsticks.png" />
+    <Content Include="images\cinnasticks.jpg" />
+    <Content Include="images\garlicKnots.jpg" />
     <Content Include="images\oshea_img2.jpg" />
     <Content Include="images\oshea_img2_250x25.jpg" />
     <Content Include="images\oshea_img2_250x250.jpg" />
@@ -150,6 +152,7 @@
     <Content Include="images\Shenanigans.jpg" />
     <Content Include="images\shirt.jpg" />
     <Content Include="images\specials.png" />
+    <Content Include="images\storeGarlicKnots.jpg" />
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
