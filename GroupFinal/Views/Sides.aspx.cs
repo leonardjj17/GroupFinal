@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.DA;
 using GroupFinal.Database;
+using GroupFinal.Classes;
 
 namespace GroupFinal.Views
 {
@@ -30,6 +31,8 @@ namespace GroupFinal.Views
         {
             double sideTotal = 0;
             string selectedSides = "";
+
+            Side newSide = new Side();
             
 
             foreach(Control sides in pnlSides.Controls)
@@ -49,6 +52,9 @@ namespace GroupFinal.Views
                         }
                     }
                 }
+
+                newSide.SideType = selectedSides;
+                newSide.SidePrice = sideTotal;
             }
 
 

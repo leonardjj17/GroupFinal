@@ -23,6 +23,8 @@ namespace GroupFinal.Classes
 
         public string OrderType { get; set; }
 
+        public string OrderEstimation { get; set; }
+
         //empty constructor
         public Order()
         {
@@ -33,6 +35,7 @@ namespace GroupFinal.Classes
             StoreNum = "";
             IsFavorite = "";
             OrderType = "";
+            OrderEstimation = "";
         }
 
         //constructor with all the variables
@@ -51,7 +54,14 @@ namespace GroupFinal.Classes
         {
             if (OrderType == "delivery")
             {
+                
                 OrderTotal += 2.00;
+                OrderEstimation = "Please allow 50 minutes for delivery";
+
+            }
+            else if(OrderType == "carryout")
+            {
+                OrderEstimation = "Please allow 15 - 20 minutes to make your items";
             }
         }
     }
