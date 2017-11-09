@@ -92,9 +92,10 @@
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" CssClass="alert-danger" Display="Dynamic" ErrorMessage="Must Enter a Valid Phone Number(555)555-5555" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
     </p>
     <p>
-        Login Username:&nbsp;&nbsp;&nbsp;
+        Login Email:&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtLogin" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtLogin" CssClass="alert-danger" ErrorMessage="Must Enter a Username"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtLogin" CssClass="alert-danger" ErrorMessage="Must Enter a Username" Display="Dynamic"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtLogin" CssClass="alert-danger" Display="Dynamic" ErrorMessage="Must enter a valid Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
     </p>
     <p>
         Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
