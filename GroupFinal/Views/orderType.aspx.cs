@@ -22,6 +22,7 @@ namespace GroupFinal.Views
         protected void btnOrderType_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Views/Menu.aspx");
+            Session["Order"] = o;
         }
 
         protected void rdoDelivery_CheckedChanged(object sender, EventArgs e)
@@ -36,26 +37,16 @@ namespace GroupFinal.Views
 
         protected void txtZip_TextChanged(object sender, EventArgs e)
         {
-            bool exist = false;
             zip.ServiceZip = txtZip.ToString();
             List<ServiceZips> zips = ServiceZipsDA.GetAllServiceZips();
             foreach(ServiceZips z in zips)
             {
                 if(zip.ServiceZip == z.ServiceZip)
                 {
-                    zip.StoreNum = z.StoreNum;
-                    exist = true;
-                    //store = zip.StoreNum;
-                }
-                else
-                {
-                    if(zip.StoreNum == 0)
-                    {
-                        exist = false;
-                    }
+                    o.StoreNum = z.StoreNum;
                 }
             }
-
+         
         }
     }
 }

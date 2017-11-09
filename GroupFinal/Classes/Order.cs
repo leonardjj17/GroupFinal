@@ -22,8 +22,8 @@ namespace GroupFinal.Classes
         public string IsFavorite { get; set; }
 
         public string OrderType { get; set; }
-
-        public string OrderEstimation { get; set; }
+        public double OrderTax { get; set; }
+        public double OrderSubTotal { get; set; }
 
         //empty constructor
         public Order()
@@ -35,11 +35,12 @@ namespace GroupFinal.Classes
             StoreNum = "";
             IsFavorite = "";
             OrderType = "";
-            OrderEstimation = "";
+            OrderTax = 0.0;
+            OrderSubTotal = 0.0;
         }
 
         //constructor with all the variables
-        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType)
+        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType, double orderTax, double orderSubTotal)
         {
             this.OrderID = orderID;
             this.CustomerFirst = customerFirst;
@@ -48,20 +49,16 @@ namespace GroupFinal.Classes
             this.StoreNum = storeNum;
             this.IsFavorite = isFavorite;
             this.OrderType = orderType;
+            this.OrderTax = orderTax;
+            this.OrderSubTotal = orderSubTotal;
+
         }
         //method to call at the end of a delivery to make sure that order total is increased if it's a delivery
         public void checkDeliveryPrice()
         {
             if (OrderType == "delivery")
             {
-                
                 OrderTotal += 2.00;
-                OrderEstimation = "Please allow 50 minutes for delivery";
-
-            }
-            else if(OrderType == "carryout")
-            {
-                OrderEstimation = "Please allow 15 - 20 minutes to make your items";
             }
         }
     }

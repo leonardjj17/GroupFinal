@@ -106,6 +106,7 @@
             <hr />
             
         </div>
+         </form>
         <footer>
          
                 <nav class="nav navbar-fixed-bottom">
@@ -120,7 +121,7 @@
                 </nav>
                 
             </footer>
-    </form>
+   
 
          </div>
 </body>

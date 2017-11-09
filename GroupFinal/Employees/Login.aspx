@@ -17,7 +17,7 @@
         <tr>
             <td style="width: 123px">Password</td>
             <td style="width: 286px">
-                <asp:TextBox ID="txtPassword" runat="server" Width="230px"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" Width="230px" TextMode="Password"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required"></asp:RequiredFieldValidator>

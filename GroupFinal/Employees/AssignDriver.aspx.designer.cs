@@ -13,21 +13,30 @@ namespace GroupFinal.Employees {
     public partial class AssignDriver {
         
         /// <summary>
-        /// pnlStoreID control.
+        /// orderID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlStoreID;
+        protected global::System.Web.UI.WebControls.HiddenField orderID;
         
         /// <summary>
-        /// pnlDrivers control.
+        /// driverList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlDrivers;
+        protected global::System.Web.UI.WebControls.DropDownList driverList;
+        
+        /// <summary>
+        /// btnUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
     }
 }

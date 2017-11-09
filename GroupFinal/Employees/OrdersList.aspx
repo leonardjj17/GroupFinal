@@ -3,18 +3,9 @@
     <p>
         Order list for store</p>
     <p>
-        &nbsp;</p>
-    <table>
-        <tr>
-            <th>OrderID</th>
-            <th>Customer Name</th>
-            <th>Order Total</th>
-            <th>Order Type</th>
-            <th>Driver</th>
-            <th>Delete</th>
-        </tr>
-        <asp:Panel ID="pnlOrders" runat="server">
-        </asp:Panel>
-    </table>
+        <asp:Table ID="table" runat="server" Width="196px">
+        </asp:Table>
+    </p>
+
 
 </asp:Content>

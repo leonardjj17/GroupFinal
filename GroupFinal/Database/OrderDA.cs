@@ -9,6 +9,49 @@ namespace GroupFinal.DA
 {
     public class OrderDA
     {
+        public static Order getOrderByID(int orderID)
+        {
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Orders WHERE orderID = @orderID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@orderID", orderID);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+                Order o = new Order();
+                if (read.Read())
+                {
+
+                    o.OrderID = (int)read["orderID"];
+                    o.CustomerFirst = (String)read["customerFirst"];
+                    o.CustomerLast = (String)read["customerLast"];
+                    o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
+                    o.StoreNum = (String)read["storeNum"];
+                    o.IsFavorite = (String)read["isFavorite"];
+                    o.OrderType = (String)read["orderType"];
+                    return o;
+                }
+                
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return null;
+        }
         public static List<Order> GetAllOrders()
         {
             List<Order> allOrders = new List<Order>();
@@ -31,7 +74,7 @@ namespace GroupFinal.DA
                     o.OrderID = (int)read["orderID"];
                     o.CustomerFirst = (String)read["customerFirst"];
                     o.CustomerLast = (String)read["customerLast"];
-                    o.OrderTotal = (double)read["orderTotal"];
+                    o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
@@ -144,5 +187,6 @@ namespace GroupFinal.DA
             }
             return allCustomerOrders;
         }
+
     }
 }
