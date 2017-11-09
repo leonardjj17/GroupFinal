@@ -137,7 +137,7 @@
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\breadsticks.png" />
-    <Content Include="images\cinnasticks.jpg" />
+    <Content Include="images\cinnasticks.png" />
     <Content Include="images\garlicKnots.jpg" />
     <Content Include="images\oshea_img2.jpg" />
     <Content Include="images\oshea_img2_250x25.jpg" />
