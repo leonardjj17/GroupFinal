@@ -154,6 +154,8 @@ namespace GroupFinal.Views
                 }
             }
 
+            newPizza.PizzaToppings = pizzaToppings;
+
             //check for extras
             if (chkExtraCheese.Checked)
             {
@@ -169,8 +171,6 @@ namespace GroupFinal.Views
 
             newPizza.PizzaExtras = pizzaExtras;
             newPizza.PizzaPrice = Math.Round(pizzaCost, 2);
-
-
 
         }
     }

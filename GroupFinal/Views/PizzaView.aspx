@@ -3,18 +3,18 @@
     <div class="col-md-4">
         <br />
 
-    <asp:Image ID="pizzaImage" runat="server" ImageUrl="~/images/blankPizza.png" Width="300px" />
+    <asp:Image ID="pizzaImage" runat="server" ImageUrl="~/images/pizza.png" Width="300px" Height="200px" />
     &nbsp;&nbsp;&nbsp;
     <br />
     Select your Size<asp:Panel ID="pnlSize" runat="server" Width="300px">
         <asp:RadioButton ID="rdoSmall" runat="server" GroupName="pizzaSize" Text="Small (12&quot;) $8.99" />
         <br />
-        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;) 11.99" />
+        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;) $11.99" />
         <br />
         <asp:RadioButton ID="rdoLarge" runat="server" GroupName="pizzaSize" Text="Large (18&quot;) $14.99" />
     </asp:Panel>
     <br />
-    Select your Crust
+    Select your Crust<br />
     <asp:Panel ID="pnlCrusts" runat="server" Width="200px">
     </asp:Panel>
     <br />
@@ -27,7 +27,7 @@
     <br />
         </div>
     <div class="col-md-4">
-    SelectSelect your Cheese<br />
+    Select your Cheese<br />
     <asp:Panel ID="pnlCheese" runat="server" Width="200px">
         <asp:RadioButton ID="rdoNone" runat="server" GroupName="grpCheese"  Text="None" />
         <br />
@@ -42,7 +42,7 @@
     <br />
         </div>
     <div class="col-md-4">
-    Can we tempt you?
+    Can we tempt you?<br />
     <asp:Panel ID="pnlExtras" runat="server" Width="200px">
         <asp:CheckBox ID="chkExtraSauce" runat="server" Text="Extra Sauce" />
         <br />
