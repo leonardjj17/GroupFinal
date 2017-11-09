@@ -18,8 +18,6 @@ namespace GroupFinal.Views
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            
-
             foreach(Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
