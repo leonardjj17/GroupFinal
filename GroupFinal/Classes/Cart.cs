@@ -82,14 +82,9 @@ namespace GroupFinal.Classes
         {
             double subtotal = 0;
             double tax = .075;
-            double t = 0;
-            Order currentOrder = new Order();
-            Products p = new Products();
-
-         
-                foreach (CartItem Item in orderItems)
-                {
-                    subtotal += (double)p.ProductMenuPrice;
+            foreach (Products p in CartItems)
+            {
+                subtotal += (double)p.ProductMenuPrice;
 
                 }
                 currentOrder.OrderSubTotal = subtotal;
