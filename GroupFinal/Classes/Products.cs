@@ -7,48 +7,33 @@ namespace GroupFinal
 {
     public class Products
     {
-        //declaring variables
-        private int productID;
-        private double productPrice;
-        private string productType;
-        private int productQty;
-        private double productCost;
-        private double productMenuPrice;
-        private string productDetail;
+        //get and sets for all variables
+        public int ProductID { get; set; }
+        public double ProductPrice { get; set; }
+        public string ProductType { get; set; }
+        public int ProductQty { get; set; }
+        public double ProductCost { get; set; }
+        public string ProductDetail { get; set; }
+
 
         //empty constructor
         public Products()
         {
 
-            productPrice = 0.0;
-            productType = "";
-            productQty = 0;
+            ProductPrice = 0.0;
+            ProductType = "";
+            ProductQty = 0;
         }
         //constructor with all the variables
-        public Products(int productID, double productPrice, string productType, int productQty, double productCost, double productMenuPrice, string productDetail)
+        public Products(int productID, double productPrice, string productType, int productQty, double productCost, string productDetail)
         {
-            this.productID = productID;
-            this.productPrice = productPrice;
-            this.productType = productType;
-            this.productQty = productQty;
-            this.productCost = productCost;
-            this.productMenuPrice = productMenuPrice;
-            this.productDetail = productDetail;
+            this.ProductID = productID;
+            this.ProductPrice = productPrice;
+            this.ProductType = productType;
+            this.ProductQty = productQty;
+            this.ProductCost = productCost;
+            this.ProductDetail = productDetail;
         }
 
-        //get and sets for all variables
-        public int ProductID { get; set; }
-
-        public double ProductPrice { get; set; }
-
-        public string ProductType { get; set; }
-
-        public int ProductQty { get; set; }
-
-        public double ProductCost { get; set; }
-
-        public double ProductMenuPrice { get; set; }
-
-        public string ProductDetail { get; set; }
     }
 }
