@@ -73,26 +73,26 @@
                         <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
                         <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
                     </ul>
-                    <% if (Session["User"] == null)
+                    <% if (Session["customer"] == null)
                         { %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/Customer/customerSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a runat="server" href="~/Customer/customerLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a runat="server" href="~/CustomerPages/customerSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a runat="server" href="~/CustomerPages/customerLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                     <% }
-    else
-    { %>
+                     else
+                    { %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~Customer/customerProfile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
-                        <li><a runat="server" href="~Customer/customerSignout"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
+                        <li><a runat="server" href="~CustomerPages/customerProfile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
+                        <li><a runat="server" href="~CustomerPages/customerSignout"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
                     </ul>
                     <%} %>
                 </div>
-            
+                    
                </nav>
       <div class="container">
      <div class="jumbotron">
-          <h1>O'Shea Shenanigan's Pub & Pizza</h1>
+<%--          <h1>O'Shea Shenanigan's Pub & Pizza</h1>--%>
      </div>
      
 </div>     

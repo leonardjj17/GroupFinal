@@ -3,7 +3,8 @@
     <p>
         Sign-Up for a O&#39;Shea Shenanigan&#39;s Account!</p>
     <p>
-        &nbsp;</p>
+        <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
+    </p>
     <p>
         First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
@@ -26,7 +27,7 @@
     </p>
     <p>
         State:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="cmboState" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="cmboState" runat="server">
             <asp:ListItem Value="AL">Alabama</asp:ListItem>
 	<asp:ListItem Value="AK">Alaska</asp:ListItem>
 	<asp:ListItem Value="AZ">Arizona</asp:ListItem>
@@ -100,6 +101,8 @@
         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPassword" CssClass="alert-danger" ErrorMessage="Must Enter a Password"></asp:RequiredFieldValidator>
     </p>
+    <p>
+        Please look through your info once again to make sure you got it right!</p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" Text="Sign Up!" />
