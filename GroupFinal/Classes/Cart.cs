@@ -15,7 +15,7 @@ namespace GroupFinal.Classes
             double tax = .075;
             foreach (Products p in CartItems)
             {
-                subtotal += (double)p.ProductMenuPrice;
+                subtotal += (double)p.ProductPrice;
 
             }
             o.OrderSubTotal = subtotal;

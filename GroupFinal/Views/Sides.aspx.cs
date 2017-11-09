@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.DA;
 using GroupFinal.Database;
+using GroupFinal.Classes;
 
 namespace GroupFinal.Views
 {
@@ -18,10 +19,40 @@ namespace GroupFinal.Views
             foreach(Products sides in allSides)
             {
                 CheckBox newSide = new CheckBox();
-                newSide.Text = sides.ProductDetail;
+                Image breadsticks = new Image();
+                Image cinnasticks = new Image();
+                Image garlicKnots = new Image();
 
-                pnlSides.Controls.Add(newSide);
-                pnlSides.Controls.Add(new LiteralControl("<br />"));
+                breadsticks.ImageUrl = "~/images/breadsticks.png";
+                breadsticks.Width = 300;
+                breadsticks.Height = 200;
+
+                cinnasticks.ImageUrl = "~/images/cinnasticks.jpg";
+                cinnasticks.Width = 300;
+                breadsticks.Height = 250;
+
+                garlicKnots.ImageUrl = "~/images/garlicKnots.jpg";
+                garlicKnots.Width = 300;
+                garlicKnots.Height = 200;
+
+                
+                newSide.Text = sides.ProductDetail;
+                if (newSide.Text == "breadsticks")
+                {
+                    pnlSides.Controls.Add(breadsticks);
+                    pnlSides.Controls.Add(newSide);
+                    pnlSides.Controls.Add(new LiteralControl("<br />"));
+                } else if (newSide.Text == "cinna sticks")
+                {
+                    pnlSides.Controls.Add(cinnasticks);
+                    pnlSides.Controls.Add(newSide);
+                    pnlSides.Controls.Add(new LiteralControl("<br />"));
+                } else if (newSide.Text == "garlic knots")
+                {
+                    pnlSides.Controls.Add(garlicKnots);
+                    pnlSides.Controls.Add(newSide);
+                    pnlSides.Controls.Add(new LiteralControl("<br />"));
+                }
 
             }
         }
@@ -30,6 +61,8 @@ namespace GroupFinal.Views
         {
             double sideTotal = 0;
             string selectedSides = "";
+
+            Side newSide = new Side();
             
 
             foreach(Control sides in pnlSides.Controls)
@@ -49,9 +82,11 @@ namespace GroupFinal.Views
                         }
                     }
                 }
+
             }
 
-
+            newSide.SideType = selectedSides;
+            newSide.SidePrice = sideTotal;
         }
     }
 }

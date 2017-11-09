@@ -3,15 +3,15 @@
     <div class="col-md-4">
         <br />
 
-    <asp:Image ID="pizzaImage" runat="server" ImageUrl="~/images/blankPizza.png" Width="300px" />
+    <asp:Image ID="pizzaImage" runat="server" ImageUrl="~/images/pizza.png" Width="300px" Height="200px" />
     &nbsp;&nbsp;&nbsp;
     <br />
     Select your Size<asp:Panel ID="pnlSize" runat="server" Width="300px">
-        <asp:RadioButton ID="rdoSmall" runat="server" GroupName="pizzaSize" Text="Small (12&quot;)" />
+        <asp:RadioButton ID="rdoSmall" runat="server" GroupName="pizzaSize" Text="Small (12&quot;) $8.99" />
         <br />
-        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;)" />
+        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;) $11.99" />
         <br />
-        <asp:RadioButton ID="rdoLarge" runat="server" GroupName="pizzaSize" Text="Large (18&quot;)" />
+        <asp:RadioButton ID="rdoLarge" runat="server" GroupName="pizzaSize" Text="Large (18&quot;) $14.99" />
     </asp:Panel>
     <br />
     Select your Crust<br />
@@ -34,9 +34,8 @@
         <asp:RadioButton ID="rdoRegular" runat="server" GroupName="grpCheese" Text="Regular Mozzerella" />
         <br />
     </asp:Panel>
-    <br />
-    <br />
-    Select your toppings<br />
+        <br />
+        Select your topping $0.75 each<br />
     <asp:Panel ID="pnlToppings" runat="server" Width="200px">
     </asp:Panel>
     <br />
