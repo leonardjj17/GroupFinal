@@ -232,6 +232,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Alcohol.cs" />
     <Compile Include="Classes\Cart.cs" />
+    <Compile Include="Classes\CartItem.cs" />
     <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Financial.cs" />

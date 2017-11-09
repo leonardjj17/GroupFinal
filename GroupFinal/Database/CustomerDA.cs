@@ -210,8 +210,8 @@ namespace GroupFinal.Database
         {
             SqlConnection connection = Connection.getConnection();
 
-            String query = "INSERT INTO Customers Values(customerFirst, customerLast, customerPhone, customerAddress, customerCity, customerState, customerZip, Role, Login, Password, primaryStore) "+
-                " (@customerFirst, @customerLast, @custmerPhone, @customerAddress, @customerCity, @customerState, @customerZip, @Role, @Login, @Password, @primaryStore) ";
+            String query = "INSERT INTO Customers Values(customerFirst, customerLast, customerPhone, customerAddress, customerCity, customerState, customerZip, Login, Password, primaryStore) "+
+                " (@customerFirst, @customerLast, @custmerPhone, @customerAddress, @customerCity, @customerState, @customerZip, @Login, @Password, @primaryStore) ";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@customerFirst", c.CustomerFirst);
             cmd.Parameters.AddWithValue("@customerLast", c.CustomerLast);
@@ -228,12 +228,12 @@ namespace GroupFinal.Database
             try
             {
                 connection.Open();
-                
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
             {
-
+                
             }
             catch (Exception ex)
             {
