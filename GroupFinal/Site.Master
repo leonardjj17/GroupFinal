@@ -31,8 +31,9 @@
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-     <div class="wrapper">
+    
     <form runat="server">
+        
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -53,8 +54,8 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        
-           <header>
+         <div class="wrapper">
+          
                
         <nav class="navbar navbar-inverse navbar-fixed-top">
            
@@ -90,26 +91,29 @@
                 </div>
                     
                </nav>
-      <div class="container">
-     <div class="jumbotron">
-<%--          <h1>O'Shea Shenanigan's Pub & Pizza</h1>--%>
+      <header>
+          <div class="container">
+                         <div class="jumbotron">
+         <h1>O'Shea Shenanigan's Pub & Pizza</h1>
      </div>
-     
-</div>     
-     </header>
+          </div>
+ 
+      </header>
+    
+   
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 Welcome to O'Shea Shenanigan's Pub & Pizzeria <br>
 
                 
             </asp:ContentPlaceHolder>
-            <hr />
+           
             
         </div>
-         </form>
+     
         <footer>
          
-                <nav class="nav navbar-fixed-bottom">
+                <nav class="nav navbar">
                     <ul class="list-inline">
                         <li class="footing">&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/">Home Page</a></li>
@@ -124,5 +128,6 @@
    
         
          </div>
+            </form>
 </body>
 </html>

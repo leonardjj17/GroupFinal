@@ -97,6 +97,50 @@ namespace GroupFinal.Database
             }
             return allIngredients;
         }
+        public static List<Products> GetAllToppings()
+        {
+            List<Products> allToppings = new List<Products>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productType = 'toppings'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductQty = (int)read["productQty"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
+
+
+                    allToppings.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message + " " + ex.StackTrace);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allToppings;
+        }
 
         public static List<Products> GetAllSides()
         {

@@ -8,66 +8,68 @@ namespace GroupFinal.Classes
     public class Cart
     {
        
-    private DateTime _dateCreated;
-    private DateTime _lastUpdate;
-    private List<CartItem> orderItems;
+    private DateTime dateCreated;
+    private DateTime lastUpdate;
+    private List<Products> orderItems;
+       Order currentOrder = new Order();
+        
 
     public Cart()
     {
         if (this.orderItems == null)
         {
-            this.orderItems = new List<CartItem>();
-            this._dateCreated = DateTime.Now;
+            this.orderItems = new List<Products>();
+            this.dateCreated = DateTime.Now;
         }
     }
 
-    public List<CartItem> Items
+    public List<Products> Items
     {
         get { return orderItems; }
         set { orderItems = value; }
     }
 
-    public void Insert(int ProductID, double Price,
-    int Quantity, string ProductName, string ImageUrl)
+    public void Insert(int ProductID, double ProductPrice,
+    int ProductQty, double ProductCost, string ProductDetail)
     {
         int ItemIndex = ItemIndexOfID(ProductID);
         if (ItemIndex == -1)
         {
-            CartItem NewItem = new CartItem();
-            NewItem.ProductID = ProductID;
-            NewItem.Quantity = Quantity;
-            NewItem.Price = Price;
-            NewItem.ProductName = ProductName;
-            NewItem.ImageUrl = ImageUrl;
-            orderItems.Add(NewItem);
+            Products newItem = new Products();
+            newItem.ProductID = ProductID;
+            newItem.ProductPrice = ProductPrice;
+            newItem.ProductQty = ProductQty;
+            newItem.ProductCost = ProductCost;
+            newItem.ProductDetail = ProductDetail;
+            orderItems.Add(newItem);
         }
         else
         {
-            orderItems[ItemIndex].Quantity += 1;
+            orderItems[ItemIndex].ProductQty += 1;
         }
-        _lastUpdate = DateTime.Now;
+        lastUpdate = DateTime.Now;
     }
 
     public void Update(int RowID, int ProductID,
-                     int Quantity, double Price)
+                     int ProductQty, double ProductPrice)
     {
-        CartItem Item = orderItems[RowID];
+        Products Item = orderItems[RowID];
         Item.ProductID = ProductID;
-        Item.Quantity = Quantity;
-        Item.Price = Price;
-        _lastUpdate = DateTime.Now;
+        Item.ProductQty = ProductQty;
+        Item.ProductPrice = ProductPrice;
+        lastUpdate = DateTime.Now;
     }
 
     public void DeleteItem(int rowID)
     {
         orderItems.RemoveAt(rowID);
-        _lastUpdate = DateTime.Now;
+        lastUpdate = DateTime.Now;
     }
 
     private int ItemIndexOfID(int ProductID)
     {
         int index = 0;
-        foreach (CartItem item in orderItems)
+        foreach (Products item in orderItems)
         {
             if (item.ProductID == ProductID)
             {
@@ -82,21 +84,21 @@ namespace GroupFinal.Classes
         {
             double subtotal = 0;
             double tax = .075;
-            foreach (Products p in CartItems)
+            foreach (Products p in orderItems)
             {
-                subtotal += (double)p.ProductMenuPrice;
+                subtotal += p.ProductPrice;
 
-                }
-                currentOrder.OrderSubTotal = subtotal;
-                currentOrder.OrderTax = currentOrder.OrderSubTotal * tax;
-                currentOrder.OrderTotal = currentOrder.OrderSubTotal + currentOrder.OrderTax;
+            }
+            currentOrder.OrderSubTotal = subtotal;
+            currentOrder.OrderTax = currentOrder.OrderSubTotal * tax;
+            currentOrder.OrderTotal = currentOrder.OrderSubTotal + currentOrder.OrderTax;
 
-                return currentOrder;
-           
+            return currentOrder;
+
         }
-         
-   
-            
+
+
+
     }
 }
 

@@ -13,7 +13,7 @@ namespace GroupFinal.Views
     {
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
-        List<Products> allToppings = ProductsDA.GetAllIngredients();
+        List<Products> allToppings = ProductsDA.GetAllToppings();
 
         protected void Page_Load(object sender, EventArgs e)
         {
