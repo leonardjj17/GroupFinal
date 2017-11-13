@@ -14,6 +14,7 @@ namespace GroupFinal.Views
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
         List<Products> allToppings = ProductsDA.GetAllToppings();
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -170,6 +171,13 @@ namespace GroupFinal.Views
             newPizza.PizzaExtras = pizzaExtras;
             newPizza.PizzaPrice = Math.Round(pizzaCost, 2);
 
+
+            Session["pizza"] = newPizza;
+
+            string pizza = newPizza.PizzaToppings;
+            Console.WriteLine(pizza.ToString());
+
+            Response.Redirect("CartView.aspx");
         }
     }
 }

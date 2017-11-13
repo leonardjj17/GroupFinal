@@ -71,6 +71,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Views/orderType">Place an Order</a></li>
+                        <li><a runat="server" href="~/Views/CartView">Your Order</a></li>
                         <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
                         <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
                     </ul>
@@ -117,6 +118,7 @@
                     <ul class="list-inline">
                         <li class="footing">&copy; <%: DateTime.Now.Year %> - O'Shea Shenanigan's LLC</li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/">Home Page</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/CartView">Your Order</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/orderType">Place an Order</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/About">About Us</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Contact">Contact Us</a></li>
