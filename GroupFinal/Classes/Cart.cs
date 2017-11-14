@@ -200,10 +200,7 @@ namespace GroupFinal.Classes
 
         }
 
-        //internal void Add(Pizza newPizza)
-        //{
-        //    throw new NotImplementedException();
-        //}
+     
     }
 }
 
