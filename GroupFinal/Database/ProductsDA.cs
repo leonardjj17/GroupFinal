@@ -447,5 +447,82 @@ namespace GroupFinal.Database
             }
             return allIngredients;
         }
+
+        public static Products GetProductByID(int id)
+        {
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Products WHERE productID = @productID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@productID", id);
+            
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductCost = Convert.ToDouble(read["productCost"]);
+                    p.ProductQty = (int)read["productQty"];
+
+                    return p;
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return null;
+        }
+        public static void UpdateProduct(Products product)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "UPDATE Products SET productType = @productType, " +
+                "productDetail = @productDetail, productQty = @productQty, " +
+                "productCost = @productCost, productMenuPrice = @productMenuPrice " +
+                "WHERE productID = @productID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@productType", product.ProductType);
+            cmd.Parameters.AddWithValue("@productDetail", product.ProductDetail);
+            cmd.Parameters.AddWithValue("@productQty", product.ProductQty);
+            cmd.Parameters.AddWithValue("@productCost", product.ProductCost);
+            cmd.Parameters.AddWithValue("@productMenuPrice", product.ProductPrice);
+            cmd.Parameters.AddWithValue("@productID", product.ProductID);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

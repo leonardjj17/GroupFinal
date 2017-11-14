@@ -68,7 +68,7 @@ namespace GroupFinal.CustomerPages
                     }
                     if (noDuplicates)
                     {
-                        Session["customer"] = c;
+                        Session["Customer"] = c;
                         CustomerDA.AddCustomer(c);
                         //SmtpClient needs a host and port passed to it
                         SmtpClient client = new SmtpClient();

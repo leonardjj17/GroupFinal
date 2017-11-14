@@ -131,6 +131,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="CustomerPages\customerLogin.aspx" />
     <Content Include="CustomerPages\customerSignOut.aspx" />
+    <Content Include="CustomerPages\ManageCustomer.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="CustomerPages\CustomerSignUp.aspx" />
     <Content Include="Employees\Home.aspx" />
@@ -158,6 +159,7 @@
     <Content Include="Manager\Default.aspx" />
     <Content Include="Manager\Drivers.aspx" />
     <Content Include="Manager\Menu.aspx" />
+    <Content Include="Manager\OrderHistory.aspx" />
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
@@ -274,6 +276,13 @@
     <Compile Include="CustomerPages\customerSignOut.aspx.designer.cs">
       <DependentUpon>customerSignOut.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPages\ManageCustomer.aspx.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\ManageCustomer.aspx.designer.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />
     <Compile Include="Database\DeliveryDA.cs" />
@@ -339,6 +348,13 @@
     </Compile>
     <Compile Include="Manager\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CartView.aspx.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
