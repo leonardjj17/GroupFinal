@@ -83,8 +83,8 @@
                      else
                     { %>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~CustomerPages/customerProfile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
-                        <li><a runat="server" href="~CustomerPages/customerSignout"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
+                        <li><a runat="server" href="~/CustomerPages/customerProfile"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
+                        <li><a runat="server" href="~/CustomerPages/customerSignOut"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
                     </ul>
                     <%} %>
                 </div>

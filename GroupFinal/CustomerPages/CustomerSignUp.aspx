@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerSignUp.aspx.cs" Inherits="GroupFinal.CustomerPages.CustomerSignUp" %>
+﻿<%@ Page Title="Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerSignUp.aspx.cs" Inherits="GroupFinal.CustomerPages.CustomerSignUp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <p>
         Sign-Up for a O&#39;Shea Shenanigan&#39;s Account!</p>
@@ -89,7 +89,7 @@
         Phone Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPhone" CssClass="alert-danger" Display="Dynamic" ErrorMessage="Must enter a Phone Number"></asp:RequiredFieldValidator>
-        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" CssClass="alert-danger" Display="Dynamic" ErrorMessage="Must Enter a Valid Phone Number(555)555-5555" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" CssClass="alert-danger" Display="Dynamic" ErrorMessage="Must Enter a Valid Phone Number" ValidationExpression="^\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$"></asp:RegularExpressionValidator>
     </p>
     <p>
         Login Email:&nbsp;&nbsp;&nbsp;
