@@ -181,7 +181,7 @@ namespace GroupFinal.Views
             //string pizza = newPizza.PizzaToppings;
 
 
-            newPizza = new Pizza(pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
+            newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Good ass pizza", pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
             //Console.WriteLine(pizza.ToString());
             Session["pizza"] = newPizza;
 
