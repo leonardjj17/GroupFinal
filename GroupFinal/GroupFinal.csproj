@@ -231,13 +231,18 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Classes\Alcohol.cs" />
-    <Compile Include="Classes\Cart.cs" />
+    <Compile Include="Classes\Cart.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Classes\CartItem.cs" />
+    <Compile Include="Classes\DbContext.cs" />
+    <Compile Include="Classes\DbSet.cs" />
     <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drink.cs" />
     <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\OrderList.cs" />
+    <Compile Include="Classes\ProductContext.cs" />
     <Compile Include="Classes\Promotional.cs" />
     <Compile Include="Classes\Salads.cs" />
     <Compile Include="Classes\ServiceZips.cs" />
@@ -294,6 +299,7 @@
     <Compile Include="Employees\OrdersList.aspx.designer.cs">
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ShoppingCartActions.cs" />
     <Compile Include="Views\CartView.aspx.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

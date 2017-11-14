@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,65 +8,35 @@ namespace GroupFinal.Classes
 {
     public class CartItem
     {
-      
-            private int _productID;
-            private string _productName;
-            private string _imageUrl;
-            private int _quantity;
-            private double _price;
-            private double _subTotal;
+        [Key]
+        public int Id { get; set; }
 
-            public CartItem()
-            {
-            }
-            public CartItem(int ProductID, string ProductName,
-                  string ImageUrl, int Quantity, double Price)
-            {
-                _productID = ProductID;
-                _productName = ProductName;
-                _imageUrl = ImageUrl;
-                _quantity = Quantity;
-                _price = Price;
-                _subTotal = Quantity * Price;
-            }
-            public int ProductID
-            {
-                get
-                {
-                    return _productID;
-                }
-                set
-                {
-                    _productID = value;
-                }
-            }
-            public string ProductName
-            {
-                get { return _productName; }
-                set { _productName = value; }
-            }
-            public string ImageUrl
-            {
-                get { return _imageUrl; }
-                set { _imageUrl = value; }
-            }
+       // public string CartId { get; set; }
 
-            public int Quantity
-            {
-                get { return _quantity; }
-                set { _quantity = value; }
-            }
+        //public DateTime DateCreated { get; set; }
 
-            public double Price
-            {
-                get { return _price; }
-                set { _price = value; }
-            }
+        public int Qty { get; set; }
 
-            public double SubTotal
-            {
-                get { return _quantity * _price; }
+       // public int ProductId { get; set; }
 
-            }
+        //public virtual Products Products { get; set; }
+
+        public string Description { get; set; }
+
+        public double Price { get; set; }
+
+        public CartItem()
+        {
+
+        }
+
+        public CartItem(int Id, int Qty, string Description, double Price)
+        {
+            this.Id = Id;
+            this.Qty = Qty;
+            this.Description = Description;
+            this.Price = Price;
+
         }
     }
+}

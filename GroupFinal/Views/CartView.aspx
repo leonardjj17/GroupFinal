@@ -4,24 +4,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Your Current Order</h2>
     
+    
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
         <Columns>
-            <asp:BoundField DataField="OrderID" HeaderText="OrderID" SortExpression="OrderID" />
-            <asp:BoundField DataField="CustomerFirst" HeaderText="CustomerFirst" SortExpression="CustomerFirst" />
-            <asp:BoundField DataField="CustomerLast" HeaderText="CustomerLast" SortExpression="CustomerLast" />
-            <asp:BoundField DataField="OrderTotal" HeaderText="OrderTotal" SortExpression="OrderTotal" />
-            <asp:BoundField DataField="StoreNum" HeaderText="StoreNum" SortExpression="StoreNum" />
-            <asp:BoundField DataField="IsFavorite" HeaderText="IsFavorite" SortExpression="IsFavorite" />
-            <asp:BoundField DataField="OrderType" HeaderText="OrderType" SortExpression="OrderType" />
-            <asp:BoundField DataField="OrderTax" HeaderText="OrderTax" SortExpression="OrderTax" />
-            <asp:BoundField DataField="OrderSubTotal" HeaderText="OrderSubTotal" SortExpression="OrderSubTotal" />
+            <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
+            <asp:BoundField DataField="ProductPrice" HeaderText="ProductPrice" SortExpression="ProductPrice" />
+            <asp:BoundField DataField="ProductType" HeaderText="ProductType" SortExpression="ProductType" />
+            <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
+            <asp:BoundField DataField="ProductCost" HeaderText="ProductCost" SortExpression="ProductCost" />
+            <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
         </Columns>
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="CalcTotal" TypeName="GroupFinal.Classes.Cart">
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="AddItemsToCart" TypeName="GroupFinal.Classes.Cart">
         <SelectParameters>
-            <asp:Parameter Name="items" Type="Object" />
+            <asp:Parameter Name="myPizza" Type="Object" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    
     
     <hr />
 

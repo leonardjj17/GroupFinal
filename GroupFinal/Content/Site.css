@@ -31,11 +31,7 @@ textarea {
 footer ul{
     display: block;
     list-style-type: none;
-    padding-left: 0;
-    padding-bottom: 5px;
-    padding-right: 20px;
+    padding: 5px 20px 5px 0px;
+  
 }
 
-footer {
-    background-color: aqua;
-}

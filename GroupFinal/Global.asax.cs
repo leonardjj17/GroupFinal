@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GroupFinal.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,11 @@ namespace GroupFinal
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            Session["cart"] = new Cart();
         }
     }
 }
