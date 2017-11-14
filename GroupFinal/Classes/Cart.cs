@@ -29,7 +29,7 @@ namespace GroupFinal.Classes
         }
         public List<CartItem> AddItemsToCart(Products myPizza)
         {
-            cartItems.Add(myPizza);
+            cartItems.Add((CartItem)myPizza);
 
             return cartItems;
         }

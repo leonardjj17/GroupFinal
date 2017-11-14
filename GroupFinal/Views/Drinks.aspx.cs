@@ -59,7 +59,7 @@ namespace GroupFinal.Views
                     {
                         if (product.ProductDetail == (((RadioButton)rdoDrink).Text))
                         {
-                            Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2));
+                           // Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2));
 
                             //put it into the cart......
 
