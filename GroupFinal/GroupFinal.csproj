@@ -156,6 +156,7 @@
     <Content Include="Manager\Default.aspx" />
     <Content Include="Manager\Drivers.aspx" />
     <Content Include="Manager\Menu.aspx" />
+    <Content Include="Manager\OrderHistory.aspx" />
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="Manager\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CartView.aspx.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
