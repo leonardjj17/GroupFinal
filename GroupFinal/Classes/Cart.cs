@@ -10,7 +10,7 @@ namespace GroupFinal.Classes
 {
     public class Cart : Page
     {
-        List<Products> cartItems = new List<Products>();
+        List<CartItem> cartItems = new List<CartItem>();
         Products myPizza = null;
 
         public Cart()
@@ -27,7 +27,7 @@ namespace GroupFinal.Classes
 
           
         }
-        public List<Products> AddItemsToCart(Products myPizza)
+        public List<CartItem> AddItemsToCart(Products myPizza)
         {
             cartItems.Add(myPizza);
 

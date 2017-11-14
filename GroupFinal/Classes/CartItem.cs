@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
-    public class CartItem
+    public class CartItem : Products
     {
         [Key]
         public int Id { get; set; }
@@ -30,7 +30,7 @@ namespace GroupFinal.Classes
 
         }
 
-        public CartItem(int Id, int Qty, string Description, double Price)
+        public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) :base(productID, productPrice, productType, productQty, productCost, productDetail)
         {
             this.Id = Id;
             this.Qty = Qty;

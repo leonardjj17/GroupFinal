@@ -8,6 +8,12 @@
     
     
     
+
+    
+    
+    
+    
+    
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
         <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
@@ -23,6 +29,12 @@
             <asp:Parameter Name="myPizza" Type="Object" />
         </SelectParameters>
     </asp:ObjectDataSource>
+    
+    
+    
+    
+    
+
     
     
     
