@@ -131,6 +131,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="CustomerPages\customerLogin.aspx" />
     <Content Include="CustomerPages\customerSignOut.aspx" />
+    <Content Include="CustomerPages\ManageCustomer.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="CustomerPages\CustomerSignUp.aspx" />
     <Content Include="Employees\Home.aspx" />
@@ -273,6 +274,13 @@
     </Compile>
     <Compile Include="CustomerPages\customerSignOut.aspx.designer.cs">
       <DependentUpon>customerSignOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\ManageCustomer.aspx.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\ManageCustomer.aspx.designer.cs">
+      <DependentUpon>ManageCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />
