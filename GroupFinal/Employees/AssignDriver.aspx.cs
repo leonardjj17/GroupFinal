@@ -28,8 +28,6 @@ namespace GroupFinal.Employees
             List<Employee> drivers = EmployeeDA.GetDriversByStoreNumber(storeNum);
             foreach (Employee driver in drivers)
             {
-                Label lblDriver = new Label();
-
                 string name = driver.EmployeeFirst + " " + driver.EmployeeLast;
                 int employeeID = driver.EmployeeID;
                 ListItem listItem = new ListItem(name, Convert.ToString(employeeID));
