@@ -32,6 +32,9 @@ namespace GroupFinal.Views
                     login == Convert.ToString(admin.Login) &&
                     password == Convert.ToString(admin.Password))               
                 {
+                    Session["employee"] = admin;
+                    Session["role"] = admin.EmployeeRole;
+                    Session["storeNum"] = admin.StoreNum;
                     Response.Redirect("~/Default.aspx");
                 }
             }
