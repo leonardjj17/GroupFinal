@@ -173,9 +173,7 @@ namespace GroupFinal.Views
 
 
             Session["pizza"] = newPizza;
-
-            string pizza = newPizza.PizzaToppings;
-            Console.WriteLine(pizza.ToString());
+            
 
             Response.Redirect("CartView.aspx");
         }
