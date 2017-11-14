@@ -10,8 +10,8 @@ namespace GroupFinal.Classes
 {
     public class Cart : Page
     {
-        List<Products> cartItems = new List<Products>();
-        Pizza myPizza;
+        List<CartItem> cartItems = new List<CartItem>();
+        Products myPizza = null;
 
         public Cart()
         {
@@ -22,13 +22,19 @@ namespace GroupFinal.Classes
             else
             {
                 myPizza = (Pizza)Session["pizza"];
+                AddItemsToCart(myPizza);
             }
 
           
         }
-        public List<Products> AddItemsToCart(Pizza myPizza)
+        public List<CartItem> AddItemsToCart(Products myPizza)
         {
-            cartItems.Add(myPizza);
+            CartItem theCart = new CartItem();
+            theCart.Description = myPizza.ProductDetail;
+            theCart.Qty = myPizza.ProductQty;
+            theCart.Price = myPizza.ProductPrice;
+
+            cartItems.Add(theCart);
 
             return cartItems;
         }
@@ -199,10 +205,7 @@ namespace GroupFinal.Classes
 
         }
 
-        //internal void Add(Pizza newPizza)
-        //{
-        //    throw new NotImplementedException();
-        //}
+     
     }
 }
 
