@@ -11,6 +11,7 @@ namespace GroupFinal.Views
 {
     public partial class PizzaView : System.Web.UI.Page
     {
+        Products newPizza = null;
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
         List<Products> allToppings = ProductsDA.GetAllToppings();
@@ -52,7 +53,10 @@ namespace GroupFinal.Views
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Pizza newPizza = new Pizza();
+            string pizzaSize = "";
+            string pizzaCheese = "";
+            string pizzaSauce = "";
+            string pizzaCrust = "";
             string pizzaToppings = "";
             string pizzaExtras = "";
             double pizzaCost = 0;
@@ -60,17 +64,17 @@ namespace GroupFinal.Views
             //check for pizza size
             if(rdoSmall.Checked)
             {
-                newPizza.PizzaSize = "Small";
+                pizzaSize = "Small";
                 pizzaCost = 8.99;
             }
             else if(rdoMedium.Checked)
             {
-                newPizza.PizzaSize = "Medium";
+                pizzaSize = "Medium";
                 pizzaCost = 11.99;
             }
             else if(rdoLarge.Checked)
             {
-                newPizza.PizzaSize = "Large";
+                pizzaSize = "Large";
                 pizzaCost = 14.99;
             }
 
@@ -86,17 +90,17 @@ namespace GroupFinal.Views
                     if(((RadioButton)crustType).Checked)
                     {
                         //sets the pizza crust type
-                        newPizza.PizzaCrust = ((RadioButton)crustType).Text;
+                        pizzaCrust = ((RadioButton)crustType).Text;
                     }
                 }
             }
 
-            String currentCrust = newPizza.PizzaCrust;
+            //String currentCrust = newPizza.PizzaCrust;
 
             foreach(Products crust in allCrusts)
             {
                 String crustSelection = crust.ProductDetail;
-                if(currentCrust == crustSelection)
+                if(pizzaCrust == crustSelection)
                 {
                     pizzaCost += Convert.ToDouble(crust.ProductPrice);
                 }
@@ -109,14 +113,14 @@ namespace GroupFinal.Views
                 {
                     if(((RadioButton)sauceType).Checked)
                     {
-                        newPizza.PizzaSauce = ((RadioButton)sauceType).Text;
+                        pizzaSauce = ((RadioButton)sauceType).Text;
                     }
                 }
             }
 
             foreach(Products sauce in allSauces)
             {
-                if(newPizza.PizzaSauce == sauce.ProductDetail)
+                if(pizzaSauce == sauce.ProductDetail)
                 {
                     pizzaCost += sauce.ProductPrice;
                 }
@@ -126,11 +130,11 @@ namespace GroupFinal.Views
             //check for cheese type
             if(rdoNone.Checked)
             {
-                newPizza.PizzaCheese = rdoNone.Text;
+                pizzaCheese = rdoNone.Text;
             }
             else if (rdoRegular.Checked)
             {
-                newPizza.PizzaCheese = rdoRegular.Text;
+                pizzaCheese = rdoRegular.Text;
             }
 
             //check for toppings
@@ -153,8 +157,6 @@ namespace GroupFinal.Views
                 }
             }
 
-            newPizza.PizzaToppings = pizzaToppings;
-
             //check for extras
             if (chkExtraCheese.Checked)
             {
@@ -168,14 +170,20 @@ namespace GroupFinal.Views
                 pizzaCost += 1.50;
             }
 
-            newPizza.PizzaExtras = pizzaExtras;
-            newPizza.PizzaPrice = Math.Round(pizzaCost, 2);
+            //newPizza.PizzaExtras = pizzaExtras;
+            //newPizza.PizzaPrice = Math.Round(pizzaCost, 2);
+            //newPizza.ProductPrice = Math.Round(pizzaCost, 2);
+            //newPizza.ProductType = "Pizza";
+            //newPizza.ProductDetail = "New Pizza object";
 
 
+
+            //string pizza = newPizza.PizzaToppings;
+
+
+            newPizza = new Pizza(pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
+            //Console.WriteLine(pizza.ToString());
             Session["pizza"] = newPizza;
-
-            string pizza = newPizza.PizzaToppings;
-            Console.WriteLine(pizza.ToString());
 
             Response.Redirect("CartView.aspx");
         }

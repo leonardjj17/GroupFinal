@@ -11,7 +11,7 @@ namespace GroupFinal.Classes
     public class Cart : Page
     {
         List<Products> cartItems = new List<Products>();
-        Pizza myPizza;
+        Products myPizza = null;
 
         public Cart()
         {
@@ -22,11 +22,12 @@ namespace GroupFinal.Classes
             else
             {
                 myPizza = (Pizza)Session["pizza"];
+                AddItemsToCart(myPizza);
             }
 
           
         }
-        public List<Products> AddItemsToCart(Pizza myPizza)
+        public List<Products> AddItemsToCart(Products myPizza)
         {
             cartItems.Add(myPizza);
 
