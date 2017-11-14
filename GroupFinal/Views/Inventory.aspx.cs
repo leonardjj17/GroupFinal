@@ -11,7 +11,7 @@ namespace GroupFinal.Views
 {
     public partial class Inventory : System.Web.UI.Page 
     {
-        List<Products> allProducts = ProductsDA.GetAllIngredients();
+        List<Products> allProducts = ProductsDA.GetAllToppings();
         protected void Page_Load(object sender, EventArgs e)
         {
 
