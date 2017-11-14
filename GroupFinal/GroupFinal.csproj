@@ -129,6 +129,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="CustomerPages\customerLogin.aspx" />
+    <Content Include="CustomerPages\customerSignOut.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="CustomerPages\CustomerSignUp.aspx" />
     <Content Include="Employees\Home.aspx" />
@@ -252,12 +254,26 @@
     <Compile Include="Classes\ServiceZips.cs" />
     <Compile Include="Classes\Side.cs" />
     <Compile Include="Classes\Stores.cs" />
+    <Compile Include="CustomerPages\customerLogin.aspx.cs">
+      <DependentUpon>customerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\customerLogin.aspx.designer.cs">
+      <DependentUpon>customerLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerPages\CustomerSignUp.aspx.cs">
       <DependentUpon>CustomerSignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomerPages\CustomerSignUp.aspx.designer.cs">
       <DependentUpon>CustomerSignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\customerSignOut.aspx.cs">
+      <DependentUpon>customerSignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\customerSignOut.aspx.designer.cs">
+      <DependentUpon>customerSignOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />

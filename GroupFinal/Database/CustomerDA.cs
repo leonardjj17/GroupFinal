@@ -45,11 +45,11 @@ namespace GroupFinal.Database
             }
             catch (SqlException ex)
             {
-
+                return null;
             }
             catch (Exception ex)
             {
-
+                return null;
             }
             finally
             {
@@ -210,17 +210,15 @@ namespace GroupFinal.Database
         {
             SqlConnection connection = Connection.getConnection();
 
-            String query = "INSERT INTO Customers Values(customerFirst, customerLast, customerPhone, customerAddress, customerCity, customerState, customerZip, Login, Password, primaryStore) "+
-                " (@customerFirst, @customerLast, @custmerPhone, @customerAddress, @customerCity, @customerState, @customerZip, @Login, @Password, @primaryStore) ";
+            String query = "INSERT INTO Customers (customerFirst, customerLast, customerPhone, cusstomerAddress, customerCity, customerState, customerZip, Login, Password, primaryStore) VALUES (@customerFirst, @customerLast, @customerPhone, @cusstomerAddress, @customerCity, @customerState, @customerZip, @Login, @Password, @primaryStore) ";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@customerFirst", c.CustomerFirst);
             cmd.Parameters.AddWithValue("@customerLast", c.CustomerLast);
             cmd.Parameters.AddWithValue("@customerPhone", c.CustomerPhone);
-            cmd.Parameters.AddWithValue("@customerAddress", c.CustomerAddress);
+            cmd.Parameters.AddWithValue("@cusstomerAddress", c.CustomerAddress);
             cmd.Parameters.AddWithValue("@customerCity", c.CustomerCity);
             cmd.Parameters.AddWithValue("@customerState", c.CustomerState);
             cmd.Parameters.AddWithValue("@customerZip", c.CustomerZip);
-            cmd.Parameters.AddWithValue("@Role", c.CustomerRole);
             cmd.Parameters.AddWithValue("@Login", c.CustomerLogin);
             cmd.Parameters.AddWithValue("@Password", c.CustomerPassword);
             cmd.Parameters.AddWithValue("@primaryStore", c.PrimaryStore);
@@ -233,11 +231,11 @@ namespace GroupFinal.Database
             }
             catch (SqlException ex)
             {
-                
+                ex.ToString();
             }
             catch (Exception ex)
             {
-
+                ex.ToString();
             }
             finally
             {
