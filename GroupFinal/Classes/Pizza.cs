@@ -24,8 +24,7 @@ namespace GroupFinal
         }
 
         //constructor with all the variables
-        public Pizza(string pizzaToppings, string pizzaCheese, string pizzaSauce, string pizzaCrust, string pizzaExtras, string pizzaSize, double pizzaPrice) :base(
-            )
+        public Pizza(string pizzaToppings, string pizzaCheese, string pizzaSauce, string pizzaCrust, string pizzaExtras, string pizzaSize, double pizzaPrice) :base()
         {
             this.pizzaToppings = pizzaToppings;
             this.pizzaCheese = pizzaCheese;
