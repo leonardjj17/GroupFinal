@@ -89,7 +89,7 @@ namespace GroupFinal.Classes
          
                 foreach (CartItem Item in orderItems)
                 {
-                    subtotal += (double)p.ProductMenuPrice;
+                    //subtotal += (double)p.ProductMenuPrice;
 
                 }
                 currentOrder.OrderSubTotal = subtotal;
