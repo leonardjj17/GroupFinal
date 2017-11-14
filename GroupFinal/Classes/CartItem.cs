@@ -8,7 +8,20 @@ namespace GroupFinal.Classes
 {
     public class CartItem : Products
     {
-        [Key]
+        public CartItem()
+        {
+
+        }
+
+        public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) : base(productID, productPrice, productType, productQty, productCost, productDetail)
+        {
+            this.Id = Id;
+            this.Qty = Qty;
+            this.Description = Description;
+            this.Price = Price;
+
+        }
+
         public int Id { get; set; }
 
        // public string CartId { get; set; }
@@ -25,18 +38,6 @@ namespace GroupFinal.Classes
 
         public double Price { get; set; }
 
-        public CartItem()
-        {
-
-        }
-
-        public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) :base(productID, productPrice, productType, productQty, productCost, productDetail)
-        {
-            this.Id = Id;
-            this.Qty = Qty;
-            this.Description = Description;
-            this.Price = Price;
-
-        }
+        
     }
 }
