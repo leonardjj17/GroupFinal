@@ -153,6 +153,9 @@
     <Content Include="images\shirt.jpg" />
     <Content Include="images\specials.png" />
     <Content Include="images\storeGarlicKnots.jpg" />
+    <Content Include="Manager\Default.aspx" />
+    <Content Include="Manager\Drivers.aspx" />
+    <Content Include="Manager\Menu.aspx" />
     <Content Include="Views\CartView.aspx" />
     <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
@@ -214,7 +217,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Drinks.aspx" />
     <Content Include="Views\EmployeeListing.aspx" />
-    <Content Include="Views\AdminLogin.aspx" />
+    <Content Include="Manager\AdminLogin.aspx" />
     <Content Include="Views\Inventory.aspx" />
     <Content Include="Views\OrderReciept.aspx" />
     <Content Include="Views\orderType.aspx" />
@@ -300,6 +303,27 @@
       <DependentUpon>OrdersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logic\ShoppingCartActions.cs" />
+    <Compile Include="Manager\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Drivers.aspx.cs">
+      <DependentUpon>Drivers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Drivers.aspx.designer.cs">
+      <DependentUpon>Drivers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\CartView.aspx.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,11 +411,11 @@
     <Compile Include="Views\EmployeeListing.aspx.designer.cs">
       <DependentUpon>EmployeeListing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\AdminLogin.aspx.cs">
+    <Compile Include="Manager\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\AdminLogin.aspx.designer.cs">
+    <Compile Include="Manager\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Inventory.aspx.cs">
