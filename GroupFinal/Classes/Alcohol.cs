@@ -9,5 +9,7 @@ namespace GroupFinal.Classes
     {
         public string alcoholType;
         public double alcoholPrice;
+
+        
     }
 }

@@ -16,7 +16,7 @@ namespace GroupFinal.Classes
         {
 
         }
-        public Drink(string drinkSize, string drinkType, double drinkPrice)
+        public Drink(string drinkSize, string drinkType, double drinkPrice) 
         {
             this.drinkSize = drinkSize;
             this.drinkType = drinkType;
