@@ -11,21 +11,39 @@ namespace GroupFinal.Classes
     public class Cart : Page
     {
 
-        public void AddItemsToCart(Products myPizza)
+        public List<CartItem> AddItemsToCart(Products myPizza)
         {
             if (myPizza != null)
             {
                 CartItem theCart = new CartItem();
-                theCart.Description = myPizza.ProductDetail;
-                theCart.Qty = myPizza.ProductQty;
-                theCart.Price = myPizza.ProductPrice;
+                theCart.ProductID = myPizza.ProductID;
+                theCart.ProductPrice = myPizza.ProductPrice;
+                theCart.ProductType = myPizza.ProductType;
+                theCart.ProductQty = myPizza.ProductQty;
+                theCart.ProductCost = myPizza.ProductCost;
+                theCart.ProductDetail = myPizza.ProductDetail;
+
+                //theCart.Description = myPizza.ProductDetail;
+                //theCart.Qty = myPizza.ProductID;
+                //theCart.Price = myPizza.ProductPrice;
+                //theCart.ProductID = myPizza.ProductID;
+                //theCart.ProductPrice = myPizza.ProductPrice;
+                //theCart.ProductDetail = myPizza.ProductDetail;
+                //theCart.ProductCost = myPizza.ProductPrice;
 
                 cartItems.Add(theCart);
+                return cartItems;
             }
+
+            return cartItems;
         }
 
+        //stuff
 
         List<CartItem> cartItems = new List<CartItem>();
+
+        
+
         Products myPizza = null;
 
         public Cart()
