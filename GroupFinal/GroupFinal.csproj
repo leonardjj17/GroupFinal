@@ -133,6 +133,7 @@
     <Content Include="CustomerPages\customerSignOut.aspx" />
     <Content Include="CustomerPages\generalChange.aspx" />
     <Content Include="CustomerPages\ManageCustomer.aspx" />
+    <Content Include="CustomerPages\PasswordChange.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="CustomerPages\CustomerSignUp.aspx" />
     <Content Include="Employees\Home.aspx" />
@@ -287,6 +288,13 @@
     </Compile>
     <Compile Include="CustomerPages\ManageCustomer.aspx.designer.cs">
       <DependentUpon>ManageCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPages\PasswordChange.aspx.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPages\PasswordChange.aspx.designer.cs">
+      <DependentUpon>PasswordChange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\CustomerDA.cs" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="generalChange.aspx.cs" Inherits="GroupFinal.CustomerPages.generalChange" %>
+﻿<%@ Page Title="Change Your Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="generalChange.aspx.cs" Inherits="GroupFinal.CustomerPages.generalChange" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>
         Change your profile</h2>

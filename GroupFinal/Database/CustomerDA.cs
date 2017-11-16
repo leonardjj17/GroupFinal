@@ -243,5 +243,42 @@ namespace GroupFinal.Database
             }
 
         }
+        public static void UpdateCustomer(Customer c)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "Update Customers Set customerFirst = @customerFirst, customerLast = @customerLast, customerPhone = @customerPhone, cusstomerAddress = @cusstomerAddress, customerCity = @customerCity, customerState = @customerState, customerZip = @customerZip, Login = @login, Password = @password, primaryStore = @primaryStore where CustomerID = @customerID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@customerFirst", c.CustomerFirst);
+            cmd.Parameters.AddWithValue("@customerLast", c.CustomerLast);
+            cmd.Parameters.AddWithValue("@customerPhone", c.CustomerPhone);
+            cmd.Parameters.AddWithValue("@cusstomerAddress", c.CustomerAddress);
+            cmd.Parameters.AddWithValue("@customerCity", c.CustomerCity);
+            cmd.Parameters.AddWithValue("@customerState", c.CustomerState);
+            cmd.Parameters.AddWithValue("@customerZip", c.CustomerZip);
+            cmd.Parameters.AddWithValue("@Login", c.CustomerLogin);
+            cmd.Parameters.AddWithValue("@Password", c.CustomerPassword);
+            cmd.Parameters.AddWithValue("@primaryStore", c.PrimaryStore);
+            cmd.Parameters.AddWithValue("@CustomerID", c.CustomerID);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                ex.ToString();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
