@@ -18,7 +18,7 @@ namespace GroupFinal.Views
         {
             foreach(Products sides in allSides)
             {
-                CheckBox newSide = new CheckBox();
+                RadioButton newSide = new RadioButton();
                 Image breadsticks = new Image();
                 Image cinnasticks = new Image();
                 Image garlicKnots = new Image();
@@ -42,16 +42,19 @@ namespace GroupFinal.Views
                     pnlSides.Controls.Add(breadsticks);
                     pnlSides.Controls.Add(newSide);
                     pnlSides.Controls.Add(new LiteralControl("<br />"));
+                    newSide.GroupName = "side";
                 } else if (newSide.Text == "cinna sticks")
                 {
                     pnlSides.Controls.Add(cinnasticks);
                     pnlSides.Controls.Add(newSide);
                     pnlSides.Controls.Add(new LiteralControl("<br />"));
+                    newSide.GroupName = "side";
                 } else if (newSide.Text == "garlic knots")
                 {
                     pnlSides.Controls.Add(garlicKnots);
                     pnlSides.Controls.Add(newSide);
                     pnlSides.Controls.Add(new LiteralControl("<br />"));
+                    newSide.GroupName = "side";
                 }
 
             }
@@ -62,7 +65,7 @@ namespace GroupFinal.Views
             double sideTotal = 0;
             string selectedSides = "";
 
-            Side newSide = new Side();
+            Side newSide = null;
             
 
             foreach(Control sides in pnlSides.Controls)
@@ -85,8 +88,17 @@ namespace GroupFinal.Views
 
             }
 
-            newSide.SideType = selectedSides;
-            newSide.SidePrice = sideTotal;
+
+            newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, sideTotal, selectedSides);
+
+            Session["side"] = newSide;
+
+            Response.Redirect("CartView.aspx");
+
+
+
+            //newSide.SideType = selectedSides;
+            //newSide.SidePrice = sideTotal;
         }
     }
 }

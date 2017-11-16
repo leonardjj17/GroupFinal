@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageCustomer.aspx.cs" Inherits="GroupFinal.CustomerPages.ManageCustomer" %>
+﻿<%@ Page Title="Your Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageCustomer.aspx.cs" Inherits="GroupFinal.CustomerPages.ManageCustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <p>
@@ -48,9 +48,5 @@
         <asp:Label ID="lblPhone" runat="server"></asp:Label>
     &nbsp;<asp:Button ID="btnChangePhone" runat="server" Text="Change" OnClick="btnChangePhone_Click" />
     </p>
-    <p>
-        &nbsp; &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnSave" runat="server" Text="Save Changes" OnClick="btnSave_Click" />
-    </p>
-
+    
 </asp:Content>
