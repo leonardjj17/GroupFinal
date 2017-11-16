@@ -23,6 +23,7 @@ namespace GroupFinal.Classes
                 theCart.ProductCost = myPizza.ProductCost;
                 theCart.ProductDetail = myPizza.ProductDetail;
 
+
                 //theCart.Description = myPizza.ProductDetail;
                 //theCart.Qty = myPizza.ProductID;
                 //theCart.Price = myPizza.ProductPrice;
@@ -45,6 +46,7 @@ namespace GroupFinal.Classes
         
 
         Products myPizza = null;
+        Products mySide = null;
 
         public Cart()
         {
@@ -62,6 +64,19 @@ namespace GroupFinal.Classes
                 }
             }
 
+            if (Session["side"] == null)
+            {
+                mySide = new Side();
+            }
+            else
+            {
+                mySide = (Side)Session["side"];
+
+                if (!IsPostBack)
+                {
+                    AddItemsToCart(mySide);
+                }
+            }
 
         }
 
