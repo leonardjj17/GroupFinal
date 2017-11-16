@@ -38,6 +38,7 @@ namespace GroupFinal.Classes
             return cartItems;
         }
 
+        //stuff
 
         List<CartItem> cartItems = new List<CartItem>();
 
