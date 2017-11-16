@@ -8,6 +8,8 @@ namespace GroupFinal.Classes
 {
     public class CartItem : Products
     {
+        List<CartItem> cartItems = new List<CartItem>();
+
         public CartItem()
         {
 
@@ -38,6 +40,6 @@ namespace GroupFinal.Classes
 
         public double Price { get; set; }
 
-        
+     
     }
 }
