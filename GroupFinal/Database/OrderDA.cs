@@ -188,5 +188,39 @@ namespace GroupFinal.DA
             return allCustomerOrders;
         }
 
+        public static void saveOrder(Order o)
+        {
+           
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "Insert into Orders(customerFirst, customerLast, orderTotal, storeNum, isFavorite, orderType, orderDate) values (@customerFirst, @customerLast, @orderTotal, @storeNum, @isFavorite, @orderType, @orderDate)";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@customerFirst", o.CustomerFirst);
+            cmd.Parameters.AddWithValue("@customerLast", o.CustomerLast);
+            cmd.Parameters.AddWithValue("@orderTotal", o.OrderTotal);
+            cmd.Parameters.AddWithValue("@storeNum", o.StoreNum);
+            cmd.Parameters.AddWithValue("@isFavorite", o.IsFavorite);
+            cmd.Parameters.AddWithValue("@orderType", o.OrderType);
+            cmd.Parameters.AddWithValue("@orderDate", o.OrderDate);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
 }

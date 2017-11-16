@@ -22,6 +22,24 @@ namespace GroupFinal.Manager {
         protected global::System.Web.UI.WebControls.Calendar calOrderDate;
         
         /// <summary>
+        /// ddlStore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStore;
+        
+        /// <summary>
+        /// OSheaStoreNum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource OSheaStoreNum;
+        
+        /// <summary>
         /// ListView1 control.
         /// </summary>
         /// <remarks>
