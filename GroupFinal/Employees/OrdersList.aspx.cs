@@ -35,6 +35,7 @@ namespace GroupFinal.Employees
                 TableHeaderCell hdriver = new TableHeaderCell();
                 TableHeaderCell hassign = new TableHeaderCell();
                 TableHeaderCell hdelete = new TableHeaderCell();
+                TableHeaderCell hmarkcomplete = new TableHeaderCell();
                 horderId.Text = "OrderID";
                 hcustName.Text = "CustomerName";
                 horderTotal.Text = "Order Total";
@@ -42,6 +43,7 @@ namespace GroupFinal.Employees
                 hdriver.Text = "Driver";
                 hassign.Text = "(Re)Assign Driver";
                 hdelete.Text = "Delete";
+                hmarkcomplete.Text = "Mark Complete?";
                 header.Controls.Add(horderId);
                 header.Controls.Add(hcustName);
                 header.Controls.Add(horderTotal);
@@ -49,7 +51,9 @@ namespace GroupFinal.Employees
                 header.Controls.Add(hdriver);
                 header.Controls.Add(hassign);
                 header.Controls.Add(hdelete);
+                header.Controls.Add(hmarkcomplete);
                 table.Controls.Add(header);
+
 
                 OrderList orders = new OrderList(storeNum);
                 foreach (Order order in orders.getOrders())
@@ -62,6 +66,7 @@ namespace GroupFinal.Employees
                     TableCell cdriver = new TableCell();
                     TableCell cassign = new TableCell();
                     TableCell cdelete = new TableCell();
+                    TableCell cmarkComplete = new TableCell();
 
                     corderID.Text = Convert.ToString(order.OrderID);
                     ccustomerName.Text = order.CustomerFirst + " " + order.CustomerLast;
@@ -110,7 +115,17 @@ namespace GroupFinal.Employees
                             Response.Redirect("ManagerLogin.aspx");
                         };
                     }
+
                     cdelete.Controls.Add(btnDelete);
+
+                    Button btnMarkComplete = new Button();
+                    btnMarkComplete.Text = "Complete";
+                    btnMarkComplete.Click += (senderer, ee) =>
+                    {
+                        OrderDA.setOrderComplete(order);
+                        Response.Redirect("OrdersList.aspx");
+                    };
+                    cmarkComplete.Controls.Add(btnMarkComplete);
 
                     row.Controls.Add(corderID);
                     row.Controls.Add(ccustomerName);
@@ -119,6 +134,7 @@ namespace GroupFinal.Employees
                     row.Controls.Add(cdriver);
                     row.Controls.Add(cassign);
                     row.Controls.Add(cdelete);
+                    row.Controls.Add(cmarkComplete);
                     table.Controls.Add(row);
 
 

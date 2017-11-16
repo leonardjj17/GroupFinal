@@ -34,6 +34,7 @@ namespace GroupFinal.DA
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
+                    o.IsCompleted = (String)read["isCompleted"];
                     return o;
                 }
                 
@@ -78,7 +79,7 @@ namespace GroupFinal.DA
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
-
+                    o.IsCompleted = (String)read["isCompleted"];
                     allOrders.Add(o);
                 }
             }
@@ -123,7 +124,7 @@ namespace GroupFinal.DA
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
-
+                    o.IsCompleted = (String)read["isCompleted"];
                     allStoreOrders.Add(o);
                 }
             }
@@ -169,7 +170,7 @@ namespace GroupFinal.DA
                     o.StoreNum = (String)read["storeNum"];
                     o.IsFavorite = (String)read["isFavorite"];
                     o.OrderType = (String)read["orderType"];
-
+                    o.IsCompleted = (String)read["isCompleted"];
                     allCustomerOrders.Add(o);
                 }
             }
@@ -187,6 +188,66 @@ namespace GroupFinal.DA
             }
             return allCustomerOrders;
         }
+        public static List<Order> GetAllIncompleteOrdersByStoreNum(string storeNum)
+        {
+            List<Order> orders = new List<Order>();
 
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Orders WHERE isCompleted NOT IN ('Y', 'y') AND storeNum = @storeNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", storeNum);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Order o = new Order();
+
+                    o.OrderID = (int)read["orderID"];
+                    o.CustomerFirst = (String)read["customerFirst"];
+                    o.CustomerLast = (String)read["customerLast"];
+                    o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
+                    o.StoreNum = (String)read["storeNum"];
+                    o.IsFavorite = (String)read["isFavorite"];
+                    o.OrderType = (String)read["orderType"];
+                    o.IsCompleted = (String)read["isCompleted"];
+                    orders.Add(o);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return orders;
+        }
+        public static void setOrderComplete(Order order)
+        {
+            SqlConnection connection = Connection.getConnection();
+            String query = "UPDATE Orders SET isCompleted = 'Y' WHERE orderID = @orderID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@orderID", order.OrderID);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

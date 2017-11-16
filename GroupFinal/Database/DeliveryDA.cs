@@ -18,8 +18,7 @@ namespace GroupFinal.Database
 
             String query = "SELECT * FROM Delivery";
             SqlCommand cmd = new SqlCommand(query, connection);
-
-
+            
             try
             {
                 connection.Open();
@@ -139,7 +138,7 @@ namespace GroupFinal.Database
 
             String query = "SELECT * FROM Delivery WHERE orderNum = @orderID";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@orderID", @orderID);
+            cmd.Parameters.AddWithValue("@orderID", orderID);
 
 
             try
@@ -224,6 +223,42 @@ namespace GroupFinal.Database
             {
                 connection.Close();
             }
+        }
+        public static Dictionary<String, int> getDeliveryCountForAllDriversAtStore(string storeNum)
+        {
+            Dictionary<String, int> deliveryCount = new Dictionary<string, int>();
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT CONCAT(e.employeeFirst, ', ', e.employeeLast) as name, count(*) as count " +
+                "FROM Delivery AS d " +
+                "JOIN Employee AS e ON d.employeenum = e.employeeID " +
+                "JOIN Orders AS o ON d.orderNum = o.orderID " +
+                "WHERE o.iscompleted NOT IN ('Y', 'y') " +
+                "AND o.storeNum = @storeNum" +
+                "GROUP BY CONCAT(e.employeeFirst, ', ', e.employeeLast)";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", storeNum);
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    string name = (string)read["name"];
+                    int count = (int)read["count"];
+                    deliveryCount.Add(name, count);
+                    
+                }
+
+            }
+            catch (Exception e)
+            {
+
+            }
+
+
+            return deliveryCount;
         }
     }
 }

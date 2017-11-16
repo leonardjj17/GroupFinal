@@ -35,7 +35,7 @@ namespace GroupFinal.Views
                     Session["employee"] = admin;
                     Session["role"] = admin.EmployeeRole;
                     Session["storeNum"] = admin.StoreNum;
-                    Response.Redirect("~/Default.aspx");
+                    Response.Redirect("Default.aspx");
                 }
             }
 
