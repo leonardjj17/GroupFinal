@@ -12,7 +12,13 @@ namespace GroupFinal.Manager
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            Employee Emp = (Employee)Session["Employee"];
+            
+
+        }
+
+        protected void ddlStore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
         }
     }
 }

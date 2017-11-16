@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderHistory.aspx.cs" Inherits="GroupFinal.Manager.OrderHistory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1 class="center">Order History</h1>
-    <p class="center">
+        <br />
+
+       <table style="width:100%;">
+        <tr>
+            <td><h2>Order Date</h2></td>
+        </tr>
+        <tr>
+            <td style="width: 367px">
         <asp:Calendar ID="calOrderDate" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" SelectedDate="11/13/2017 18:53:07" Width="350px">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
@@ -10,7 +17,32 @@
             <TitleStyle BackColor="White" BorderColor="Black" BorderWidth="4px" Font-Bold="True" Font-Size="12pt" ForeColor="#333399" />
             <TodayDayStyle BackColor="#CCCCCC" />
         </asp:Calendar>
-    </p>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 367px; height: 39px">&nbsp;</td>
+            <td style="height: 39px">&nbsp;</td>
+            <td style="height: 39px">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 367px; height: 39px"><h2>Store Number</h2></td>
+            <td style="height: 39px"></td>
+            <td style="height: 39px"></td>
+        </tr>
+        <tr>
+            <td style="width: 367px">
+                <asp:DropDownList ID="ddlStore" runat="server" DataSourceID="OSheaStoreNum" DataTextField="storeID" DataValueField="storeID" Width="267px" AutoPostBack="True" OnSelectedIndexChanged="ddlStore_SelectedIndexChanged">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="OSheaStoreNum" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" SelectCommand="SELECT [storeID] FROM [Store]"></asp:SqlDataSource>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        </table>
+    <p class="center">
+        &nbsp;</p>
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="orderID" DataSourceID="OsheaDB">
         <AlternatingItemTemplate>
             <span style="">orderID:
@@ -151,10 +183,10 @@
             </span>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="OsheaDB" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" SelectCommand="SELECT [orderID], [customerFirst], [customerLast], [orderTotal], [storeNum], [orderType], [orderDate] FROM [Orders] WHERE (([orderDate] = @orderDate) AND ([storeNum] = @storeNum))">
+    <asp:SqlDataSource ID="OsheaDB" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" SelectCommand="SELECT [orderID], [customerFirst], [customerLast], [orderTotal], [storeNum], [orderType], [orderDate] FROM [Orders] WHERE (([storeNum] = @storeNum) AND ([orderDate] = @orderDate))">
         <SelectParameters>
+            <asp:ControlParameter ControlID="ddlStore" Name="storeNum" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="calOrderDate" DbType="Date" Name="orderDate" PropertyName="SelectedDate" />
-            <asp:SessionParameter Name="storeNum" SessionField="Emp.storeNum" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
     <br />
