@@ -8,6 +8,32 @@
     
     
     
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
 
     
     
@@ -33,6 +59,42 @@
 
     
     
+ 
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+
+    
+    
     
     
     
@@ -52,11 +114,52 @@
     
     
     
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1">
+
+    
+    
+ 
+    
+    
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+        <Columns>
+            <asp:BoundField DataField="ProductPrice" HeaderText="ProductPrice" SortExpression="ProductPrice" />
+            <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
+            <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
+        </Columns>
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetDataItem" TypeName="GroupFinal.Classes.Cart"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="AddItemsToCart" TypeName="GroupFinal.Classes.Cart">
+        <SelectParameters>
+            <asp:Parameter Name="myPizza" Type="Object" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
     
     
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+  
     
     
     
@@ -85,6 +188,17 @@
 
     
     
+ 
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
     
     
     
@@ -102,6 +216,37 @@
     
     
     
+    
+  
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+ 
     
     
     <hr />
