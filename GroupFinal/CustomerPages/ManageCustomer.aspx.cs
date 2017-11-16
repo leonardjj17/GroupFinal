@@ -40,7 +40,7 @@ namespace GroupFinal.CustomerPages
 
         protected void btnChangePassword_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/CustomerPages/PasswordChange");
         }
 
         protected void btnChangeFirstName_Click(object sender, EventArgs e)
@@ -83,11 +83,6 @@ namespace GroupFinal.CustomerPages
             Session["ValueChanging"] = "Phone";
             Session["OldValue"] = lblPhone.Text;
             Response.Redirect("~/CustomerPages/generalChange");
-        }
-
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

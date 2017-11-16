@@ -39,7 +39,7 @@ namespace GroupFinal.CustomerPages
         protected void btnSave_Click(object sender, EventArgs e)
         {
             Customer changedCustomer = (Customer)Session["Customer"];
-
+            bool noErrors = true;
             switch ((string)Session["ValueChanging"])
             {
                 case ("Email"):
@@ -51,15 +51,16 @@ namespace GroupFinal.CustomerPages
                         {
                             lblError.Text = "That email is already claimed, try a different email";
                             lblError.Visible = true;
-                            noDuplicates = true;
+                            noDuplicates = false;
+                            noErrors = false;
                             break;
                         }
                         else
                         {
-                            noDuplicates = false;
+                            noDuplicates = true;
                         }
                     }
-                    if (!noDuplicates)
+                    if (noDuplicates)
                     {
                         changedCustomer.CustomerLogin = txtChangedValue.Text;
                     }
@@ -74,7 +75,7 @@ namespace GroupFinal.CustomerPages
                     changedCustomer.CustomerPhone = txtChangedValue.Text;
                     break;
                 case ("Address"):
-                    changedCustomer.CustomerPhone = txtChangedValue.Text;
+                    changedCustomer.CustomerAddress = txtChangedValue.Text;
                     break;
                 case ("City"):
                     changedCustomer.CustomerCity = txtChangedValue.Text;
@@ -93,12 +94,18 @@ namespace GroupFinal.CustomerPages
                         else
                         {
                             lblError.Text = "We can't deliver to that zipcode, contact us with further questions";
+                            lblError.Visible = true;
+                            noErrors = false;
                         }
                     }
                     break;
             }
-            Session["Customer"] = changedCustomer;
-            Response.Redirect("~/CustomerPages/ManageCustomer");
+            if (noErrors)
+            {
+                CustomerDA.UpdateCustomer(changedCustomer);
+                Session["Customer"] = changedCustomer;
+                Response.Redirect("~/CustomerPages/ManageCustomer");
+            }
         }
     }
 }
