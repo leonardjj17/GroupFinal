@@ -11,25 +11,18 @@ namespace GroupFinal.Classes
     public class Cart : Page
     {
 
-        public void AddItemsToCart(Products myPizza)
-        {
-            if (myPizza != null)
-            {
-                CartItem theCart = new CartItem();
-                theCart.Description = myPizza.ProductDetail;
-                theCart.Qty = myPizza.ProductQty;
-                theCart.Price = myPizza.ProductPrice;
-
-                cartItems.Add(theCart);
-            }
-        }
-
-
         List<CartItem> cartItems = new List<CartItem>();
         Products myPizza = null;
-
+       
+       
         public Cart()
         {
+            if (this.cartItems == null)
+            {
+                this.cartItems = new List<CartItem>();
+
+            }
+
             if (Session["pizza"] == null)
             {
                 myPizza = new Pizza();
@@ -47,6 +40,29 @@ namespace GroupFinal.Classes
 
         }
 
+        public List<CartItem> Items
+        {
+            get { return cartItems; }
+            set { cartItems = value; }
+        }
+
+        public void  AddItemsToCart(Products myPizza)
+        {
+            if (myPizza != null)
+            {
+                CartItem theCart = new CartItem();
+                theCart.Description = myPizza.ProductDetail;
+                theCart.Qty = myPizza.ProductQty;
+                theCart.Price = myPizza.ProductPrice;
+
+                cartItems.Add(theCart);
+                
+            }
+            
+        }
+
+        public List<CartItem> CartItems = new List<CartItem>();
+    
 
     }
 
