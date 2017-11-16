@@ -18,6 +18,11 @@ namespace GroupFinal.Views
             
         }
 
+        protected void continueOrderBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Menu.aspx");
+        }
+
         //private void FillData()
         //{
         //    gvShoppingCart.DataSource = cart.Items;
@@ -32,10 +37,10 @@ namespace GroupFinal.Views
         //    }
         //}
 
-       //public List<CartItem> GetShoppingCartItems()
-       // {
-       //     ShoppingCartActions actions = new ShoppingCartActions();
-       //     return actions.GetCartItems();
-       // }
+        //public List<CartItem> GetShoppingCartItems()
+        // {
+        //     ShoppingCartActions actions = new ShoppingCartActions();
+        //     return actions.GetCartItems();
+        // }
     }
 }
