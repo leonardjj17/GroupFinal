@@ -182,7 +182,7 @@ namespace GroupFinal.Views
 
 
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Good ass pizza", pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
-            //Console.WriteLine(pizza.ToString());
+          
             Session["pizza"] = newPizza;
 
             Response.Redirect("CartView.aspx");
