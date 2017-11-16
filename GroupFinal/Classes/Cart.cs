@@ -10,10 +10,43 @@ namespace GroupFinal.Classes
 {
     public class Cart : Page
     {
+
+        public List<CartItem> AddItemsToCart(Products myPizza)
+        {
+            if (myPizza != null)
+            {
+                CartItem theCart = new CartItem();
+                theCart.ProductID = myPizza.ProductID;
+                theCart.ProductPrice = myPizza.ProductPrice;
+                theCart.ProductType = myPizza.ProductType;
+                theCart.ProductQty = myPizza.ProductQty;
+                theCart.ProductCost = myPizza.ProductCost;
+                theCart.ProductDetail = myPizza.ProductDetail;
+
+
+                //theCart.Description = myPizza.ProductDetail;
+                //theCart.Qty = myPizza.ProductID;
+                //theCart.Price = myPizza.ProductPrice;
+                //theCart.ProductID = myPizza.ProductID;
+                //theCart.ProductPrice = myPizza.ProductPrice;
+                //theCart.ProductDetail = myPizza.ProductDetail;
+                //theCart.ProductCost = myPizza.ProductPrice;
+
+                cartItems.Add(theCart);
+                return cartItems;
+            }
+
+            return cartItems;
+        }
+
+        //stuff
+
         List<CartItem> cartItems = new List<CartItem>();
 
-        CartItem item = new CartItem();
+        
+
         Products myPizza = null;
+        Products mySide = null;
 
         public Cart()
         {
@@ -24,24 +57,39 @@ namespace GroupFinal.Classes
             else
             {
                 myPizza = (Pizza)Session["pizza"];
-                item.AddItemsToCart(myPizza);
+
+                if (!IsPostBack)
+                {
+                    AddItemsToCart(myPizza);
+                }
             }
+
+            if (Session["side"] == null)
+            {
+                mySide = new Side();
+            }
+            else
+            {
+                mySide = (Side)Session["side"];
+
+                if (!IsPostBack)
+                {
+                    AddItemsToCart(mySide);
+                }
+            }
+
         }
 
 
-            //public void AddItemsToCart(Products myPizza)
-            //{
-            //    CartItem theCart = new CartItem();
-            //    theCart.Description = myPizza.ProductDetail;
-            //    theCart.Qty = myPizza.ProductQty;
-            //    theCart.Price = myPizza.ProductPrice;
-
-            //    cartItems.Add(theCart);
-
-            //    //return cartItems;
-            //}
-        
     }
+
+
+
+
+}
+
+
+
 
         //public List<Products> GetAllCartItems()
         //public List<CartItem> Items { get; set; }
@@ -188,27 +236,27 @@ namespace GroupFinal.Classes
         //    return -1;
         //}
 
-        //public Order CalcTotal(List<Products> cartItems)
-        //{
-        //    Order currentOrder = new Order();
+//        public Order CalcTotal(List<Products> cartItems)
+//        {
+//            Order currentOrder = new Order();
 
-        //    double subtotal = 0;
-        //    double tax = .075;
-        //    foreach (Pizza p in cartItems)
-        //    {
-        //        subtotal += p.ProductPrice;
+//            double subtotal = 0;
+//            double tax = .075;
+//            foreach (Pizza p in cartItems)
+//            {
+//                subtotal += p.ProductPrice;
 
-        //    }
-        //    currentOrder.OrderSubTotal = subtotal;
-        //    currentOrder.OrderTax = currentOrder.OrderSubTotal * tax;
-        //    currentOrder.OrderTotal = currentOrder.OrderSubTotal + currentOrder.OrderTax;
+//            }
+//            currentOrder.OrderSubTotal = subtotal;
+//            currentOrder.OrderTax = currentOrder.OrderSubTotal * tax;
+//            currentOrder.OrderTotal = currentOrder.OrderSubTotal + currentOrder.OrderTax;
 
-        //    return currentOrder;
+//            return currentOrder;
 
-        //}
+//        }
 
      
-    
-}
+//    }
+//}
 
 

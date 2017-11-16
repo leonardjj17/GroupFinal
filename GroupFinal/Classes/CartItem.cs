@@ -40,16 +40,6 @@ namespace GroupFinal.Classes
 
         public double Price { get; set; }
 
-        public void AddItemsToCart(Products myPizza)
-        {
-            CartItem theCart = new CartItem();
-            theCart.Description = myPizza.ProductDetail;
-            theCart.Qty = myPizza.ProductQty;
-            theCart.Price = myPizza.ProductPrice;
-
-            cartItems.Add(theCart);
-
-            //return cartItems;
-        }
+     
     }
 }
