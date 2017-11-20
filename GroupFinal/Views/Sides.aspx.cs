@@ -70,7 +70,7 @@ namespace GroupFinal.Views
 
             foreach(Control sides in pnlSides.Controls)
             {
-                if (sides.GetType().Name == "CheckBox")
+                if (sides.GetType().Name == "RadioButton")
                 {
                     if(((CheckBox)sides).Checked)
                     {

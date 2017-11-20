@@ -13,7 +13,7 @@ namespace GroupFinal.Classes
         List<CartItem> cartItems;
 
         Products myPizza = null;
-
+        Products mySide = null;
 
         public Cart()
         {
@@ -36,6 +36,17 @@ namespace GroupFinal.Classes
                 }
             }
 
+            if(Session["side"] == null)
+            {
+                mySide = new Side();
+            }
+            else
+            {
+                mySide = (Side)Session["side"];
+
+                AddItemsToCart(mySide);
+            }
+
 
         }
 
@@ -44,26 +55,48 @@ namespace GroupFinal.Classes
 
         public List<CartItem> AddItemsToCart(Products myPizza)
         {
+
             if (myPizza != null)
             {
-                CartItem theCart = new CartItem();
-                theCart.ProductID = myPizza.ProductID;
-                theCart.ProductPrice = myPizza.ProductPrice;
-                theCart.ProductType = myPizza.ProductType;
-                theCart.ProductQty = myPizza.ProductQty;
-                theCart.ProductCost = myPizza.ProductCost;
-                theCart.ProductDetail = myPizza.ProductDetail;
+                string myType = myPizza.GetType().ToString();
 
-                //theCart.Description = myPizza.ProductDetail;
-                //theCart.Qty = myPizza.ProductID;
-                //theCart.Price = myPizza.ProductPrice;
-                //theCart.ProductID = myPizza.ProductID;
-                //theCart.ProductPrice = myPizza.ProductPrice;
-                //theCart.ProductDetail = myPizza.ProductDetail;
-                //theCart.ProductCost = myPizza.ProductPrice;
+                if (myType == "GroupFinal.Pizza")
+                {
+                    CartItem theCart = new CartItem();
+                    theCart.ProductID = myPizza.ProductID;
+                    theCart.ProductPrice = myPizza.ProductPrice;
+                    theCart.ProductType = myPizza.ProductType;
+                    theCart.ProductQty = myPizza.ProductQty;
+                    theCart.ProductCost = myPizza.ProductCost;
+                    theCart.ProductDetail = myPizza.ProductDetail;
 
-                cartItems.Add(theCart);
-                return cartItems;
+                    //theCart.Description = myPizza.ProductDetail;
+                    //theCart.Qty = myPizza.ProductID;
+                    //theCart.Price = myPizza.ProductPrice;
+                    //theCart.ProductID = myPizza.ProductID;
+                    //theCart.ProductPrice = myPizza.ProductPrice;
+                    //theCart.ProductDetail = myPizza.ProductDetail;
+                    //theCart.ProductCost = myPizza.ProductPrice;
+
+                    cartItems.Add(theCart);
+                    return cartItems;
+                }
+
+                else if (myType == "GroupFinal.Classes.Side")
+                {
+                    CartItem theCart = new CartItem();
+                    theCart.ProductID = myPizza.ProductID;
+                    theCart.ProductPrice = myPizza.ProductPrice;
+                    theCart.ProductType = myPizza.ProductType;
+                    theCart.ProductQty = myPizza.ProductQty;
+                    theCart.ProductCost = myPizza.ProductCost;
+                    theCart.ProductDetail = myPizza.ProductDetail;
+
+
+                    cartItems.Add(theCart);
+                    return cartItems;
+                }
+
             }
 
             return cartItems;
