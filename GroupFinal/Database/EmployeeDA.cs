@@ -338,6 +338,52 @@ namespace GroupFinal.DA
             }
             return employees;
         }
+        public static List<Employee> GetDriversByStoreNumberWithDeliveryCount(String storeNum)
+        {
+            List<Employee> employees = new List<Employee>();
+
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "SELECT * FROM Employee WHERE role = 'delivery driver' AND storeNum = @storeNum";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", storeNum);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+
+                while (read.Read())
+                {
+                    Employee e = new Employee();
+                    e.EmployeeID = (int)read["employeeID"];
+                    e.StoreNum = (String)read["storeNum"];
+                    e.EmployeeFirst = (String)read["employeeFirst"];
+                    e.EmployeeLast = (String)read["employeeLast"];
+                    e.EmployeeHireDate = (DateTime)read["employeeHireDate"];
+                    e.EmployeeStatus = (String)read["employeeStatus"];
+                    e.EmployeeRole = (String)read["role"];
+                    e.Login = (String)read["login"];
+                    e.Password = (String)read["password"];
+
+                    employees.Add(e);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return employees;
+        }
     }
 
 }

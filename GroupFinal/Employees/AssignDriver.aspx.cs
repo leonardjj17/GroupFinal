@@ -25,7 +25,7 @@ namespace GroupFinal.Employees
             orderID.Value = Request.QueryString.Get("id");
             int driverID = DeliveryDA.GetDeliveryDriverByOrder(Convert.ToInt32(orderID.Value));
 
-            List<Employee> drivers = EmployeeDA.GetDriversByStoreNumber(storeNum);
+            List<Employee> drivers = EmployeeDA.GetDriversByStoreNumberWithDeliveryCount(storeNum);
             foreach (Employee driver in drivers)
             {
                 string name = driver.EmployeeFirst + " " + driver.EmployeeLast;

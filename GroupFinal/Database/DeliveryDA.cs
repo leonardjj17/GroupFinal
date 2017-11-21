@@ -224,6 +224,7 @@ namespace GroupFinal.Database
                 connection.Close();
             }
         }
+        
         public static Dictionary<String, int> getDeliveryCountForAllDriversAtStore(string storeNum)
         {
             Dictionary<String, int> deliveryCount = new Dictionary<string, int>();
@@ -234,7 +235,7 @@ namespace GroupFinal.Database
                 "JOIN Employee AS e ON d.employeenum = e.employeeID " +
                 "JOIN Orders AS o ON d.orderNum = o.orderID " +
                 "WHERE o.iscompleted NOT IN ('Y', 'y') " +
-                "AND o.storeNum = @storeNum" +
+                "AND o.storeNum = @storeNum " +
                 "GROUP BY CONCAT(e.employeeFirst, ', ', e.employeeLast)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@storeNum", storeNum);
