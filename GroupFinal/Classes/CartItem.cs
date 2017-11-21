@@ -8,7 +8,8 @@ namespace GroupFinal.Classes
 {
     public class CartItem : Products
     {
-        List<CartItem> cartItems = new List<CartItem>();
+        //List<CartItem> cartItems;
+        
 
         public CartItem()
         {

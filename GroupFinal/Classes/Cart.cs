@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace GroupFinal.Classes
 {
-    public class Cart : Page
+    public class Cart 
     {
         List<CartItem> cartItems;
 
@@ -18,93 +18,57 @@ namespace GroupFinal.Classes
 
         public Cart()
         {
-            if(cartItems == null)
-            {
-                cartItems = new List<CartItem>();
-            }
-
-            if (Session["pizza"] == null)
-            {
-                myPizza = new Pizza();
-            }
-            else
-            {
-                myPizza = (Pizza)Session["pizza"];
-
-                if (!IsPostBack)
-                {
-                    AddItemsToCart(myPizza);
-                    myPizza = new Pizza();
-                }
-            }
-
-            if(Session["side"] == null)
-            {
-                mySide = new Side();
-            }
-            else
-            {
-                mySide = (Side)Session["side"];
-
-                AddItemsToCart(mySide);
-            }
-
+           
 
         }
 
 
-
-
-        public List<CartItem> AddItemsToCart(Products myPizza)
+        public static List<CartItem> AddPizzaToCart(Products myPizza, List<CartItem> cartItems)
         {
 
-            if (myPizza != null)
-            {
-                string myType = myPizza.GetType().ToString();
+            //if (myPizza != null)
+            //{
+            //    string myType = myPizza.GetType().ToString();
 
-                if (myType == "GroupFinal.Pizza")
-                {
-                    CartItem theCart = new CartItem();
-                    theCart.ProductID = myPizza.ProductID;
-                    theCart.ProductPrice = myPizza.ProductPrice;
-                    theCart.ProductType = myPizza.ProductType;
-                    theCart.ProductQty = myPizza.ProductQty;
-                    theCart.ProductCost = myPizza.ProductCost;
-                    theCart.ProductDetail = myPizza.ProductDetail;
-
-                    //theCart.Description = myPizza.ProductDetail;
-                    //theCart.Qty = myPizza.ProductID;
-                    //theCart.Price = myPizza.ProductPrice;
-                    //theCart.ProductID = myPizza.ProductID;
-                    //theCart.ProductPrice = myPizza.ProductPrice;
-                    //theCart.ProductDetail = myPizza.ProductDetail;
-                    //theCart.ProductCost = myPizza.ProductPrice;
-
-                    cartItems.Add(theCart);
-                    return cartItems;
-                }
-
-                else if (myType == "GroupFinal.Classes.Side")
-                {
-                    CartItem theCart = new CartItem();
-                    theCart.ProductID = myPizza.ProductID;
-                    theCart.ProductPrice = myPizza.ProductPrice;
-                    theCart.ProductType = myPizza.ProductType;
-                    theCart.ProductQty = myPizza.ProductQty;
-                    theCart.ProductCost = myPizza.ProductCost;
-                    theCart.ProductDetail = myPizza.ProductDetail;
+            //    if (myType == "GroupFinal.Pizza")
+            //    {
+            CartItem theCart = new CartItem();
+            theCart.ProductID = myPizza.ProductID;
+            theCart.ProductPrice = myPizza.ProductPrice;
+            theCart.ProductType = myPizza.ProductType;
+            theCart.ProductQty = myPizza.ProductQty;
+            theCart.ProductCost = myPizza.ProductCost;
+            theCart.ProductDetail = myPizza.ProductDetail;
 
 
-                    cartItems.Add(theCart);
-                    return cartItems;
-                }
 
-            }
-
+            cartItems.Add(theCart);
             return cartItems;
         }
+            public static List<CartItem> AddSidesToCart(Products mySide, List<CartItem> cartItems)
+            {
+                
+                    CartItem theCart = new CartItem();
+                    theCart.ProductID = mySide.ProductID;
+                    theCart.ProductPrice = mySide.ProductPrice;
+                    theCart.ProductType = mySide.ProductType;
+                    theCart.ProductQty = mySide.ProductQty;
+                    theCart.ProductCost = mySide.ProductCost;
+                    theCart.ProductDetail = mySide.ProductDetail;
 
-        //stuff
+
+                    cartItems.Add(theCart);
+                    return cartItems;
+                }
+        public static List<CartItem> DisplayCart(List<CartItem> cartItems)
+        {
+            return cartItems;
+        }
+    }
+
+    
+
+
 
 
 
@@ -112,7 +76,7 @@ namespace GroupFinal.Classes
 
 
 
-}
+
 
 
 
