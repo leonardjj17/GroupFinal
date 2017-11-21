@@ -15,6 +15,7 @@ namespace GroupFinal.Classes
         Products myPizza = null;
         Products mySide = null;
 
+
         public Cart()
         {
             if(cartItems == null)
@@ -33,6 +34,7 @@ namespace GroupFinal.Classes
                 if (!IsPostBack)
                 {
                     AddItemsToCart(myPizza);
+                    myPizza = new Pizza();
                 }
             }
 
