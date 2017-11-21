@@ -19,8 +19,8 @@ namespace GroupFinal.CustomerPages
             }
             else
             {
+
                 lblChanging.Text = (string)Session["ValueChanging"];
-                txtChangedValue.Text = (string)Session["OldValue"];
                 if (lblChanging.Text == "Zip")
                 {
                     txtChangedValue.MaxLength = 5;

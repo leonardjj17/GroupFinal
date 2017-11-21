@@ -20,7 +20,7 @@ namespace GroupFinal.Database
             }
             if (login == null) return null;
 
-            String query = "SELECT * FROM Customer WHERE Role IN ('Customer') AND login = @login";
+            String query = "SELECT * FROM Customers WHERE login = @login";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@login", login);
 
@@ -34,7 +34,7 @@ namespace GroupFinal.Database
                     c.PrimaryStore = (String)read["primaryStore"];
                     c.CustomerFirst = (String)read["customerFirst"];
                     c.CustomerLast = (String)read["customerLast"];
-                    c.CustomerAddress = (String)read["customerAddress"];
+                    c.CustomerAddress = (String)read["cusstomerAddress"];
                     c.CustomerCity = (String)read["customerCity"];
                     c.CustomerState = (String)read["customerState"];
                     c.CustomerZip = (String)read["customerZip"];

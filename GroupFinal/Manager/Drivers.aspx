@@ -5,7 +5,7 @@
     <asp:Table runat="server" ID="Count">
         <asp:TableRow >
             <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Assigned Delivery Count</asp:TableHeaderCell>
+            <asp:TableHeaderCell>Assigned</asp:TableHeaderCell>
         </asp:TableRow>
 
 
