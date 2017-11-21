@@ -26,6 +26,7 @@ namespace GroupFinal.Classes
         public string OrderType { get; set; }
         public double OrderTax { get; set; }
         public double OrderSubTotal { get; set; }
+        public string IsCompleted { get; set; }
         public DateTime OrderDate { get; set; }
 
         //empty constructor
@@ -43,7 +44,7 @@ namespace GroupFinal.Classes
         }
 
         //constructor with all the variables
-        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType, double orderTax, double orderSubTotal, DateTime orderDate)
+        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType, double orderTax, double orderSubTotal, DateTime orderDate, string isCompleted)
         {
             this.OrderID = orderID;
             this.CustomerFirst = customerFirst;
@@ -56,6 +57,7 @@ namespace GroupFinal.Classes
             this.OrderSubTotal = orderSubTotal;
             this.OrderDate = orderDate;
 
+            this.IsCompleted = isCompleted;
         }
         //method to call at the end of a delivery to make sure that order total is increased if it's a delivery
         public void checkDeliveryPrice()

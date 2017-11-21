@@ -12,7 +12,7 @@ namespace GroupFinal.Classes
 
         public OrderList(string storeID)
         {
-            this.orders = OrderDA.GetAllOrdersByStoreNum(storeID);
+            this.orders = OrderDA.GetAllIncompleteOrdersByStoreNum(storeID);
         }
         public List<Order> getOrders()
         {
