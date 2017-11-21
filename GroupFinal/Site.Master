@@ -75,18 +75,25 @@
                         <li><a runat="server" href="~/Views/About">About Shenanigan's</a></li>
                         <li><a runat="server" href="~/Views/Contact">Contact Us</a></li>
                     </ul>
-                    <% if (Session["customer"] == null)
-                        { %>
+                    <%if (Session["employee"] != null)
+                            { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/Employees/Home.aspx"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                        <li><a runat="server" href="~/Employees/EmployeeSignOut.aspx"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                    <% }
+                            else if (Session["customer"] == null)
+                            { %>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/CustomerPages/customerSignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a runat="server" href="~/CustomerPages/customerLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                     <% }
-                     else
-                    { %>
+                            else
+                            { %>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/CustomerPages/ManageCustomer"><span class="glyphicon glyphicon-user"> Profile</span></a></li>
-                        <li><a runat="server" href="~/CustomerPages/customerSignOut"><span class="glyphicon glyphicon-log-in"> Log Out</span></a></li>
+                        <li><a runat="server" href="~/CustomerPages/customerSignOut"><span class="glyphicon glyphicon-log-in"> Logout</span></a></li>
                     </ul>
                     <%} %>
                 </div>

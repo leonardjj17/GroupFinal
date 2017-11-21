@@ -14,6 +14,7 @@ namespace GroupFinal.Employees
         protected void Page_Load(object sender, EventArgs e)
         {
             Employee employee = (Employee)Session["employee"];
+            string role = (string)Session["role"];
             if (Session["employee"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -21,10 +22,15 @@ namespace GroupFinal.Employees
 
             lblUserName.Text = employee.EmployeeFirst;
             //Linkbutton data to make sure it's only visible if you're a manager
-            if (employee.EmployeeRole == "store manager")
+            if (role == "store manager")
             {
-                lnkEmployeeListing.Visible.Equals(true);
+                lnkEmployeeListing.Visible = true;
             }
+        }
+
+        protected void lnkEmployeeListing_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

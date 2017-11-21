@@ -13,5 +13,10 @@ namespace GroupFinal.Views
         {
 
         }
+
+        protected void btnOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

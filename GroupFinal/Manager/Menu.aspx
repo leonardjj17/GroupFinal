@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     allow editing the price of menu items
     
-    <asp:Table ID="Table1" runat="server">
+    <asp:Table ID="CategoryTable" runat="server">
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Label ID="Label1" runat="server" Text="">Select Category</asp:Label>
@@ -14,6 +14,8 @@
                 <asp:Button ID="UpdateCategory" runat="server" Text="Select" OnClick="UpdateCategory_Click" />
             </asp:TableCell>
         </asp:TableRow>
+    </asp:Table>
+    <asp:Table ID="ItemTable" runat="server" Visible="false">
         <asp:TableRow>
             <asp:TableCell>
                  <asp:Label ID="Label2" runat="server" Text="">Select Menu Item</asp:Label>
@@ -25,6 +27,8 @@
                 <asp:Button ID="EditItem" runat="server" Text="Edit Menu Item" OnClick="EditItem_Click" />
             </asp:TableCell>
         </asp:TableRow>
+    </asp:Table>
+    <asp:Table ID="PriceTable" runat="server" Visible="false">
         <asp:TableRow>
             <asp:TableCell>
                 Menu Item:

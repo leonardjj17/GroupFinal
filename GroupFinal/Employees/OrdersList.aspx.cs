@@ -27,32 +27,6 @@ namespace GroupFinal.Employees
 
             else
             {
-                TableHeaderRow header = new TableHeaderRow();
-                TableHeaderCell horderId = new TableHeaderCell();
-                TableHeaderCell hcustName = new TableHeaderCell();
-                TableHeaderCell horderTotal = new TableHeaderCell();
-                TableHeaderCell horderType = new TableHeaderCell();
-                TableHeaderCell hdriver = new TableHeaderCell();
-                TableHeaderCell hassign = new TableHeaderCell();
-                TableHeaderCell hdelete = new TableHeaderCell();
-                TableHeaderCell hmarkcomplete = new TableHeaderCell();
-                horderId.Text = "OrderID";
-                hcustName.Text = "CustomerName";
-                horderTotal.Text = "Order Total";
-                horderType.Text = "Order Type";
-                hdriver.Text = "Driver";
-                hassign.Text = "(Re)Assign Driver";
-                hdelete.Text = "Delete";
-                hmarkcomplete.Text = "Mark Complete?";
-                header.Controls.Add(horderId);
-                header.Controls.Add(hcustName);
-                header.Controls.Add(horderTotal);
-                header.Controls.Add(horderType);
-                header.Controls.Add(hdriver);
-                header.Controls.Add(hassign);
-                header.Controls.Add(hdelete);
-                header.Controls.Add(hmarkcomplete);
-                table.Controls.Add(header);
 
 
                 OrderList orders = new OrderList(storeNum);
@@ -70,7 +44,7 @@ namespace GroupFinal.Employees
 
                     corderID.Text = Convert.ToString(order.OrderID);
                     ccustomerName.Text = order.CustomerFirst + " " + order.CustomerLast;
-                    corderTotal.Text = Convert.ToString(order.OrderTotal);
+                    corderTotal.Text = String.Format("{0:c}",order.OrderTotal);
                     corderType.Text = order.OrderType;
                     
                     cdriver.Text = "N/A";
@@ -93,8 +67,6 @@ namespace GroupFinal.Employees
                         
                         cassign.Controls.Add(btnAssign);
                         
-                        //assignDriver = "<td><form action='AssignDriver.aspx' method='post'><input type='hidden' name='id' value='"
-                        //    + orderID + "'><input type='hidden' name='action' value='assign'><input type='submit' value='Assign Driver'></form></td>";
                     }
                     else cassign.Text = "";
                     

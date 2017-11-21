@@ -13,13 +13,13 @@ namespace GroupFinal.Manager {
     public partial class Menu {
         
         /// <summary>
-        /// Table1 control.
+        /// CategoryTable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Table CategoryTable;
         
         /// <summary>
         /// Label1 control.
@@ -49,6 +49,15 @@ namespace GroupFinal.Manager {
         protected global::System.Web.UI.WebControls.Button UpdateCategory;
         
         /// <summary>
+        /// ItemTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ItemTable;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace GroupFinal.Manager {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button EditItem;
+        
+        /// <summary>
+        /// PriceTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table PriceTable;
         
         /// <summary>
         /// MenuItemName control.
