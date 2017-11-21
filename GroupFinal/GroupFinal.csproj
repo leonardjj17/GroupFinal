@@ -136,6 +136,8 @@
     <Content Include="CustomerPages\PasswordChange.aspx" />
     <Content Include="Employees\AssignDriver.aspx" />
     <Content Include="CustomerPages\CustomerSignUp.aspx" />
+    <Content Include="Employees\EmployeeSignOut.aspx" />
+    <Content Include="Employees\EditEmployees.aspx" />
     <Content Include="Employees\Home.aspx" />
     <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
@@ -311,6 +313,20 @@
     </Compile>
     <Compile Include="Employees\AssignDriver.aspx.designer.cs">
       <DependentUpon>AssignDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EmployeeSignOut.aspx.cs">
+      <DependentUpon>EmployeeSignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\EmployeeSignOut.aspx.designer.cs">
+      <DependentUpon>EmployeeSignOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employees\EditEmployees.aspx.cs">
+      <DependentUpon>EditEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employees\EditEmployees.aspx.designer.cs">
+      <DependentUpon>EditEmployees.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employees\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

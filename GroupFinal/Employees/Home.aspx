@@ -7,7 +7,7 @@
     </p>
     <p>
         <a href ="OrdersList.aspx">Order</a>&nbsp;&nbsp;&nbsp;
-        <asp:LinkButton ID="lnkEmployeeListing" runat="server" Visible="False">Employee Listing</asp:LinkButton>
+        <asp:LinkButton ID="lnkEmployeeListing" runat="server" Visible="False" OnClick="lnkEmployeeListing_Click" PostBackUrl="~/Employees/EditEmployees.aspx">Employee Listing</asp:LinkButton>
     </p>
         </div>
 </asp:Content>
