@@ -4,8 +4,8 @@
 
     <asp:Table runat="server" ID="Count">
         <asp:TableRow >
-            <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-            <asp:TableHeaderCell>Assigned</asp:TableHeaderCell>
+            <asp:TableHeaderCell Width="10em">Name</asp:TableHeaderCell>
+            <asp:TableHeaderCell Width="5em">Assigned</asp:TableHeaderCell>
         </asp:TableRow>
 
 

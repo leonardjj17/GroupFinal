@@ -3,7 +3,17 @@
     <p>
         Order list for store</p>
     <p>
-        <asp:Table ID="table" runat="server" Width="196px">
+        <asp:Table ID="table" runat="server">
+            <asp:TableRow>
+                <asp:TableHeaderCell Width="5em">OrderID</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="10em">Customer Name</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="5em">Order Total</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="6em">Order Type</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="10em">Driver</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="5em">(Re)Assign Driver</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="5em">Delete</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="5em">Mark Complete?</asp:TableHeaderCell>
+            </asp:TableRow>
         </asp:Table>
     </p>
 

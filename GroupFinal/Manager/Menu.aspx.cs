@@ -35,6 +35,7 @@ namespace GroupFinal.Manager
 
         protected void UpdateCategory_Click(object sender, EventArgs e)
         {
+            dropdownItems.Items.Clear();
             string category = dropdownCategory.SelectedValue;
             products = ProductsDA.GetAllProducts();
             foreach (Products product in products)
@@ -45,6 +46,8 @@ namespace GroupFinal.Manager
                     productItem.Text = product.ProductDetail;
                     productItem.Value = product.ProductID.ToString();
                     dropdownItems.Items.Add(productItem);
+                    ItemTable.Visible = true;
+                    PriceTable.Visible = false;
                 }
             }
         }
@@ -55,6 +58,7 @@ namespace GroupFinal.Manager
             MenuItemName.Text = product.ProductDetail;
             MenuItemID.Text = dropdownItems.SelectedValue;
             Price.Text = product.ProductPrice.ToString();
+            PriceTable.Visible = true;
         }
 
         protected void UpdatePrice_Click(object sender, EventArgs e)
@@ -74,6 +78,8 @@ namespace GroupFinal.Manager
                     Price.Text = "";
                     MenuItemID.Text = "";
                     MenuItemName.Text = "";
+                    PriceTable.Visible = false;
+                    ItemTable.Visible = false;
                 }
             }
             catch(Exception ex)

@@ -12,7 +12,7 @@ namespace GroupFinal.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnLogin_Click1(object sender, EventArgs e)
