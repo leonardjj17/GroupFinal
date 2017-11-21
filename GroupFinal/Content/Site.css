@@ -1,15 +1,19 @@
 ﻿body {
     padding-top: 30px;
     padding-bottom: 20px;
-    
+    background-color: #f9ffe6;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background-color: white;
+    background-color: #029350;
+    border: 3px outset #000;
+    border-top: 3px groove #000;
+    color: #ffffff;
 }
+
 
 /* Ov
 }

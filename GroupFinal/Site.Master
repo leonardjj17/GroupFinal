@@ -111,7 +111,7 @@
    
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                Welcome to O'Shea Shenanigan's Pub & Pizzeria <br>
+                <h3>Welcome to O'Shea Shenanigan's Pub & Pizzeria</h3> <br>
 
                 
             </asp:ContentPlaceHolder>

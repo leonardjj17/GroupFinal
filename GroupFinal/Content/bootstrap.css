@@ -1097,14 +1097,14 @@ textarea {
   line-height: inherit;
 }
 a {
-    color: #029350;
+    color: #ffffff;
     text-decoration: none;
 }
-a:hover,
-a:focus {
-  color: #23527c;
-  text-decoration: underline;
-}
+    a:hover,
+    a:focus {
+        color: #f9ffe6;
+        text-decoration: underline;
+    }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -1590,6 +1590,7 @@ margin: 0 auto;
 
 }
 @media (max-width: 575px) {
+    
     .container, .jumbotron, h2, h3, h4, h5, h6 {
         width: 325px;
         font-size: 1.1em;
@@ -1612,9 +1613,8 @@ margin: 0 auto;
         width: 325px;
     }
     .front_page p {
-
-        margin-left:24px;
         margin-right: auto;
+        margin-left: 50px;
     }
     .front_page h2 {
         font-size: .95em;
@@ -1623,6 +1623,7 @@ margin: 0 auto;
     }
 }
 @media (min-width: 576px) {
+    
     .container, .jumbotron, h2,h3,h4,h5,h6{
     width: 630px;
     font-size: 1.4em;
@@ -1640,11 +1641,12 @@ margin: 0 auto;
         width: 630px;
     }
     .front_page p {
-        margin-left: 167px;
         margin-right: auto;
+        margin-left: 150px;
     }
 }
 @media (min-width: 768px) {
+   
     .container{
         width: 825px;
            }
@@ -1658,12 +1660,13 @@ margin: 0 auto;
         width: 825px;
     }
     .front_page p {
-        margin-left: 256px;
         margin-right: auto;
+        margin-left: 200px;
     }
 
 }
 @media (min-width: 992px) {
+    
     .container{
         width: 1000px;
       
@@ -1678,11 +1681,12 @@ margin: 0 auto;
         width: 1000px;
     }
     .front_page p {
-        margin-left: 357px;
         margin-right: auto;
+        margin-left: 250px;
     }
 }
 @media (min-width: 1200px) {
+    
     .container {
        width: 1200px;
         
@@ -1700,8 +1704,8 @@ margin: 0 auto;
         width: 1200px;
     }
     .front_page p {
-        margin-left: 467px;
         margin-right: auto;
+        margin-left: 385px;
     }
     .center h1{
       
@@ -4604,7 +4608,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #000;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -4700,7 +4704,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #333;
+  background-color: #000;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -5070,14 +5074,16 @@ a.badge:focus {
     padding: 10px 0px 10px 10px;
     margin-bottom: 15px;
     color: inherit;
-    background-color: #222;
+    background-color: #029350;
+    border: 3px outset #000;
+    border-bottom: 4px groove #000;
     margin: 0 auto;
 }
 
 
     .jumbotron h1,
     .jumbotron .h1 {
-        color: #029350;
+        color: white;
         
         font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
         font-weight: 600;
@@ -5163,16 +5169,16 @@ a.badge:focus {
         font-size: 48pt;
      
     }
+    
 }
 @media screen and (min-width: 1200px) {
     .jumbotron {
         padding: 10px 0px 5px `5px;
-      
     }
 
     .container .jumbotron,
     .container-fluid .jumbotron {
-     width:auto;
+        width: auto;
     }
 
     .jumbotron h1,
@@ -5180,6 +5186,9 @@ a.badge:focus {
         font-size: 57pt;
         padding-left: 30px;
     }
+    
+   
+    
 }
 .thumbnail {
   display: block;
@@ -6969,10 +6978,9 @@ button.close {
 
 
     .front_page img {
-        margin-top: 30px;
+       margin-left: 0px;
 
-        border: 3px solid darkgreen;
-        border-radius: 5px;
+       
     }
 .navbar-collapse.collapse ul{
     padding-right: 40px;
