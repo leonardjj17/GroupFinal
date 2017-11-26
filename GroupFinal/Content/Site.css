@@ -2,17 +2,19 @@
     padding-top: 30px;
     padding-bottom: 20px;
     background-color: #029350;
-    color:black;
+ 
+    color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background-color: white;
+    background-color: #daffb3;
     border: 3px outset #000;
     border-top: 3px groove #000;
     color: black;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
 
 
