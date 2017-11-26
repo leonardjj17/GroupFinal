@@ -9,7 +9,11 @@ namespace GroupFinal.Classes
     public class CartItem : Products
     {
         //List<CartItem> cartItems;
-        
+        private int id;
+        private int qty;
+        private string description;
+        private double price;
+        private double subtotal;
 
         public CartItem()
         {
@@ -18,29 +22,48 @@ namespace GroupFinal.Classes
 
         public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) : base(productID, productPrice, productType, productQty, productCost, productDetail)
         {
-            this.Id = Id;
-            this.Qty = Qty;
-            this.Description = Description;
-            this.Price = Price;
+            id = Id;
+            qty = Qty;
+            description = Description;
+            price = Price;
 
         }
 
-        public int Id { get; set; }
-
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
        // public string CartId { get; set; }
 
         //public DateTime DateCreated { get; set; }
 
-        public int Qty { get; set; }
+        public int Qty
+        {
+            get { return qty; }
+            set { qty = value; }
+        }
 
        // public int ProductId { get; set; }
 
         //public virtual Products Products { get; set; }
 
-        public string Description { get; set; }
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
 
-        public double Price { get; set; }
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
 
-     
+        public double SubTotal
+        {
+            get { return qty * price; }
+
+        }
     }
 }

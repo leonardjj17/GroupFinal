@@ -188,9 +188,9 @@ namespace GroupFinal.Views
             {
                 cartItems = new List<CartItem>();
             }
-            cartItems = Cart.AddPizzaToCart(newPizza, cartItems);
+            Cart.AddPizzaToCart(newPizza, cartItems);
 
-           
+            Session["cart"] = cartItems;
 
             Response.Redirect("Menu.aspx");
         }
