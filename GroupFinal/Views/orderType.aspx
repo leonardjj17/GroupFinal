@@ -15,7 +15,7 @@
         </p>
         <p>
             Choose Store City:&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="OsheaDB" DataTextField="storeCity" DataValueField="storeState" Height="30px">
+            <asp:DropDownList ID="DropDownList1" class="city" runat="server" DataSourceID="OsheaDB" DataTextField="storeCity" DataValueField="storeState" Height="30px">
             </asp:DropDownList>
             <asp:SqlDataSource ID="OsheaDB" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" SelectCommand="SELECT [storeCity], [storeState] FROM [Store]"></asp:SqlDataSource>
         </p>

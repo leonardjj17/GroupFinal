@@ -1599,7 +1599,7 @@ margin: 0 auto;
 }
 @media (max-width: 575px) {
     
-    .container, .jumbotron, h2, h3, h4, h5, h6 {
+    .container{
         width: 325px;
         font-size: 1.1em;
     }
@@ -1632,7 +1632,7 @@ margin: 0 auto;
 }
 @media (min-width: 576px) {
     
-    .container, .jumbotron, h2,h3,h4,h5,h6{
+    .container{
     width: 630px;
     font-size: 1.4em;
 }
@@ -6977,9 +6977,9 @@ button.close {
 
 .front_page h2{
     text-align: center;
-
+    font-size: 1.3em;
     margin: 0 auto;
-    padding-top: 10px;
+    padding: 10px 0px 10px 0px;
 
 
 }
@@ -7020,7 +7020,7 @@ footer {
 .oType {
 
     text-align: center;
-  
+    color: #000;
 
 }
 
@@ -7058,6 +7058,96 @@ footer {
 
 }
 
+.oType .city{
+    color: #000;
+
+}
+
+.about h1{
+    font-size: 2em;
+   
+    font-weight: 800;
+    padding: 10px;
+}
+
+.about {
+    padding: 20px;
+
+}
+
+.contact {
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.contact h2{
+    font-weight: 800;
+    padding: 10px;
+    font-size: 2em;
+}
+
+.contact section{
+    padding: 160px 0px 20px 0px;
+}
+
+.contact address{
+    padding-left: 20px;
+}
+
+.contact section a{
+    color: #029350;
+}
+
+.eLogin h3{
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 700;
+
+}
+
+.eLogin table {
+    margin-left: auto;
+    margin-right: auto;
+
+
+
+}
+
+.tLabel {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.eLogButton input[type="submit"]{
+    margin-left: 10px;
+    padding: 2px 10px 2px 10px;
+    margin: 10px 0px 10px 0px;
+    
+}
+
+.cLogin h3,table{
+ 
+    font-weight: 700;
+    text-align: center;
+
+}
+.cLogin table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    
+}
+
+ .cLogin input[type="submit"]{
+     padding: 2px 10px 2px 10px;
+     margin: 10px 0px 10px 0px;
+ }
+.cLogButton {
+    
+    margin: 10px 200px 20px 10px;
+}
 
 
     /*# sourceMappingURL=bootstrap.css.map */
+    
