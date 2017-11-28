@@ -27,7 +27,7 @@ namespace GroupFinal.DA
 
                 if (read.Read())
                 {
-                    string tempPass = (String)read["password"];
+                    string tempPass = (String)read["Password"];
                     if (BCrypt.Net.BCrypt.Verify(password, tempPass)) return true;
                 }
                 return false;

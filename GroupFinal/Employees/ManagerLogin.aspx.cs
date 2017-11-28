@@ -1,6 +1,7 @@
 ﻿using GroupFinal.DA;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,18 +20,20 @@ namespace GroupFinal.Employees
         {
             string login = txtUsername.Text;
             string password = txtPassword.Text;
+            
+   
+            Debug.WriteLine(BCrypt.Net.BCrypt.HashPassword(password, 10));
 
-
-            //find out if username exists had has correct password
-            Employee employee = EmployeeDA.GetEmployeeByLogin(login);
-            if (employee.EmployeeRole != "store manager")
+            if (EmployeeDA.verifyLogin(login, password))
             {
-                Response.Redirect("ManagerLogin.aspx");
-            }
-            if (employee != null)
-            {
-                if (password == employee.Password)
+                //find out if username exists had has correct password
+                Employee employee = EmployeeDA.GetEmployeeByLogin(login);
+                if (employee.EmployeeRole != "store manager")
                 {
+                    Response.Redirect("ManagerLogin.aspx");
+                }
+                if (employee != null)
+                {   
                     Session["employee"] = employee;
                     Session["role"] = employee.EmployeeRole;
                     Session["storeNum"] = employee.StoreNum;
