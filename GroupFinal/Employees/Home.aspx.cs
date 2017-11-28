@@ -26,6 +26,11 @@ namespace GroupFinal.Employees
             {
                 lnkEmployeeListing.Visible = true;
             }
+            if(Session["Message"] != null)
+            {
+                lblMessage.Text = (string)Session["Message"];
+                Session["Message"] = null;
+            }
         }
 
         protected void lnkEmployeeListing_Click(object sender, EventArgs e)

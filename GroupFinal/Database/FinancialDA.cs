@@ -51,7 +51,7 @@
 //            return allBalances;
 //        }
 
-//        /*public static Financial GetTotalBalanceByStoreNum(string storeNum)
+//        public static Financial GetTotalBalanceByStoreNum(string storeNum)
 //        {
 
 //            Financial storeBalance = new Financial();
@@ -86,6 +86,6 @@
 //                connection.Close();
 //            }
 //            return storeBalance;
-//        }*/
+//        }
 //    }
 //}

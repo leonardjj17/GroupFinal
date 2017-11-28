@@ -4,21 +4,17 @@
     <p>
         <asp:Label ID="lblError" runat="server" CssClass="alert-danger" Visible="False"></asp:Label>
     </p>
-    <p>
+        <asp:Table ID="changePass" runat="server" style="text-align: left">
+            <asp:TableRow>
+                <asp:TableCell>Password:</asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtOldPassword" runat="server"></asp:TextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>New Password:</asp:TableCell>
+                <asp:TableCell><asp:TextBox ID="txtNewPassword" runat="server"></asp:TextBox></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
 
-        Old Password: <asp:TextBox ID="txtOldPassword" runat="server"></asp:TextBox>
-
-    </p>
-    <p>
-
-        New Password:
-        <asp:TextBox ID="txtNewPassword" runat="server"></asp:TextBox>
-
-    </p>
-    <p>
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnSubmit" runat="server" Text="Change Password" OnClick="btnSubmit_Click" />
 
-    </p>
 </asp:Content>
