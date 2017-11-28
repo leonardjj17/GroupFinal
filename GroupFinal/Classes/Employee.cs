@@ -16,8 +16,8 @@ namespace GroupFinal
         private DateTime employeeHireDate;
         private string employeeStatus;
         private int employeeOrders;
-        private string employeeLogin;
-        private string employeePassword;
+        private string login;
+        private string password;
         private string storeNum;
 
         //empty constructor
@@ -31,8 +31,8 @@ namespace GroupFinal
             employeeHireDate = DateTime.Now;
             employeeStatus = "";
             employeeOrders = 0;
-            employeeLogin = "";
-            employeePassword = "";
+            login = "";
+            password = "";
             storeNum = "";
         }
         //constructor with all the variables
@@ -46,8 +46,8 @@ namespace GroupFinal
             this.employeeHireDate = employeeHireDate;
             this.employeeStatus = employeeStatus;
             this.employeeOrders = employeeOrders;
-            this.employeeLogin = employeeLogin;
-            this.employeePassword = employeePassword;
+            this.login = employeeLogin;
+            this.password = employeePassword;
             this.storeNum = storeNum;
         }
 

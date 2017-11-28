@@ -20,18 +20,14 @@ namespace GroupFinal.Employees
             string login = txtUsername.Text;
             string password = txtPassword.Text;
 
-
-            //find out if username exists had has correct password
-            Employee employee = EmployeeDA.GetEmployeeByLogin(login);
-            if (employee != null)
-            {
-                if (password == employee.Password)
-                {
-                    Session["employee"] = employee;
-                    Session["role"] = employee.EmployeeRole;
-                    Session["storeNum"] = employee.StoreNum;
-                    Response.Redirect("Home.aspx");
-                }
+            if (EmployeeDA.verifyLogin(login, password)) { 
+                //find out if username exists had has correct password
+                Employee employee = EmployeeDA.GetEmployeeByLogin(login);
+                
+                Session["employee"] = employee;
+                Session["role"] = employee.EmployeeRole;
+                Session["storeNum"] = employee.StoreNum;
+                Response.Redirect("Home.aspx");
             }
         }
     }
