@@ -16,11 +16,12 @@
             <td style="width: 155px">
                 <br />
                 <br />
-                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="Medium" Text="$15.99"></asp:Label>
                 <br />
                 <br />
                 Size&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlSizeShirt1" runat="server">
+                <asp:DropDownList ID="ddlSizeShirt1" runat="server" ForeColor="Black">
                     <asp:ListItem> </asp:ListItem>
                     <asp:ListItem>XS</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
@@ -33,7 +34,7 @@
                 <br />
                 <br />
                 Qty&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlQtyShirt1" runat="server" AutoPostBack="True">
+                <asp:DropDownList ID="ddlQtyShirt1" runat="server" AutoPostBack="True" ForeColor="Black">
                     <asp:ListItem Value="0"> 0</asp:ListItem>
                     <asp:ListItem Value="1"> 1</asp:ListItem>
                     <asp:ListItem Value="2"> 2</asp:ListItem>
@@ -72,11 +73,12 @@
                 <img alt="Tshirt2" src="../images/oshea_tshirt1.jpg" style="width: 225px; height: 225px" /></td>
             <td style="width: 155px">
                 <br />
-                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="Medium" Text="$15.99"></asp:Label>
                 <br />
                 <br />
                 Size&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlSizeShirt2" runat="server">
+                <asp:DropDownList ID="ddlSizeShirt2" runat="server" ForeColor="Black">
                     <asp:ListItem> </asp:ListItem>
                     <asp:ListItem>XS</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
@@ -89,7 +91,7 @@
                 <br />
                 <br />
                 Qty&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlQtyShirt2" runat="server" AutoPostBack="True" >
+                <asp:DropDownList ID="ddlQtyShirt2" runat="server" AutoPostBack="True" ForeColor="Black" >
                     <asp:ListItem Value="0"> 0</asp:ListItem>
                     <asp:ListItem Value="1"> 1</asp:ListItem>
                     <asp:ListItem Value="2"> 2</asp:ListItem>
@@ -128,11 +130,12 @@
                 <img alt="Tshirt3" src="../images/oshea_img3.jpg" style="width: 225px; height: 225px" /></td>
             <td style="width: 155px">
                 <br />
-                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Medium" Text="$15.99"></asp:Label>
                 <br />
                 <br />
                 Size&nbsp; &nbsp;
-                <asp:DropDownList ID="ddlSizeShirt3" runat="server">
+                <asp:DropDownList ID="ddlSizeShirt3" runat="server" ForeColor="Black">
                     <asp:ListItem> </asp:ListItem>
                     <asp:ListItem>XS</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
@@ -145,7 +148,7 @@
                 <br />
                 <br />
                 Qty&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlQtyShirt3" runat="server" AutoPostBack="True" >
+                <asp:DropDownList ID="ddlQtyShirt3" runat="server" AutoPostBack="True" ForeColor="Black" >
                     <asp:ListItem Value="0"> 0</asp:ListItem>
                     <asp:ListItem Value="1"> 1</asp:ListItem>
                     <asp:ListItem Value="2"> 2</asp:ListItem>
@@ -183,11 +186,12 @@
             <td class="modal-sm" style="width: 276px">
                 <img alt="Tshirt4" src="../images/oshea_img4.png" style="width: 246px; height: 205px" /></td>
             <td style="width: 155px">
-                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label4" runat="server" Font-Bold="True" Font-Size="Medium" Text="$15.99"></asp:Label>
                 <br />
                 <br />
                 Size&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlSizeShirt4" runat="server">
+                <asp:DropDownList ID="ddlSizeShirt4" runat="server" ForeColor="Black">
                     <asp:ListItem> </asp:ListItem>
                     <asp:ListItem>XS</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
@@ -200,7 +204,7 @@
                 <br />
                 <br />
                 Qty&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:DropDownList ID="ddlQtyShirt4" runat="server" AutoPostBack="True" >
+                <asp:DropDownList ID="ddlQtyShirt4" runat="server" AutoPostBack="True" ForeColor="Black" >
                     <asp:ListItem Value="0"> 0</asp:ListItem>
                     <asp:ListItem Value="1"> 1</asp:ListItem>
                     <asp:ListItem Value="2"> 2</asp:ListItem>
@@ -236,7 +240,7 @@
             <td class="modal-sm" style="width: 85px">&nbsp;</td>
             <td class="modal-sm" style="width: 276px">&nbsp;</td>
             <td style="width: 155px">
-                <asp:Button ID="btnOrder" runat="server" Text="Order Items" OnClick="btnOrder_Click" />
+                <asp:Button ID="btnOrder" runat="server" Text="Order Items" OnClick="btnOrder_Click" ForeColor="Black" />
             </td>
             <td>&nbsp;</td>
         </tr>

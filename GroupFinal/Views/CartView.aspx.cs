@@ -23,6 +23,11 @@ namespace GroupFinal.Views
             Response.Redirect("Menu.aspx");
         }
 
+        protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+        {
+
+        }
+
         //private void FillData()
         //{
         //    gvShoppingCart.DataSource = cart.Items;

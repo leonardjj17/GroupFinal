@@ -1,16 +1,22 @@
 ﻿body {
     padding-top: 30px;
     padding-bottom: 20px;
-    
+    background-color: #029350;
+ 
+    color: black;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background-color: white;
-    border: 2px solid darkgreen;
+    background-color: #ffffff;
+    border: 3px outset #000;
+    border-top: 3px groove #000;
+    color: black;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
 }
+
 
 /* Ov
 }
@@ -36,3 +42,6 @@ footer ul{
   
 }
 
+.center a {
+    color: #000;
+}

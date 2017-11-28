@@ -28,7 +28,7 @@ namespace GroupFinal.CustomerPages
             string zip = txtZip.Text;
             string phone = txtPhone.Text;
             string login = txtLogin.Text;
-            string password = txtPassword.Text;
+            string password = BCrypt.Net.BCrypt.HashPassword(txtPassword.Text, 10);
 
             Customer c = new Customer();
 

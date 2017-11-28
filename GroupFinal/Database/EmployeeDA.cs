@@ -9,7 +9,45 @@ namespace GroupFinal.DA
     public class EmployeeDA
 
     {
-            public static Employee GetEmployeeByLogin(String login)
+        public static Boolean verifyLogin(String login, String password)
+        {
+            if (login == null) return false;
+            SqlConnection connection = Connection.getConnection();
+            if (connection != null)
+            {
+                connection.Open();
+            }
+            String query = "SELECT Password FROM Employee WHERE login = @login";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@login", login);
+
+            try
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    string tempPass = (String)read["password"];
+                    if (BCrypt.Net.BCrypt.Verify(password, tempPass)) return true;
+                }
+                return false;
+
+            }
+            catch (SqlException ex)
+            {
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static Employee GetEmployeeByLogin(String login)
         {
             if (login == null) return null;
             Employee e = new Employee();

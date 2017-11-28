@@ -11,6 +11,7 @@ namespace GroupFinal.Views
 {
     public partial class PizzaView : System.Web.UI.Page
     {
+        List<CartItem> cartItems;
         Products newPizza = null;
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
@@ -182,10 +183,16 @@ namespace GroupFinal.Views
 
 
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Pizza with: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
-          
-            Session["pizza"] = newPizza;
 
-            Response.Redirect("CartView.aspx");
+            if (cartItems == null)
+            {
+                cartItems = new List<CartItem>();
+            }
+            Cart.AddPizzaToCart(newPizza, cartItems);
+
+            Session["cart"] = cartItems;
+
+            Response.Redirect("Menu.aspx");
         }
     }
 }
