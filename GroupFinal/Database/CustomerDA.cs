@@ -9,6 +9,43 @@ namespace GroupFinal.Database
 {
     public class CustomerDA
     {
+        public static Boolean verifyLogin(String login, String password)
+        {
+            if (login == null) return false;
+            SqlConnection connection = Connection.getConnection();
+            if (connection != null)
+            {
+                connection.Open();
+            }
+            String query = "SELECT Password FROM Customers WHERE login = @login";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@login", login);
+
+            try
+            {
+                SqlDataReader read = cmd.ExecuteReader();
+
+                if (read.Read())
+                {
+                    string tempPass = (String)read["password"];
+                    if (BCrypt.Net.BCrypt.Verify(password, tempPass)) return true;
+                }
+                return false;
+
+            }
+            catch (SqlException ex)
+            {
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public static Customer GetCustomerByLogin(String login)
         {
             Customer c = new Customer();
