@@ -422,6 +422,41 @@ namespace GroupFinal.DA
             }
             return employees;
         }
+
+        public static void AddNewEmployee(Employee e)
+        {
+            SqlConnection connection = Connection.getConnection();
+
+            String query = "INSERT INTO Employee (storeNum, employeeFirst, employeeLast, employeeHireDate, employeeStatus, Role, Login, Password) VALUES (@storeNum, @employeeFirst, @employeeLast, @employeeHireDate, @employeeStatus, @Role, @Login, @Password)";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", e.StoreNum);
+            cmd.Parameters.AddWithValue("@employeeFirst", e.EmployeeFirst);
+            cmd.Parameters.AddWithValue("@employeeLast", e.EmployeeLast);
+            cmd.Parameters.AddWithValue("@employeeHireDate", e.EmployeeHireDate);
+            cmd.Parameters.AddWithValue("@employeeStatus", e.EmployeeStatus);
+            cmd.Parameters.AddWithValue("@Role", e.EmployeeRole);
+            cmd.Parameters.AddWithValue("@Login", e.Login);
+            cmd.Parameters.AddWithValue("@Password", e.Password);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 
 }

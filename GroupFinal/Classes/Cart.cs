@@ -143,20 +143,20 @@ namespace GroupFinal.Classes
 
         public List<CartItem> GetItems(List<CartItem> cartItems)
         {
-            //List<CartItem> items = new List<CartItem>();
-            Products p = new Products();
+            List<CartItem> items = new List<CartItem>();
+
 
             foreach (CartItem item in cartItems)
             {
-
+                Products p = new Products();
                 item.Id = p.ProductID;
                 item.Qty = p.ProductQty;
                 item.Description = p.ProductDetail;
                 item.Price = p.ProductPrice;
 
-                cartItems.Add(item);
+                items.Add(item);
             }
-            return cartItems;
+            return items;
         }
 
     }
