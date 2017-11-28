@@ -8,16 +8,10 @@
   
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
         <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
-            <asp:BoundField DataField="Qty" HeaderText="Qty" SortExpression="Qty" />
-            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-            <asp:BoundField DataField="SubTotal" HeaderText="SubTotal" ReadOnly="True" SortExpression="SubTotal" />
             <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID" />
             <asp:BoundField DataField="ProductPrice" HeaderText="ProductPrice" SortExpression="ProductPrice" />
             <asp:BoundField DataField="ProductType" HeaderText="ProductType" SortExpression="ProductType" />
             <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
-            <asp:BoundField DataField="ProductCost" HeaderText="ProductCost" SortExpression="ProductCost" />
             <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
         </Columns>
     </asp:GridView>

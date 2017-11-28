@@ -15,11 +15,12 @@ namespace GroupFinal.Classes
         private DateTime dateCreated;
         private DateTime lastUpdate;
         Products product = null;
-       
+
 
 
         public Cart()
-        {       
+        {
+
             if (this.cartItems == null)
             {
                 this.cartItems = new List<CartItem>();
@@ -37,19 +38,25 @@ namespace GroupFinal.Classes
         public static List<CartItem> AddItemToCart(Products product, List<CartItem> cartItems)
         {
 
-           
+            if (cartItems == null)
+            {
+                cartItems = new List<CartItem>();
+            }
+
             CartItem theCart = new CartItem();
             theCart.ProductID = product.ProductID;
             theCart.ProductPrice = product.ProductPrice;
             theCart.ProductType = product.ProductType;
             theCart.ProductQty = product.ProductQty;
-            theCart.ProductCost = product.ProductCost;
+            //theCart.ProductCost = product.ProductCost;
             theCart.ProductDetail = product.ProductDetail;
 
             cartItems.Add(theCart);
 
             return cartItems;
-            
+
+      
+
         }
             public static List<CartItem> AddSidesToCart(Products mySide, List<CartItem> cartItems)
             {
@@ -59,7 +66,7 @@ namespace GroupFinal.Classes
                     theCart.ProductPrice = mySide.ProductPrice;
                     theCart.ProductType = mySide.ProductType;
                     theCart.ProductQty = mySide.ProductQty;
-                    theCart.ProductCost = mySide.ProductCost;
+                    //theCart.ProductCost = mySide.ProductCost;
                     theCart.ProductDetail = mySide.ProductDetail;
 
 

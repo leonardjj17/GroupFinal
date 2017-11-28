@@ -4,6 +4,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.Classes;
 using GroupFinal.Database;
+using System.Collections.ObjectModel;
 
 namespace GroupFinal.Views
 {
@@ -15,12 +16,11 @@ namespace GroupFinal.Views
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
         List<Products> allToppings = ProductsDA.GetAllToppings();
-       
+        List<CartItem> cartItems;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
+            cartItems = new List<CartItem>();
             foreach (Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
@@ -186,12 +186,13 @@ namespace GroupFinal.Views
 
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Pizza with: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
-           
-            Cart.AddItemToCart(newPizza, cartItems);
+
+            cartItems = Cart.AddItemToCart(newPizza, cartItems);
+
 
             Session["items"] = cartItems;
 
-            //Response.Redirect("Menu.aspx");
+            Response.Redirect("CartView.aspx");
         }
     }
 }

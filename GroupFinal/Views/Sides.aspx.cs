@@ -89,7 +89,7 @@ namespace GroupFinal.Views
             }
 
 
-            newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, sideTotal, selectedSides);
+            newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, selectedSides);
 
             Session["side"] = newSide;
 

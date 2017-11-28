@@ -21,7 +21,7 @@ namespace GroupFinal
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["cart"] = new Cart();
+            Session["cart"] = new List<Cart>();
         }
     }
 }
