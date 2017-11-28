@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="customerLogin.aspx.cs" Inherits="GroupFinal.CustomerPages.customerLogin" %>
+﻿<%@ Page Title="Sign-on" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="customerLogin.aspx.cs" Inherits="GroupFinal.CustomerPages.customerLogin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="cLogin">
 
@@ -20,7 +20,7 @@
        <tr>
             <td class="tLabel" style="width: 260px">Password: </td>
             <td style="width: 280px">
-                <asp:TextBox ID="txtPassword" runat="server" Width="260px"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" Width="260px" TextMode="password"></asp:TextBox>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" CssClass="alert-danger" ErrorMessage="Please enter your password"></asp:RequiredFieldValidator>

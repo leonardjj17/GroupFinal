@@ -13,7 +13,6 @@
                 <asp:BoundField DataField="employeeStatus" HeaderText="employeeStatus" SortExpression="employeeStatus" />
                 <asp:BoundField DataField="Role" HeaderText="Role" SortExpression="Role" />
                 <asp:BoundField DataField="Login" HeaderText="Login" SortExpression="Login" />
-                <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" DeleteCommand="DELETE FROM [Employee] WHERE [employeeID] = @employeeID" InsertCommand="INSERT INTO [Employee] ([storeNum], [employeeFirst], [employeeLast], [employeeStatus], [Role], [Login], [Password]) VALUES (@storeNum, @employeeFirst, @employeeLast, @employeeStatus, @Role, @Login, @Password)" SelectCommand="SELECT [employeeID], [storeNum], [employeeFirst], [employeeLast], [employeeStatus], [Role], [Login], [Password] FROM [Employee] WHERE ([storeNum] = @storeNum) ORDER BY [employeeLast], [employeeFirst]" UpdateCommand="UPDATE [Employee] SET [storeNum] = @storeNum, [employeeFirst] = @employeeFirst, [employeeLast] = @employeeLast, [employeeStatus] = @employeeStatus, [Role] = @Role, [Login] = @Login, [Password] = @Password WHERE [employeeID] = @employeeID">
