@@ -6,6 +6,7 @@ using System.Web;
 
 namespace GroupFinal.Classes
 {
+    [Serializable]
     public class CartItem : Products
     {
         //List<CartItem> cartItems;

@@ -7031,6 +7031,7 @@ footer {
 }
 .center p {
     text-align: center;
+    color: #000;
 }
 
 .col2{
@@ -7135,6 +7136,7 @@ footer {
      padding: 2px 10px 2px 10px;
      margin: 10px 0px 10px 0px;
  }
+
 .cLogButton {
     
     margin: 10px 200px 20px 10px;

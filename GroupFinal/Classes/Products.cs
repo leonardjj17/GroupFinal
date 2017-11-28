@@ -5,6 +5,7 @@ using System.Web;
 
 namespace GroupFinal
 {
+    [Serializable]
     public class Products
     {
         //get and sets for all variables

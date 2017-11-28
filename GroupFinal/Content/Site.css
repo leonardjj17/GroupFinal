@@ -10,7 +10,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background-color: #daffb3;
+    background-color: #ffffff;
     border: 3px outset #000;
     border-top: 3px groove #000;
     color: black;
@@ -42,3 +42,6 @@ footer ul{
   
 }
 
+.center a {
+    color: #000;
+}
