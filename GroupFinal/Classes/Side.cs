@@ -14,7 +14,7 @@ namespace GroupFinal.Classes
         {
 
         }
-        public Side(string sideType, double sidePrice, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) : base(productID, productPrice, productType, productQty, productCost, productDetail)
+        public Side(string sideType, double sidePrice, int productID, double productPrice, string productType, int productQty, string productDetail) : base(productID, productPrice, productType, productQty, productDetail)
             
         {
             this.sideType = sideType;

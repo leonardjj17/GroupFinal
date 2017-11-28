@@ -20,14 +20,14 @@ namespace GroupFinal.CustomerPages
             string newPassword = txtNewPassword.Text;
             string oldPassword = txtOldPassword.Text;
             Customer loggedIn = (Customer)Session["Customer"];
-            if (oldPassword != loggedIn.CustomerPassword)
+            if (!CustomerDA.verifyLogin(loggedIn.CustomerLogin, oldPassword))
             {
                 lblError.Text = "Old Password is incorrect, try again";
                 lblError.Visible = true;
             }
             else
             {
-                loggedIn.CustomerPassword = newPassword;
+                loggedIn.CustomerPassword = BCrypt.Net.BCrypt.HashPassword(newPassword, 10);
                 CustomerDA.UpdateCustomer(loggedIn);
                 Session["Customer"] = loggedIn;
                 Response.Redirect("~/CustomerPages/ManageCustomer");

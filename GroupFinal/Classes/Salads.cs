@@ -17,7 +17,7 @@ namespace GroupFinal.Classes
         {
 
         }
-        public Salads(string saladType, string saladDressing, double saladPrice, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) : base(productID, productPrice, productType, productQty, productCost, productDetail)
+        public Salads(string saladType, string saladDressing, double saladPrice, int productID, double productPrice, string productType, int productQty, string productDetail) : base(productID, productPrice, productType, productQty, productDetail)
             
         {
             this.saladType = saladType;

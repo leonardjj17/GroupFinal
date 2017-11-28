@@ -24,7 +24,7 @@
     
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetItems" TypeName="GroupFinal.Classes.Cart">
         <SelectParameters>
-            <asp:SessionParameter Name="cartItems" SessionField="cart" Type="Object" />
+            <asp:SessionParameter Name="items" SessionField="items" Type="Object" />
         </SelectParameters>
     </asp:ObjectDataSource>
     

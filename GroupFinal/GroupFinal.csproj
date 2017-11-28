@@ -144,7 +144,6 @@
     <Content Include="Employees\EmployeeSignOut.aspx" />
     <Content Include="Employees\EditEmployees.aspx" />
     <Content Include="Employees\Home.aspx" />
-    <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -171,7 +170,6 @@
     <Content Include="Manager\Menu.aspx" />
     <Content Include="Manager\OrderHistory.aspx" />
     <Content Include="Views\CartView.aspx" />
-    <Content Include="Views\FinancialView.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -232,7 +230,6 @@
     <Content Include="Views\Drinks.aspx" />
     <Content Include="Views\EmployeeListing.aspx" />
     <Content Include="Manager\AdminLogin.aspx" />
-    <Content Include="Views\Inventory.aspx" />
     <Content Include="Views\OrderReciept.aspx" />
     <Content Include="Views\orderType.aspx" />
     <Content Include="Views\PizzaView.aspx" />
@@ -247,12 +244,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Classes\Alcohol.cs" />
     <Compile Include="Classes\Cart.cs" />
     <Compile Include="Classes\CartItem.cs" />
     <Compile Include="Classes\Delivery.cs" />
     <Compile Include="Classes\Drink.cs" />
-    <Compile Include="Classes\Financial.cs" />
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\OrderList.cs" />
     <Compile Include="Classes\Promotional.cs" />
@@ -345,13 +340,6 @@
     <Compile Include="Employees\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employees\ManagerLogin.aspx.cs">
-      <DependentUpon>ManagerLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employees\ManagerLogin.aspx.designer.cs">
-      <DependentUpon>ManagerLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Employees\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -401,13 +389,6 @@
     <Compile Include="Views\CartView.aspx.designer.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\FinancialView.aspx.cs">
-      <DependentUpon>FinancialView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\FinancialView.aspx.designer.cs">
-      <DependentUpon>FinancialView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -424,7 +405,6 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Classes\Employee.cs" />
-    <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Pizza.cs" />
     <Compile Include="Classes\Products.cs" />
     <Compile Include="Classes\Customer.cs" />
@@ -487,13 +467,6 @@
     </Compile>
     <Compile Include="Manager\AdminLogin.aspx.designer.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Inventory.aspx.cs">
-      <DependentUpon>Inventory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Inventory.aspx.designer.cs">
-      <DependentUpon>Inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\OrderReciept.aspx.cs">
       <DependentUpon>OrderReciept.aspx</DependentUpon>
