@@ -15,7 +15,7 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            List<CartItem> items = (List<CartItem>)Session["items"];
         }
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)

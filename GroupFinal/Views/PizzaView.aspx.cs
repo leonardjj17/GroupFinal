@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.Classes;
@@ -11,7 +9,8 @@ namespace GroupFinal.Views
 {
     public partial class PizzaView : System.Web.UI.Page
     {
-        List<CartItem> cartItems;
+
+        
         Products newPizza = null;
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
@@ -20,8 +19,9 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
-            foreach(Products crusts in allCrusts)
+            foreach (Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
                 newCrust.Text = crusts.ProductDetail;
@@ -54,6 +54,8 @@ namespace GroupFinal.Views
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            List<CartItem> cartItems = (List<CartItem>)Session["items"];
+
             string pizzaSize = "";
             string pizzaCheese = "";
             string pizzaSauce = "";
@@ -184,15 +186,12 @@ namespace GroupFinal.Views
 
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Pizza with: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
-            if (cartItems == null)
-            {
-                cartItems = new List<CartItem>();
-            }
-            Cart.AddPizzaToCart(newPizza, cartItems);
+           
+            Cart.AddItemToCart(newPizza, cartItems);
 
-            Session["cart"] = cartItems;
+            Session["items"] = cartItems;
 
-            Response.Redirect("Menu.aspx");
+            //Response.Redirect("Menu.aspx");
         }
     }
 }
