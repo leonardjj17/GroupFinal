@@ -27,7 +27,7 @@ namespace GroupFinal.CustomerPages
             }
             else
             {
-                loggedIn.CustomerPassword = newPassword;
+                loggedIn.CustomerPassword = BCrypt.Net.BCrypt.HashPassword(newPassword, 10);
                 CustomerDA.UpdateCustomer(loggedIn);
                 Session["Customer"] = loggedIn;
                 Response.Redirect("~/CustomerPages/ManageCustomer");
