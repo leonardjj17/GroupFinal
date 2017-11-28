@@ -11,11 +11,18 @@ namespace GroupFinal.Views
 {
     public partial class CartView : System.Web.UI.Page
     {
-        Cart cart;
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<CartItem> items = (List<CartItem>)Session["items"];
+            if (Session["theCart"] != null)
+
+            {
+                Cart theCart = (Cart)Session["theCart"];
+                
+            }
+
+           
         }
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)
@@ -24,6 +31,21 @@ namespace GroupFinal.Views
         }
 
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void gvShoppingCart_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void btnUpdateCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gvShoppingCart_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

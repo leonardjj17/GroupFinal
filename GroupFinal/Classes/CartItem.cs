@@ -21,7 +21,9 @@ namespace GroupFinal.Classes
 
         }
 
-        public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, double productCost, string productDetail) : base(productID, productPrice, productType, productQty, productCost, productDetail)
+       
+
+        public CartItem(int Id, int Qty, string Description, double Price, int productID, double productPrice, string productType, int productQty, string productDetail) : base(productID, productPrice, productType, productQty, productDetail)
         {
             id = Id;
             qty = Qty;
