@@ -6,7 +6,7 @@
 
 
     <h2>Your Current Order</h2>
-    
+ <%--<%--<%--<%--  <asp:foreach(CartItem item in theCart)>
    <%-- <% foreach (CartItem items in theCart)
         { %>--%>
     <table>
@@ -24,17 +24,20 @@
             </tr>
         </thead>
         <tbody>
+           <%-- <% foreach(Cart c in theCart){%>--%>
             <tr>
-                <td> 
-                  <%--<%@ items.Qty;%> --%>
+               <%-- <td><%=c.description%>--%>
+                  <%--<asp:Label runat="server" ID="theCart"></asp:Label>--%>
                 </td>
             </tr>
+       <%--    <% }%> --%>
             <tr>
                <%-- <%@ items.Description; %>--%>
             </tr>
         </tbody>
     </table>
-   <%-- <% } %>--%>
+  </asp:foreach>--%>--%>--%>--%>
+  
        <br />
             <asp:Button runat="server" ID="btnUpdateCart" Text="Update Cart" OnClick="btnUpdateCart_Click"  Font-Bold="true"/>
         
