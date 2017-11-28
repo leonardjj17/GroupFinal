@@ -43,7 +43,7 @@ namespace GroupFinal.Classes
             theCart.ProductPrice = product.ProductPrice;
             theCart.ProductType = product.ProductType;
             theCart.ProductQty = product.ProductQty;
-            theCart.ProductCost = product.ProductCost;
+            
             theCart.ProductDetail = product.ProductDetail;
 
             cartItems.Add(theCart);
