@@ -4,28 +4,24 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.Classes;
 using GroupFinal.Database;
+using System.Collections.ObjectModel;
 
 namespace GroupFinal.Views
 {
     public partial class PizzaView : System.Web.UI.Page
     {
-        Cart cart = new Cart();
 
         
         Products newPizza = null;
         List<Products> allCrusts = ProductsDA.GetPizzaCrust();
         List<Products> allSauces = ProductsDA.GetPizzaSauce();
         List<Products> allToppings = ProductsDA.GetAllToppings();
-       
+        List<CartItem> cartItems;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["items"] != null)
-            {
-                List<CartItem> items = (List<CartItem>)Session["items"];
-            }
-
-                foreach (Products crusts in allCrusts)
+            cartItems = new List<CartItem>();
+            foreach (Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
                 newCrust.Text = crusts.ProductDetail;
@@ -58,7 +54,7 @@ namespace GroupFinal.Views
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-           
+            List<CartItem> cartItems = (List<CartItem>)Session["items"];
 
             string pizzaSize = "";
             string pizzaCheese = "";
@@ -190,14 +186,13 @@ namespace GroupFinal.Views
 
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Pizza with: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
-            Cart theCart = Cart.GetShoppingCart();
-            theCart.AddItemToCart(newPizza);
-            //ShoppingCart.Instance.AddItem(newPizza.ProductID);
-            //Cart.AddItemToCart(newPizza, items);
-            Session["theCart"] = theCart;
-            //Session["TheShoppingCart"] = ShoppingCart.Instance;
+
+            cartItems = Cart.AddItemToCart(newPizza, cartItems);
+
+
+            Session["items"] = cartItems;
+
             Response.Redirect("CartView.aspx");
-            //Response.Redirect("Menu.aspx");
         }
     }
 }
