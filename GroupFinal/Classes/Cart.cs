@@ -14,8 +14,8 @@ namespace GroupFinal.Classes
         private List<CartItem> cartItems;
         private DateTime dateCreated;
         private DateTime lastUpdate;
-        Products myPizza = null;
-        Products mySide = null;
+        Products product = null;
+       
 
 
         public Cart()
@@ -34,22 +34,17 @@ namespace GroupFinal.Classes
             set { cartItems = value; }
         }
 
-        public static List<CartItem> AddPizzaToCart(Products myPizza, List<CartItem> cartItems)
+        public static List<CartItem> AddItemToCart(Products product, List<CartItem> cartItems)
         {
 
-            //if (myPizza != null)
-            //{
-            //    string myType = myPizza.GetType().ToString();
-
-            //    if (myType == "GroupFinal.Pizza")
-            //    {
+           
             CartItem theCart = new CartItem();
-            theCart.ProductID = myPizza.ProductID;
-            theCart.ProductPrice = myPizza.ProductPrice;
-            theCart.ProductType = myPizza.ProductType;
-            theCart.ProductQty = myPizza.ProductQty;
-            theCart.ProductCost = myPizza.ProductCost;
-            theCart.ProductDetail = myPizza.ProductDetail;
+            theCart.ProductID = product.ProductID;
+            theCart.ProductPrice = product.ProductPrice;
+            theCart.ProductType = product.ProductType;
+            theCart.ProductQty = product.ProductQty;
+            theCart.ProductCost = product.ProductCost;
+            theCart.ProductDetail = product.ProductDetail;
 
             cartItems.Add(theCart);
 
@@ -141,21 +136,21 @@ namespace GroupFinal.Classes
             }
         }
 
-        public List<CartItem> GetItems(List<CartItem> cartItems)
+        public List<CartItem> GetItems(List<CartItem> items)
         {
-            List<CartItem> items = new List<CartItem>();
+            //List<CartItem> items = new List<CartItem>();
 
 
-            foreach (CartItem item in cartItems)
-            {
-                Products p = new Products();
-                item.Id = p.ProductID;
-                item.Qty = p.ProductQty;
-                item.Description = p.ProductDetail;
-                item.Price = p.ProductPrice;
+            //foreach (CartItem item in cartItems)
+            //{
+            //    Products p = new Products();
+            //    item.Id = p.ProductID;
+            //    item.Qty = p.ProductQty;
+            //    item.Description = p.ProductDetail;
+            //    item.Price = p.ProductPrice;
 
-                items.Add(item);
-            }
+            //    items.Add(item);
+            //}
             return items;
         }
 
