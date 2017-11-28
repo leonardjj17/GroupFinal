@@ -50,6 +50,7 @@ namespace GroupFinal
             this.employeePassword = employeePassword;
             this.storeNum = storeNum;
         }
+
         //get and sets for all employee variables
         public int EmployeeID { get; set; }
 
