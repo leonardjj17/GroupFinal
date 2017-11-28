@@ -7,8 +7,8 @@
 
     <h2>Your Current Order</h2>
     
-    <%@ foreach (CartItem items in theCart)
-        { %>
+   <%-- <% foreach (CartItem items in theCart)
+        { %>--%>
     <table>
         <thead>
             <tr>
@@ -25,16 +25,16 @@
         </thead>
         <tbody>
             <tr>
-                <td> ;
-                  <%@ items.Qty;%> 
+                <td> 
+                  <%--<%@ items.Qty;%> --%>
                 </td>
             </tr>
             <tr>
-                <%@ items.Description; %>
+               <%-- <%@ items.Description; %>--%>
             </tr>
         </tbody>
     </table>
-    <% } %>
+   <%-- <% } %>--%>
        <br />
             <asp:Button runat="server" ID="btnUpdateCart" Text="Update Cart" OnClick="btnUpdateCart_Click"  Font-Bold="true"/>
         
