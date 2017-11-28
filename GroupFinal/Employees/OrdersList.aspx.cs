@@ -84,7 +84,7 @@ namespace GroupFinal.Employees
                     {
                         btnDelete.Click += (senderer, ee) =>
                         {
-                            Response.Redirect("ManagerLogin.aspx");
+                            Response.Redirect("../Manager/AdminLogin.aspx");
                         };
                     }
 

@@ -144,7 +144,6 @@
     <Content Include="Employees\EmployeeSignOut.aspx" />
     <Content Include="Employees\EditEmployees.aspx" />
     <Content Include="Employees\Home.aspx" />
-    <Content Include="Employees\ManagerLogin.aspx" />
     <Content Include="Employees\Login.aspx" />
     <Content Include="Employees\OrdersList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -345,13 +344,6 @@
     </Compile>
     <Compile Include="Employees\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Employees\ManagerLogin.aspx.cs">
-      <DependentUpon>ManagerLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employees\ManagerLogin.aspx.designer.cs">
-      <DependentUpon>ManagerLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employees\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
