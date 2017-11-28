@@ -301,7 +301,6 @@
     <Compile Include="Database\CustomerDA.cs" />
     <Compile Include="Database\DeliveryDA.cs" />
     <Compile Include="Database\EmployeeDA.cs" />
-    <Compile Include="Database\FinancialDA.cs" />
     <Compile Include="Database\OrderDA.cs" />
     <Compile Include="Database\ProductsDA.cs" />
     <Compile Include="Database\ServiceZipsDA.cs" />
