@@ -13,9 +13,12 @@ namespace GroupFinal.Views
     public partial class Sides : System.Web.UI.Page
     {
         List<Products> allSides = ProductsDA.GetAllSides();
+        List<CartItem> cartItems;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            cartItems = new List<CartItem>();
             foreach(Products sides in allSides)
             {
                 RadioButton newSide = new RadioButton();
@@ -66,9 +69,9 @@ namespace GroupFinal.Views
             string selectedSides = "";
 
             Side newSide = null;
-            
+            List<CartItem> cartItems = (List<CartItem>)Session["items"];
 
-            foreach(Control sides in pnlSides.Controls)
+            foreach (Control sides in pnlSides.Controls)
             {
                 if (sides.GetType().Name == "RadioButton")
                 {
@@ -91,7 +94,10 @@ namespace GroupFinal.Views
 
             newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, selectedSides);
 
-            Session["side"] = newSide;
+            cartItems = Cart.AddItemToCart(newSide, cartItems);
+
+
+            Session["items"] = cartItems;
 
             Response.Redirect("CartView.aspx");
 
