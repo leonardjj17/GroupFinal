@@ -22,7 +22,7 @@ namespace GroupFinal.Views
                 
             }
 
-           
+            
         }
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)
@@ -52,9 +52,9 @@ namespace GroupFinal.Views
 
         //private void FillData()
         //{
-        //    gvShoppingCart.DataSource = cart.Items;
+        //    gvShoppingCart.DataSource = theCart.Items;
         //    gvShoppingCart.DataBind();
-        //    if(cart.Items.Count == 0)
+        //    if (cart.Items.Count == 0)
         //    {
         //        lblTotal.Visible = false;
         //    }
