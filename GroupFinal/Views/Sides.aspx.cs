@@ -13,6 +13,7 @@ namespace GroupFinal.Views
     public partial class Sides : System.Web.UI.Page
     {
         List<Products> allSides = ProductsDA.GetAllSides();
+        List<CartItem> cartItems;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -91,7 +92,9 @@ namespace GroupFinal.Views
 
             newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, selectedSides);
 
-            Session["side"] = newSide;
+            cartItems = Cart.AddItemToCart(newSide, cartItems);
+
+            Session["items"] = cartItems;
 
             Response.Redirect("CartView.aspx");
 

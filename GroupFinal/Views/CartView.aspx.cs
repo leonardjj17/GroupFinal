@@ -27,7 +27,9 @@ namespace GroupFinal.Views
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)
         {
+            //Session["theCart"] = theCart;
             Response.Redirect("Menu.aspx");
+
         }
 
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)

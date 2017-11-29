@@ -60,8 +60,8 @@ namespace GroupFinal.Views
                         if (product.ProductDetail == (((RadioButton)rdoDrink).Text))
                         {
                             //Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2));
-
-                            //put it into the cart......
+                            //Drink newDrink = new Drink(drinkSize, drinkType, drinkPrice, productID, productPrice, productType, productQty, productDetail);
+                            //cartItems = Cart.AddItemToCart(drink, cartItems);
 
                             Response.Redirect("CartView.aspx");
                         }
