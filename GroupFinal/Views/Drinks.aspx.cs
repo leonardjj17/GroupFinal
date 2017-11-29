@@ -11,6 +11,8 @@ namespace GroupFinal.Views
 {
     public partial class Drinks : System.Web.UI.Page
     {
+        Products drink = null;
+        List<CartItem> cartItems;
         const double MEDIUM_PRICE_MULTIPLIER = 1.5;
         const double LARGE_PRICE_MULTIPLIER = 2;
 
@@ -18,6 +20,7 @@ namespace GroupFinal.Views
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            cartItems = new List<CartItem>();
             drinks = ProductsDA.GetAllDrinks();
             double basePrice = drinks.First().ProductPrice;
             rdoSmall.Text = rdoSmall.Text + " (" + Math.Round(basePrice,2).ToString("C") + ")";
@@ -37,6 +40,7 @@ namespace GroupFinal.Views
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            List<CartItem> cartItems = (List<CartItem>)Session["items"];
             drinks = ProductsDA.GetAllDrinks();
             double pricemultiplier = 1;
             string size = "small";
@@ -59,9 +63,12 @@ namespace GroupFinal.Views
                     {
                         if (product.ProductDetail == (((RadioButton)rdoDrink).Text))
                         {
-                            //Drink drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2));
+                            drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2), 1, Math.Round(product.ProductPrice * pricemultiplier, 2), product.ProductDetail, 1, size);
 
-                            //put it into the cart......
+                            cartItems = Cart.AddItemToCart(drink, cartItems);
+
+
+                            Session["items"] = cartItems;
 
                             Response.Redirect("CartView.aspx");
                         }
