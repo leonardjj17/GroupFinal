@@ -30,18 +30,37 @@ namespace GroupFinal.Employees
 
             Employee newEmployee = new Employee();
 
-            newEmployee.EmployeeFirst = firstName;
-            newEmployee.EmployeeLast = lastName;
-            newEmployee.EmployeeStatus = status;
-            newEmployee.EmployeeHireDate = now;
-            newEmployee.EmployeeRole = role;
-            newEmployee.Login = login;
-            newEmployee.Password = password;
-            newEmployee.StoreNum = (string)Session["storeNum"];
+            List<Employee> cc = EmployeeDA.GetAllEmployees();
+            bool noDuplicates = false;
+            foreach (Employee checker in cc)
+            {
+                if (checker.Login == login)
+                {
+                    lblError.Text = "That login is already taken, try a different one!";
+                    lblError.Visible = true;
+                    noDuplicates = false;
+                    break;
+                }
+                else
+                {
+                    noDuplicates = true;
+                }
+            }
+            if (noDuplicates)
+            {
+                newEmployee.EmployeeFirst = firstName;
+                newEmployee.EmployeeLast = lastName;
+                newEmployee.EmployeeStatus = status;
+                newEmployee.EmployeeHireDate = now;
+                newEmployee.EmployeeRole = role;
+                newEmployee.Login = login;
+                newEmployee.Password = password;
+                newEmployee.StoreNum = (string)Session["storeNum"];
 
-            EmployeeDA.AddNewEmployee(newEmployee);
-            Session["Message"] = "New Employee added! Welcome, " + firstName;
-            Response.Redirect("~/Employees/Home");
+                EmployeeDA.AddNewEmployee(newEmployee);
+                Session["Message"] = "New Employee added! Welcome, " + firstName;
+                Response.Redirect("~/Employees/Home");
+            }
         }
     }
 }
