@@ -26,7 +26,7 @@ namespace GroupFinal.Employees
             string status = cmboStatus.SelectedItem.Text;
             string role = cmboJob.Text;
             string login = txtLogin.Text;
-            string password = txtPassword.Text;
+            string password = BCrypt.Net.BCrypt.HashPassword(txtPassword.Text,10);
 
             Employee newEmployee = new Employee();
 
