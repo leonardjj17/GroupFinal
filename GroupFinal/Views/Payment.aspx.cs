@@ -11,6 +11,7 @@ namespace GroupFinal.Views
     public partial class WebForm1 : System.Web.UI.Page
     {
         List<CartItem> cartItems;
+        Customer currentCustomer;
         Order currentOrder;
         double total = 0;
         string customerName = "";
@@ -22,7 +23,20 @@ namespace GroupFinal.Views
         {
             
             List<CartItem> cartItems = (List<CartItem>)Session["items"];
+            currentCustomer = (Customer)Session["customer"];
             currentOrder = (Order)Session["Order"];
+
+            if(currentCustomer != null)
+            {
+                customerName = currentCustomer.CustomerFirst + " " + currentCustomer.CustomerLast;
+                lblCustomerName.Text = customerName;
+            }
+
+            else
+            {
+                customerName = "Guest";
+                lblCustomerName.Text = customerName;
+            }
 
             deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
 
