@@ -14,6 +14,7 @@ namespace GroupFinal.Views
         Order currentOrder;
         double total = 0;
         string customerName = "";
+        DateTime deliveryTime = new DateTime();
         DateTime date = DateTime.Now;
 
 
@@ -23,8 +24,10 @@ namespace GroupFinal.Views
             List<CartItem> cartItems = (List<CartItem>)Session["items"];
             currentOrder = (Order)Session["Order"];
 
+            deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
+
             lblOrderType.Text = currentOrder.OrderType;
-            lblOrderEstimation.Text = currentOrder.OrderEstimation;
+            lblOrderEstimation.Text = Convert.ToString(deliveryTime);
 
             lblDate.Text = Convert.ToString(date);
 
