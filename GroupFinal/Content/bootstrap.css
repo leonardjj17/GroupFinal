@@ -5128,6 +5128,9 @@ a.badge:focus {
         font-size: 24pt;
        
     }
+    .makePizzaBtn{
+        margin-left: 30px;
+    }
 }
 @media screen and (min-width: 576px) {
   .jumbotron {
@@ -5143,6 +5146,9 @@ a.badge:focus {
     font-size: 30pt;
   
   }
+    .makePizzaBtn {
+        margin-left: 180px;
+    }
 }
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -5159,6 +5165,9 @@ a.badge:focus {
     .jumbotron .h1 {
         font-size: 38pt;
       
+    }
+    .makePizzaBtn {
+        margin-left: 280px;
     }
 }
 @media screen and (min-width: 992px) {
@@ -5177,6 +5186,9 @@ a.badge:focus {
         font-size: 48pt;
      
     }
+    .makePizzaBtn {
+        margin-left: 400px;
+    }
     
 }
 @media screen and (min-width: 1200px) {
@@ -5194,7 +5206,9 @@ a.badge:focus {
         font-size: 57pt;
         padding-left: 30px;
     }
-    
+    .makePizzaBtn {
+        margin-left: 480px;
+    }
    
     
 }
@@ -7055,7 +7069,7 @@ footer {
 .makePizzaBtn {
     padding: 2px 15px 2px 15px;
     border-radius: 10px;
-    margin-left: 200px;
+  
 
 }
 
@@ -7149,6 +7163,7 @@ footer {
     
     margin: 10px 200px 20px 10px;
 }
+
 
 
     /*# sourceMappingURL=bootstrap.css.map */
