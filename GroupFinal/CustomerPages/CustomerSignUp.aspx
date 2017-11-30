@@ -6,7 +6,7 @@
     </p>
 
     <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
-    <table style="text-align: left;">
+    <table style="text-align: left">
         <tr>
             <td>First Name:</td>
             <td>
@@ -107,7 +107,7 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtZip" CssClass="alert-danger" ErrorMessage="Must enter a Zipcode"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" ErrorMessage="Must Enter a Valid Zip code" ValidationExpression="\d{5}(-\d{4})?"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" ErrorMessage="Must Enter a Valid Zip code" ValidationExpression="\d{5}(-\d{4})?" CssClass="alert-danger"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -134,10 +134,11 @@
         <tr>
             <td>Password:</td>
             <td>
-                <asp:TextBox ID="txtPassword" runat="server" Height="25px"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPassword" CssClass="alert-danger" ErrorMessage="Must Enter a Password"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtPassword" CssClass="alert-danger" ErrorMessage="Must Enter a Password" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password must be at least 8 characters long and contain an uppercase letter, a lowercase letter and a number" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" CssClass="alert-danger" Display="Dynamic"></asp:RegularExpressionValidator>
             </td>
         </tr>
     </table>

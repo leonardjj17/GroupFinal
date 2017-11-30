@@ -24,8 +24,6 @@
     
     <asp:Button ID="continueOrderBtn" class="drinkBtn" runat="server" Text="Continue Ordering" OnClick="continueOrderBtn_Click" Font-Bold="true"/>
 
-    <asp:Button ID="submitOrderBtn" class="submitOrderBtn" runat="server" Text="Submit Order" OnClick="submitOrderBtn_Click" Font-Bold="true"/>
-    
    
     
     <br />
