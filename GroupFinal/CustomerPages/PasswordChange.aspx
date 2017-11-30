@@ -4,7 +4,7 @@
     <p>
         <asp:Label ID="lblError" runat="server" CssClass="alert-danger" Visible="False"></asp:Label>
     </p>
-        <asp:Table ID="changePass" runat="server" style="text-align: left">
+        <asp:Table ID="changePass" runat="server" style="text-align: left" Width="296px">
             <asp:TableRow>
                 <asp:TableCell>Password:</asp:TableCell>
                 <asp:TableCell><asp:TextBox ID="txtOldPassword" runat="server"></asp:TextBox></asp:TableCell>
