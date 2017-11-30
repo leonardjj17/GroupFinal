@@ -11,9 +11,12 @@ namespace GroupFinal.Views
 {
     public partial class PromoItems : System.Web.UI.Page
     {
+
+        List<CartItem> cartItems;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnOrder_Click(object sender, EventArgs e)

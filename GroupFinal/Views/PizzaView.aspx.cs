@@ -20,7 +20,7 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            cartItems = new List<CartItem>();
+            //cartItems = new List<CartItem>();
             foreach (Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();

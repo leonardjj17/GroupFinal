@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="GroupFinal.Employees.CreateEmployee" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Fill out the form for your new employee</h2>
+    <p>
+        <asp:Label ID="lblError" runat="server" CssClass="alert-danger" Visible="False"></asp:Label>
+    </p>
 
     <div class="container">
         <div class="row">
@@ -67,7 +70,8 @@
             </div>
         </div>
         <div class="row">
-            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+            <br />
+&nbsp;<asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
         </div>
 </div>
 </asp:Content>

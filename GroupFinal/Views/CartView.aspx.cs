@@ -11,7 +11,7 @@ namespace GroupFinal.Views
 {
     public partial class CartView : System.Web.UI.Page
     {
-       
+        Order myOrder = new Order();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,12 +22,15 @@ namespace GroupFinal.Views
                 
             }
 
+
             
         }
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)
         {
+            //Session["theCart"] = theCart;
             Response.Redirect("Menu.aspx");
+
         }
 
         protected void ObjectDataSource1_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
@@ -35,18 +38,23 @@ namespace GroupFinal.Views
 
         }
 
-        protected void gvShoppingCart_RowCommand(object sender, GridViewCommandEventArgs e)
+       
+        protected void submitOrderBtn_Click(object sender, EventArgs e)
         {
+            Cart cart = (Cart)Session["theCart"];
 
-        }
+            if(Session["customer"] != null)
+            {
+                Customer theCustomer = (Customer)Session["customer"];
 
-        protected void btnUpdateCart_Click(object sender, EventArgs e)
-        {
+                myOrder.CustomerFirst = theCustomer.CustomerFirst;
+                myOrder.CustomerLast = theCustomer.CustomerLast;
+                myOrder.OrderTotal = cart.Total;
+                myOrder.StoreNum = theCustomer.PrimaryStore;
+                
 
-        }
-
-        protected void gvShoppingCart_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            }
+            
 
         }
 

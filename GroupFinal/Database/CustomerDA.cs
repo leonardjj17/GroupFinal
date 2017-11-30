@@ -75,6 +75,7 @@ namespace GroupFinal.Database
                     c.CustomerCity = (String)read["customerCity"];
                     c.CustomerState = (String)read["customerState"];
                     c.CustomerZip = (String)read["customerZip"];
+                    c.CustomerPhone = (String)read["customerPhone"];
                     c.CustomerRole = (String)read["role"];
                     c.CustomerLogin = (String)read["login"];
                     c.CustomerPassword = (String)read["password"];

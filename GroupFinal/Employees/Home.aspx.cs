@@ -25,6 +25,7 @@ namespace GroupFinal.Employees
             if (role == "store manager")
             {
                 lnkEmployeeListing.Visible = true;
+                lnkCreateEmployee.Visible = true;
             }
             if(Session["Message"] != null)
             {
