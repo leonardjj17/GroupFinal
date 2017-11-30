@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="GroupFinal.Views.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Panel ID="pnlNewCustomer" runat="server" Width="680px">
+    </asp:Panel>
     <br />
     <table style="width: 54%">
         <tr>
             <td style="width: 218px">
-                <asp:Label ID="Label1" runat="server" Text="Customer Name:"></asp:Label>
+                <asp:Label ID="lblName" runat="server" Text="Customer Name:"></asp:Label>
             </td>
             <td>
                 <asp:Label ID="lblCustomerName" runat="server"></asp:Label>

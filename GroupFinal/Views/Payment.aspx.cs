@@ -34,8 +34,33 @@ namespace GroupFinal.Views
 
             else
             {
-                customerName = "Guest";
-                lblCustomerName.Text = customerName;
+                Label guest = new Label();
+                Label lblFirstName = new Label();
+                Label lblLastName = new Label();
+                lblName.Enabled = false;
+
+                TextBox txtFirstName = new TextBox();
+                TextBox txtLastName = new TextBox();
+
+                guest.Text = "Not signed in? No problem, just enter some quick info";
+                lblFirstName.Text = "First Name: ";
+                lblLastName.Text = "Last Name: ";
+
+
+                pnlNewCustomer.Controls.Add(guest);
+                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
+
+                pnlNewCustomer.Controls.Add(lblFirstName);
+                pnlNewCustomer.Controls.Add(new LiteralControl("\t"));
+                pnlNewCustomer.Controls.Add(txtFirstName);
+                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
+
+                pnlNewCustomer.Controls.Add(lblLastName);
+                pnlNewCustomer.Controls.Add(new LiteralControl("\t"));
+                pnlNewCustomer.Controls.Add(txtLastName);
+                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
+
+
             }
 
             deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
