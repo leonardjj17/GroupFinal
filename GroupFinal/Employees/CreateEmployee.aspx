@@ -65,7 +65,7 @@
                 Password:
             </div>
             <div class="col-sm">
-                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" ToolTip="Password must contain at least 1 Uppercase, 1 lowercase,  1 numeric digit, and be at least 8 characters long"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" CssClass="alert-danger" Display="Dynamic" ErrorMessage="*Must enter a password!"></asp:RequiredFieldValidator>
             </div>
         </div>
