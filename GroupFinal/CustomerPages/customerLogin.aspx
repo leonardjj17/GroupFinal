@@ -9,7 +9,7 @@
     </p>
    <table>
         <tr>
-            <td class="tLabel" style="width: 290px">Email: </td>
+            <td class="tLabel" style="width: 8em">Email: </td>
             <td style="width: 280px; padding-bottom: 2px;">
                 <asp:TextBox ID="txtEmail" runat="server" Width="260px"></asp:TextBox>
             </td>
@@ -18,7 +18,7 @@
             </td>
        </tr>
        <tr>
-            <td class="tLabel" style="width: 260px">Password: </td>
+            <td class="tLabel" style="width: 8em">Password: </td>
             <td style="width: 280px">
                 <asp:TextBox ID="txtPassword" runat="server" Width="260px" TextMode="password"></asp:TextBox>
             </td>

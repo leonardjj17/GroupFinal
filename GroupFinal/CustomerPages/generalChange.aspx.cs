@@ -33,6 +33,10 @@ namespace GroupFinal.CustomerPages
                 {
                     validatorPhone.Enabled = true;
                 }
+                if(lblChanging.Text == "Zip")
+                {
+                    validatorZip.Enabled = true;
+                }
             }
         }
 

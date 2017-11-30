@@ -1,4 +1,5 @@
 ﻿using GroupFinal.Classes;
+using GroupFinal.DA;
 
 using System;
 using System.Collections.Generic;
@@ -51,11 +52,21 @@ namespace GroupFinal.Views
                 myOrder.CustomerLast = theCustomer.CustomerLast;
                 myOrder.OrderTotal = cart.Total;
                 myOrder.StoreNum = theCustomer.PrimaryStore;
+                myOrder.OrderDate = DateTime.Now;
+                myOrder.IsFavorite = "N";
+                myOrder.OrderType = 
+                OrderDA.saveOrder(myOrder);
+                myOrder.convertThenSave(cart);
                 
 
             }
             
 
+        }
+
+        protected void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Payment.aspx");
         }
 
         //private void FillData()
