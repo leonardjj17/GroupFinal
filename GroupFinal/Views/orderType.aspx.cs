@@ -25,18 +25,21 @@ namespace GroupFinal.Views
 
         protected void btnOrderType_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Menu.aspx");
             Session["Order"] = o;
+            Response.Redirect("~/Views/Menu.aspx");
+
         }
 
         protected void rdoDelivery_CheckedChanged(object sender, EventArgs e)
         {
             o.OrderType = "delivery";
+            o.OrderEstimation = "50";
         }
 
         protected void rdoCarryOut_CheckedChanged(object sender, EventArgs e)
         {
             o.OrderType = "carryout";
+            o.OrderEstimation = "20";
         }
 
         protected void txtZip_TextChanged(object sender, EventArgs e)
