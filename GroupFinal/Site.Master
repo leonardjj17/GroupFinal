@@ -129,7 +129,7 @@
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/orderType">Place an Order</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/About">About Us</a></li>
                         <li class="nav-item"><a runat="server" class="nav-link" href="~/Views/Contact">Contact Us</a></li>
-                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login">Employee's login here</a></li>
+                        <li class="nav-item"><a runat="server" class="nav-link" href="~/Employees/Login">Employees login here</a></li>
                     </ul>
                 </nav>
                 
