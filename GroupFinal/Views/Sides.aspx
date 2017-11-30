@@ -3,9 +3,10 @@
         <div class="center">
     <br />
 
-    Select your side:<asp:Panel ID="pnlSides" runat="server" Width="200px">
+    <p style="margin: 0 auto">Select your side:</p>
+            <asp:Panel ID="pnlSides" style="margin: 0 auto" runat="server" Width="200px">
     </asp:Panel>
     <br />
-    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="I Want These Sides!" />
+    <asp:Button  style="margin: 0 auto" ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="I Want These Sides!" />
         </div>
 </asp:Content>
