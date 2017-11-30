@@ -16,7 +16,11 @@ namespace GroupFinal.Views
         ServiceZips zip = new ServiceZips();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["Customer"] != null)
+            {
+                Customer theCustomer = (Customer)Session["Customer"];
+                txtZip.Text = theCustomer.CustomerZip;
+            }
         }
 
         protected void btnOrderType_Click(object sender, EventArgs e)
