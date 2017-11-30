@@ -58,6 +58,11 @@ namespace GroupFinal.Views
 
         }
 
+        protected void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Payment.aspx");
+        }
+
         //private void FillData()
         //{
         //    gvShoppingCart.DataSource = theCart.Items;
