@@ -10,32 +10,35 @@ namespace GroupFinal.Views
 {
     public partial class Specials : System.Web.UI.Page
     {
-        Products p = new Products();
+        Products specials = null;
+        List<CartItem> cartItems;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["Products"] = p;
-            Response.Redirect("~/views/CartView");
+            cartItems = new List<CartItem>();
+            //Session["Products"] = p;
+            //Response.Redirect("~/views/CartView");
         }
 
         protected void rdoFamPk_CheckedChanged(object sender, EventArgs e)
         {
-            p.ProductPrice = 19.99;
-            p.ProductType = "Special";
-            p.ProductDetail = "Family Pack";
+            specials.ProductPrice = 19.99;
+            specials.ProductType = "Special";
+            specials.ProductDetail = "Family Pack";
         }
 
         protected void rdoIndivPk_CheckedChanged(object sender, EventArgs e)
         {
-            p.ProductPrice = 9.99;
-            p.ProductType = "Special";
-            p.ProductDetail = "Individual Pack";
+            specials.ProductPrice = 9.99;
+            specials.ProductType = "Special";
+            specials.ProductDetail = "Individual Pack";
         }
 
         protected void rdoLGFamPk_CheckedChanged(object sender, EventArgs e)
         {
-            p.ProductPrice = 29.99;
-            p.ProductType = "Special";
-            p.ProductDetail = "Large Family Pack";
+            specials.ProductPrice = 29.99;
+            specials.ProductType = "Special";
+            specials.ProductDetail = "Large Family Pack";
 
         }
 

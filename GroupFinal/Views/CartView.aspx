@@ -8,6 +8,7 @@
   
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
         <Columns>
+            <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="ProductType" HeaderText="ProductType" SortExpression="ProductType" />
             <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
             <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
@@ -22,6 +23,12 @@
     </asp:ObjectDataSource>
     
     <asp:Button ID="continueOrderBtn" class="drinkBtn" runat="server" Text="Continue Ordering" OnClick="continueOrderBtn_Click" Font-Bold="true"/>
+    
+   
+    
+    <br />
+    <br />
+    <asp:Button ID="btnPlaceOrder" runat="server" OnClick="btnPlaceOrder_Click" Text="Place Order" />
     
    
     
