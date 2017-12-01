@@ -253,7 +253,6 @@
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\OrderList.cs" />
     <Compile Include="Classes\Promotional.cs" />
-    <Compile Include="Classes\Salads.cs" />
     <Compile Include="Classes\ServiceZips.cs" />
     <Compile Include="Classes\Side.cs" />
     <Compile Include="Classes\Stores.cs" />

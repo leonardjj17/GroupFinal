@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using GroupFinal.DA;
 
 namespace GroupFinal.Classes
 {
@@ -19,7 +20,7 @@ namespace GroupFinal.Classes
 
         public string StoreNum { get; set; }
 
-        public string IsFavorite { get; set; }
+       
 
         public string OrderEstimation { get; set; }
 
@@ -37,21 +38,21 @@ namespace GroupFinal.Classes
             CustomerLast = "";
             OrderTotal = 0.0;
             StoreNum = "";
-            IsFavorite = "";
+           
             OrderType = "";
             OrderTax = 0.0;
             OrderSubTotal = 0.0;
         }
 
         //constructor with all the variables
-        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string isFavorite, string orderType, double orderTax, double orderSubTotal, DateTime orderDate, string isCompleted)
+        public Order(int orderID, string customerFirst, string customerLast, double orderTotal, string storeNum, string orderType, double orderTax, double orderSubTotal, DateTime orderDate, string isCompleted)
         {
             this.OrderID = orderID;
             this.CustomerFirst = customerFirst;
             this.CustomerLast = customerLast;
             this.OrderTotal = orderTotal;
             this.StoreNum = storeNum;
-            this.IsFavorite = isFavorite;
+            
             this.OrderType = orderType;
             this.OrderTax = orderTax;
             this.OrderSubTotal = orderSubTotal;
@@ -73,6 +74,19 @@ namespace GroupFinal.Classes
             {
                 OrderEstimation = "Please allow 15 - 20 minutes to make your items";
             }
-}
+        }
+        public void convertThenSave(Cart theCart)
+        {
+            List<CartItem> cartItems = theCart.CartItems;
+            
+            foreach (CartItem cartItem in cartItems)
+            {
+
+                string description = cartItem.Description;
+                int productID = cartItem.ProductID;
+
+                
+            }
+        }
     }
 }

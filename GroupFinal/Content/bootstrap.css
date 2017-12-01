@@ -7038,6 +7038,11 @@ footer {
 
 }
 
+.center {
+    text-align:center;
+    margin: 0 auto;
+
+}
 .center img{
     margin: 0 auto;
 

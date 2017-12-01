@@ -32,7 +32,7 @@ namespace GroupFinal.DA
                     o.CustomerLast = (String)read["customerLast"];
                     o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
-                    o.IsFavorite = (String)read["isFavorite"];
+                    
                     o.OrderType = (String)read["orderType"];
                     o.IsCompleted = (String)read["isCompleted"];
                     return o;
@@ -77,7 +77,7 @@ namespace GroupFinal.DA
                     o.CustomerLast = (String)read["customerLast"];
                     o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
-                    o.IsFavorite = (String)read["isFavorite"];
+                    
                     o.OrderType = (String)read["orderType"];
                     o.IsCompleted = (String)read["isCompleted"];
                     allOrders.Add(o);
@@ -122,7 +122,7 @@ namespace GroupFinal.DA
                     o.CustomerLast = (String)read["customerLast"];
                     o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
-                    o.IsFavorite = (String)read["isFavorite"];
+
                     o.OrderType = (String)read["orderType"];
                     o.IsCompleted = (String)read["isCompleted"];
                     allStoreOrders.Add(o);
@@ -168,7 +168,7 @@ namespace GroupFinal.DA
                     o.CustomerLast = (String)read["customerLast"];
                     o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
-                    o.IsFavorite = (String)read["isFavorite"];
+                    
                     o.OrderType = (String)read["orderType"];
                     o.IsCompleted = (String)read["isCompleted"];
                     allCustomerOrders.Add(o);
@@ -212,7 +212,7 @@ namespace GroupFinal.DA
                     o.CustomerLast = (String)read["customerLast"];
                     o.OrderTotal = Convert.ToDouble(read["orderTotal"]);
                     o.StoreNum = (String)read["storeNum"];
-                    o.IsFavorite = (String)read["isFavorite"];
+                    
                     o.OrderType = (String)read["orderType"];
                     o.IsCompleted = (String)read["isCompleted"];
                     orders.Add(o);
@@ -254,13 +254,13 @@ namespace GroupFinal.DA
            
             SqlConnection connection = Connection.getConnection();
 
-            String query = "Insert into Orders(customerFirst, customerLast, orderTotal, storeNum, isFavorite, orderType, orderDate) values (@customerFirst, @customerLast, @orderTotal, @storeNum, @isFavorite, @orderType, @orderDate)";
+            String query = "Insert into Orders(customerFirst, customerLast, orderTotal, storeNum, orderType, orderDate) values (@customerFirst, @customerLast, @orderTotal, @storeNum, @isFavorite, @orderType, @orderDate)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@customerFirst", o.CustomerFirst);
             cmd.Parameters.AddWithValue("@customerLast", o.CustomerLast);
             cmd.Parameters.AddWithValue("@orderTotal", o.OrderTotal);
             cmd.Parameters.AddWithValue("@storeNum", o.StoreNum);
-            cmd.Parameters.AddWithValue("@isFavorite", o.IsFavorite);
+            
             cmd.Parameters.AddWithValue("@orderType", o.OrderType);
             cmd.Parameters.AddWithValue("@orderDate", o.OrderDate);
 
