@@ -20,27 +20,63 @@ namespace GroupFinal.Views
             //Response.Redirect("~/views/CartView");
         }
 
-        protected void rdoFamPk_CheckedChanged(object sender, EventArgs e)
+        //protected void rdoFamPk_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    //specials.ProductPrice = 19.99;
+        //    //specials.ProductType = "Special";
+        //    //specials.ProductDetail = "Family Pack";
+        //}
+
+        //protected void rdoIndivPk_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    ////specials.ProductPrice = 9.99;
+        //    //specials.ProductType = "Special";
+        //    //specials.ProductDetail = "Individual Pack";
+        //}
+
+        //protected void rdoLGFamPk_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    //specials.ProductPrice = 29.99;
+        //    //specials.ProductType = "Special";
+        //    //specials.ProductDetail = "Large Family Pack";
+
+        //}
+
+        protected void btnSpecOrder_Click(object sender, EventArgs e)
         {
-            specials.ProductPrice = 19.99;
-            specials.ProductType = "Special";
-            specials.ProductDetail = "Family Pack";
+            specials = new Products();
+            cartItems = (List<CartItem>)Session["items"];
+            if (rdoFamPk.Checked == true)
+            {
+                specials.ProductID = 1;
+                specials.ProductPrice = 19.99;
+                specials.ProductQty = 1;
+                specials.ProductType = "Special";
+                specials.ProductDetail = "Family Pack";
+                
+            }
+            else if(rdoIndivPk.Checked == true)
+            {
+                specials.ProductID = 1;
+                specials.ProductPrice = 9.99;
+                specials.ProductQty = 1;
+                specials.ProductType = "Special";
+                specials.ProductDetail = "Individual Pack";
+            }
+            else if(rdoLGFamPk.Checked == true)
+            {
+                specials.ProductID = 1;
+                specials.ProductPrice = 29.99;
+                specials.ProductQty = 1;
+                specials.ProductType = "Special";
+                specials.ProductDetail = "Large Family Pack";
+            }
+
+            cartItems = Cart.AddItemToCart(specials, cartItems);
+
+            Session["items"] = cartItems;
+
+            Response.Redirect("CartView2.aspx");
         }
-
-        protected void rdoIndivPk_CheckedChanged(object sender, EventArgs e)
-        {
-            specials.ProductPrice = 9.99;
-            specials.ProductType = "Special";
-            specials.ProductDetail = "Individual Pack";
-        }
-
-        protected void rdoLGFamPk_CheckedChanged(object sender, EventArgs e)
-        {
-            specials.ProductPrice = 29.99;
-            specials.ProductType = "Special";
-            specials.ProductDetail = "Large Family Pack";
-
-        }
-
     }
 }

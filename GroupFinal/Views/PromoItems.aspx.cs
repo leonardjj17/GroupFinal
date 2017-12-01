@@ -13,14 +13,18 @@ namespace GroupFinal.Views
     {
 
         List<CartItem> cartItems;
+        Products currentPromo = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            cartItems = new List<CartItem>();
         }
 
         protected void btnOrder_Click(object sender, EventArgs e)
         {
+            cartItems = (List<CartItem >)Session["items"];
+            currentPromo = new Promotional();
+
             Promotional shirt1 = new Promotional();
             Promotional shirt2 = new Promotional();
             Promotional shirt3 = new Promotional();
@@ -33,6 +37,9 @@ namespace GroupFinal.Views
                 shirt1.PromotionalSize = ddlSizeShirt1.SelectedValue;
                 shirt1.ProductType = "Promotional";
                 shirt1.ProductDetail = "Let the Shenanigans begin female shirt";
+
+                currentPromo = shirt1;
+                
             }
             else
             {
@@ -45,6 +52,7 @@ namespace GroupFinal.Views
                 shirt2.PromotionalSize = ddlSizeShirt2.SelectedValue;
                 shirt2.ProductType = "Promotional";
                 shirt2.ProductDetail = "Kiss me I'm a piza baker shirt";
+                currentPromo = shirt2;
             }
             else
             {
@@ -57,6 +65,7 @@ namespace GroupFinal.Views
                 shirt3.PromotionalSize = ddlSizeShirt3.SelectedValue;
                 shirt3.ProductType = "Promotional";
                 shirt3.ProductDetail = "I shamrock Shenanigans shirt";
+                currentPromo = shirt3;
             }
             else
             {
@@ -69,30 +78,39 @@ namespace GroupFinal.Views
                 shirt4.PromotionalSize = ddlSizeShirt4.SelectedValue;
                 shirt4.ProductType = "Promotional";
                 shirt4.ProductDetail = "I shamrock Shenanigans shirt";
+                currentPromo = shirt4;
             }
             else
             {
                 shirt4 = null;
             }
 
-            double orderTotal = 0;
-            
-            if(shirt1 != null)
-            {
-                shirt1.ProductPrice += orderTotal;
-            }
-            if (shirt2 != null)
-            {
-                shirt2.ProductPrice += orderTotal;
-            }
-            if (shirt3 != null)
-            {
-                shirt3.ProductPrice += orderTotal;
-            }
-            if (shirt4 != null)
-            {
-                shirt4.ProductPrice += orderTotal;
-            }
+            cartItems = Cart.AddItemToCart(currentPromo, cartItems);
+
+            Session["items"] = cartItems;
+
+            Response.Redirect("CartView2.aspx");
+
+
+
+            //double orderTotal = 0;
+
+            //if(shirt1 != null)
+            //{
+            //    shirt1.ProductPrice += orderTotal;
+            //}
+            //if (shirt2 != null)
+            //{
+            //    shirt2.ProductPrice += orderTotal;
+            //}
+            //if (shirt3 != null)
+            //{
+            //    shirt3.ProductPrice += orderTotal;
+            //}
+            //if (shirt4 != null)
+            //{
+            //    shirt4.ProductPrice += orderTotal;
+            //}
 
         }
     }

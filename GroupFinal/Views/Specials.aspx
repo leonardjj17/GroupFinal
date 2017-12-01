@@ -5,27 +5,27 @@
     <h1>Specials</h1>
     <p>&nbsp;</p>
     <p>
-        <asp:RadioButton ID="rdoLGFamPk" runat="server" OnCheckedChanged="rdoLGFamPk_CheckedChanged" Text="Large Family Pack $29.99" Font-Bold="True" Font-Size="Large" />
+        <asp:RadioButton ID="rdoLGFamPk" runat="server" Text="Large Family Pack $29.99" Font-Bold="True" Font-Size="Large" />
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A large pepperoni pizza, a large supreme pizza, an order of breadsticks, and a liter of Pepsi</p>
     <p>
         &nbsp;</p>
     <p>
-        <asp:RadioButton ID="rdoFamPk" runat="server" OnCheckedChanged="rdoFamPk_CheckedChanged" Text="Family Pack $19.99" Font-Bold="True" Font-Size="Large" />
+        <asp:RadioButton ID="rdoFamPk" runat="server" Text="Family Pack $19.99" Font-Bold="True" Font-Size="Large" />
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A large pepperoni pizza, an order of breadsticks, and a liter of Pepsi&nbsp;</p>
     <p>
         &nbsp;</p>
     <p>
-        <asp:RadioButton ID="rdoIndivPk" runat="server" OnCheckedChanged="rdoIndivPk_CheckedChanged" Text="Individual Pack $9.99" Font-Bold="True" Font-Size="Large" />
+        <asp:RadioButton ID="rdoIndivPk" runat="server"  Text="Individual Pack $9.99" Font-Bold="True" Font-Size="Large" />
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A medium pizza and a 20 oz Pepsi&nbsp;</p>
     <p>
         
-        <asp:Button ID="btnSpecOrder" runat="server" Text="Order" />
+        <asp:Button ID="btnSpecOrder" runat="server" Text="Order" OnClick="btnSpecOrder_Click" />
         
     </p>
 

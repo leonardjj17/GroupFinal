@@ -15,6 +15,7 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["theCart"] != null)
 
             {
@@ -22,8 +23,18 @@ namespace GroupFinal.Views
                 
             }
 
-
+            GridView1.RowCommand += GridView1_RowCommand;
             
+        }
+
+        private void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName.ToString() == "Select")
+            {
+                int index = Convert.ToInt32(e.CommandArgument.ToString());
+
+                GridView1.DeleteRow(index);
+            }
         }
 
         protected void continueOrderBtn_Click(object sender, EventArgs e)

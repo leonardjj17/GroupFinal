@@ -38,11 +38,9 @@
         </tr>
         <tr>
             <td style="width: 218px" class="text-left">
-                <asp:Label ID="Label5" runat="server" Text="Todays Date:"></asp:Label>
-            </td>
+                &nbsp;</td>
             <td class="text-left">
-                <asp:Label ID="lblDate" runat="server"></asp:Label>
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
     <br />
