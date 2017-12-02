@@ -87,5 +87,10 @@ namespace GroupFinal.Views
             lblTotal.Text = total.ToString("c2");
             
         }
+
+        protected void btnSubmitOrder_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrderReciept.aspx");
+        }
     }
 }

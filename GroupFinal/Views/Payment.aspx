@@ -85,7 +85,7 @@
         </tr>
     </table>
     <br />
-    <asp:Button ID="btnSubmitOrder" runat="server" Text="Submit" />
+    <asp:Button ID="btnSubmitOrder" runat="server" OnClick="btnSubmitOrder_Click" Text="Submit" />
     <br />
     <br />
     <br />
