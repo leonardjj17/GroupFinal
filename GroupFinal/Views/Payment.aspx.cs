@@ -21,6 +21,7 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string currentTime = Convert.ToString(date.Hour + ": " + date.Minute);
             
             List<CartItem> cartItems = (List<CartItem>)Session["items"];
             currentCustomer = (Customer)Session["customer"];
@@ -62,13 +63,21 @@ namespace GroupFinal.Views
 
 
             }
+            if (currentCustomer != null)
+            {
+                deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
+            }
+            else
+            {
+                deliveryTime = date;
+            }
 
-            deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
+            string deliveryEstimated = Convert.ToString(deliveryTime.Hour + ": " + deliveryTime.Minute);
 
             lblOrderType.Text = currentOrder.OrderType;
-            lblOrderEstimation.Text = Convert.ToString(deliveryTime);
+            lblOrderEstimation.Text = deliveryEstimated + ". That's about "+currentOrder.OrderEstimation+" minutes from now";
 
-            lblDate.Text = Convert.ToString(date);
+            //lblDate.Text = Convert.ToString(currentTime);
 
             foreach(CartItem item in cartItems)
             {

@@ -99,7 +99,7 @@ namespace GroupFinal.Views
 
             Session["items"] = cartItems;
 
-            Response.Redirect("CartView.aspx");
+            Response.Redirect("CartView2.aspx");
 
 
 
