@@ -48,7 +48,7 @@ namespace GroupFinal.Classes
             theCart.ProductPrice = product.ProductPrice;
             theCart.ProductType = product.ProductType;
             theCart.ProductQty = product.ProductQty;
-            //theCart.ProductCost = product.ProductCost;
+            
             theCart.ProductDetail = product.ProductDetail;
 
             cartItems.Add(theCart);
@@ -58,22 +58,7 @@ namespace GroupFinal.Classes
       
 
         }
-            public static List<CartItem> AddSidesToCart(Products mySide, List<CartItem> cartItems)
-            {
-                
-                    CartItem theCart = new CartItem();
-                    theCart.ProductID = mySide.ProductID;
-                    theCart.ProductPrice = mySide.ProductPrice;
-                    theCart.ProductType = mySide.ProductType;
-                    theCart.ProductQty = mySide.ProductQty;
-                    //theCart.ProductCost = mySide.ProductCost;
-                    theCart.ProductDetail = mySide.ProductDetail;
-
-
-                    cartItems.Add(theCart);
-
-                    return cartItems;
-            }
+          
 
         public void Insert(int Id, int Qty, string Description, double Price)
         {
@@ -137,29 +122,13 @@ namespace GroupFinal.Classes
                 }
                 foreach (CartItem Item in cartItems)
                 {
-                    t += Item.SubTotal;
+                    t += Item.Subtotal;
                 }
                 return t;
             }
         }
 
-        public List<CartItem> GetItems(List<CartItem> items)
-        {
-            //List<CartItem> items = new List<CartItem>();
-
-
-            //foreach (CartItem item in cartItems)
-            //{
-            //    Products p = new Products();
-            //    item.Id = p.ProductID;
-            //    item.Qty = p.ProductQty;
-            //    item.Description = p.ProductDetail;
-            //    item.Price = p.ProductPrice;
-
-            //    items.Add(item);
-            //}
-            return items;
-        }
+       
 
     }
 }

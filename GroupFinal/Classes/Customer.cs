@@ -8,7 +8,17 @@ namespace GroupFinal
     public class Customer
     {
         private int customerID;
-        private string customerFirst, customerLast, customerAddress, customerCity, customerState, customerPhone, customerRole, primaryStore, customerLogin, customerPassword, customerZIP;
+        private string customerFirst;
+        private string customerLast;
+        private string customerAddress;
+        private string customerCity;
+        private string customerState;
+        private string customerPhone;
+        private string customerRole;
+        private string primaryStore;
+        private string customerLogin;
+        private string customerPassword;
+        private string customerZIP;
 
         public Customer()
         {

@@ -14,7 +14,7 @@ namespace GroupFinal.Database
         {
             List<Stores> allStores = new List<Stores>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Stores";
             SqlCommand cmd = new SqlCommand(query, connection);

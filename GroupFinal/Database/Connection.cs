@@ -8,7 +8,7 @@ namespace GroupFinal.DA
 {
     public static class Connection
     {
-        public static SqlConnection getConnection()
+        public static SqlConnection GetConnection()
         {
             try
             {

@@ -20,8 +20,6 @@ namespace GroupFinal.Classes
 
         public string StoreNum { get; set; }
 
-       
-
         public string OrderEstimation { get; set; }
 
         public string OrderType { get; set; }
@@ -42,6 +40,7 @@ namespace GroupFinal.Classes
             OrderType = "";
             OrderTax = 0.0;
             OrderSubTotal = 0.0;
+            IsCompleted = "";
         }
 
         //constructor with all the variables

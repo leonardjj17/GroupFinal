@@ -9,10 +9,10 @@ namespace GroupFinal.DA
     public class EmployeeDA
 
     {
-        public static Boolean verifyLogin(String login, String password)
+        public static Boolean VerifyLogin(String login, String password)
         {
             if (login == null) return false;
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
             if (connection != null)
             {
                 connection.Open();
@@ -52,7 +52,7 @@ namespace GroupFinal.DA
             if (login == null) return null;
             Employee e = new Employee();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
             if (connection != null)
             {
                 connection.Open();
@@ -102,7 +102,7 @@ namespace GroupFinal.DA
         {
             List<Employee> allEmployees = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
      
             String query = "SELECT * FROM Employee";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -148,7 +148,7 @@ namespace GroupFinal.DA
         {
             List<Employee> allEmployees = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee where role NOT LIKE ('store manager') AND storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -195,7 +195,7 @@ namespace GroupFinal.DA
         {
             List<Employee> allEmployees = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee where role NOT LIKE ('store manager')";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -242,7 +242,7 @@ namespace GroupFinal.DA
         {
             List<Employee> allManagers = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee where role LIKE ('store manager')";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -289,7 +289,7 @@ namespace GroupFinal.DA
         {
             Employee e = new Employee();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee where employeeID = @employeeID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -334,7 +334,7 @@ namespace GroupFinal.DA
         {
             List<Employee> employees = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee WHERE role = 'delivery driver' AND storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -380,7 +380,7 @@ namespace GroupFinal.DA
         {
             List<Employee> employees = new List<Employee>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Employee WHERE role = 'delivery driver' AND storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -425,7 +425,7 @@ namespace GroupFinal.DA
 
         public static void AddNewEmployee(Employee e)
         {
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "INSERT INTO Employee (storeNum, employeeFirst, employeeLast, employeeHireDate, employeeStatus, Role, Login, Password) VALUES (@storeNum, @employeeFirst, @employeeLast, @employeeHireDate, @employeeStatus, @Role, @Login, @Password)";
 
@@ -456,6 +456,76 @@ namespace GroupFinal.DA
             {
                 connection.Close();
             }
+        }
+
+        public static void UpdateEmployee(Employee e)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "Update Employee " +
+                            "SET storeNum = @storeNum, employeeFirst = @employeeFirst, employeeLast = @employeeLast, employeeStatus = @employeeStatus, " +
+                            "Role = @Role, Login = @Login, Password = @Password " +
+                            "WHERE employeeID = @employeeID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@storeNum", e.StoreNum);
+            cmd.Parameters.AddWithValue("@employeeFirst", e.EmployeeFirst);
+            cmd.Parameters.AddWithValue("@employeeLast", e.EmployeeLast);
+           
+            cmd.Parameters.AddWithValue("@employeeStatus", e.EmployeeStatus);
+            cmd.Parameters.AddWithValue("@Role", e.EmployeeRole);
+            cmd.Parameters.AddWithValue("@Login", e.Login);
+            cmd.Parameters.AddWithValue("@Password", e.Password);
+            cmd.Parameters.AddWithValue("@employeeID", e.EmployeeID);
+            
+  
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void RemoveEmployee(Employee e)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "DELETE FROM Employee WHERE employeeID=@employeeID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@employeeID", e.EmployeeID);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+                e.EmployeeID = 0;
+            }
+
         }
     }
 
