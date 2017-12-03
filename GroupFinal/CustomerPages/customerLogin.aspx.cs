@@ -30,7 +30,7 @@ namespace GroupFinal.CustomerPages
             }
             else
             {
-                if(CustomerDA.verifyLogin(email, password))
+                if(CustomerDA.VerifyLogin(email, password))
                 {
                     Session["Customer"] = c;
                     Response.Redirect("~");

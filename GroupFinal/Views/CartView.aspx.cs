@@ -64,10 +64,9 @@ namespace GroupFinal.Views
                 myOrder.OrderTotal = cart.Total;
                 myOrder.StoreNum = theCustomer.PrimaryStore;
                 myOrder.OrderDate = DateTime.Now;
-                myOrder.IsFavorite = "N";
-                myOrder.OrderType = 
-                OrderDA.saveOrder(myOrder);
-                myOrder.convertThenSave(cart);
+
+                OrderDA.SaveOrder(myOrder);
+                myOrder.ConvertThenSave(cart);
                 
 
             }
@@ -80,24 +79,5 @@ namespace GroupFinal.Views
             Response.Redirect("Payment.aspx");
         }
 
-        //private void FillData()
-        //{
-        //    gvShoppingCart.DataSource = theCart.Items;
-        //    gvShoppingCart.DataBind();
-        //    if (cart.Items.Count == 0)
-        //    {
-        //        lblTotal.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        lblTotal.Text = string.Format("{ 0,19:C}", cart.Total);
-        //    }
-        //}
-
-        //public List<CartItem> GetShoppingCartItems()
-        // {
-        //     ShoppingCartActions actions = new ShoppingCartActions();
-        //     return actions.GetCartItems();
-        // }
     }
 }

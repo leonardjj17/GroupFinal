@@ -94,7 +94,7 @@ namespace GroupFinal.Employees
                     btnMarkComplete.Text = "Complete";
                     btnMarkComplete.Click += (senderer, ee) =>
                     {
-                        OrderDA.setOrderComplete(order);
+                        OrderDA.SetOrderComplete(order);
                         Response.Redirect("OrdersList.aspx");
                     };
                     cmarkComplete.Controls.Add(btnMarkComplete);
