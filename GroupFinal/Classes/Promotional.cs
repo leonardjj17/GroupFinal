@@ -14,7 +14,7 @@ namespace GroupFinal.Classes
 
         }
 
-        public Promotional(string promotionalSize)
+        public Promotional(string promotionalSize, int productID, double productPrice, string productType, int productQty, string productDetail) : base(productID, productPrice, productType, productQty, productDetail)
         {
             this.promotionalSize = promotionalSize;
         }
