@@ -184,7 +184,7 @@ namespace GroupFinal.Views
             //string pizza = newPizza.PizzaToppings;
 
 
-            newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, "Pizza with: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
+            newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, pizzaSize + " " + pizzaCrust + " Pizza: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
 
             cartItems = Cart.AddItemToCart(newPizza, cartItems);
@@ -192,7 +192,7 @@ namespace GroupFinal.Views
 
             Session["items"] = cartItems;
 
-            Response.Redirect("CartView.aspx");
+            Response.Redirect("CartView2.aspx");
         }
     }
 }

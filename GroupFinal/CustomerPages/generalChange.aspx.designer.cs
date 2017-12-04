@@ -67,6 +67,15 @@ namespace GroupFinal.CustomerPages {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator validatorPhone;
         
         /// <summary>
+        /// validatorZip control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator validatorZip;
+        
+        /// <summary>
         /// btnSave control.
         /// </summary>
         /// <remarks>

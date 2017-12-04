@@ -9,7 +9,7 @@ namespace GroupFinal.Classes
     [Serializable]
     public class CartItem : Products
     {
-        //List<CartItem> cartItems;
+       
         private int id;
         private int qty;
         private string description;
@@ -35,19 +35,13 @@ namespace GroupFinal.Classes
             get { return id; }
             set { id = value; }
         }
-       // public string CartId { get; set; }
-
-        //public DateTime DateCreated { get; set; }
-
+     
         public int Qty
         {
             get { return qty; }
             set { qty = value; }
         }
 
-       // public int ProductId { get; set; }
-
-        //public virtual Products Products { get; set; }
 
         public string Description
         {
@@ -61,7 +55,7 @@ namespace GroupFinal.Classes
             set { price = value; }
         }
 
-        public double SubTotal
+        public double Subtotal
         {
             get { return qty * price; }
 

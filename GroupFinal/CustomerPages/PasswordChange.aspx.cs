@@ -20,7 +20,7 @@ namespace GroupFinal.CustomerPages
             string newPassword = txtNewPassword.Text;
             string oldPassword = txtOldPassword.Text;
             Customer loggedIn = (Customer)Session["Customer"];
-            if (!CustomerDA.verifyLogin(loggedIn.CustomerLogin, oldPassword))
+            if (!CustomerDA.VerifyLogin(loggedIn.CustomerLogin, oldPassword))
             {
                 lblError.Text = "Old Password is incorrect, try again";
                 lblError.Visible = true;

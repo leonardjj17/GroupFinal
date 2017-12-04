@@ -14,10 +14,13 @@ namespace GroupFinal.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string customerFirst = "Billy";
-            string customerLast = "Batts";
+            if(Session["customer"] == null)
+            {
+                Response.Redirect("~");
+            }
 
-            List<Order> customerOrders = OrderDA.GetAllOrdersByCustomer(customerFirst, customerLast);
+            Customer theCustomer = (Customer)Session["Customer"];
+            List<Order> customerOrders = OrderDA.GetAllOrdersByCustomer(theCustomer.CustomerFirst, theCustomer.CustomerLast);
 
             foreach(Order o in customerOrders)
             {
@@ -25,7 +28,7 @@ namespace GroupFinal.Views
                 lblLast.Text = o.CustomerLast;
                 lblOrderTotal.Text = o.OrderTotal.ToString("c2");
                 lblStoreNumber.Text = Convert.ToString(o.StoreNum);
-                lblIsFavorite.Text = o.IsFavorite;
+                
                 lblOrderType.Text = o.OrderType;
             }
             

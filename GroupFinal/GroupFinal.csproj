@@ -170,6 +170,7 @@
     <Content Include="Manager\Menu.aspx" />
     <Content Include="Manager\OrderHistory.aspx" />
     <Content Include="Views\CartView.aspx" />
+    <Content Include="Views\CartView2.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\About.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -236,6 +237,7 @@
     <Content Include="Views\PromoItems.aspx" />
     <Content Include="Views\Sides.aspx" />
     <Content Include="Views\Specials.aspx" />
+    <Content Include="Views\Payment.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config">
       <SubType>Designer</SubType>
@@ -251,7 +253,6 @@
     <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\OrderList.cs" />
     <Compile Include="Classes\Promotional.cs" />
-    <Compile Include="Classes\Salads.cs" />
     <Compile Include="Classes\ServiceZips.cs" />
     <Compile Include="Classes\Side.cs" />
     <Compile Include="Classes\Stores.cs" />
@@ -389,6 +390,13 @@
     <Compile Include="Views\CartView.aspx.designer.cs">
       <DependentUpon>CartView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\CartView2.aspx.cs">
+      <DependentUpon>CartView2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CartView2.aspx.designer.cs">
+      <DependentUpon>CartView2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -509,6 +517,13 @@
     </Compile>
     <Compile Include="Views\Specials.aspx.designer.cs">
       <DependentUpon>Specials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

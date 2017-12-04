@@ -43,7 +43,7 @@ namespace GroupFinal.Employees
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Order order = OrderDA.getOrderByID(Convert.ToInt32(orderID.Value));
+            Order order = OrderDA.GetOrderByID(Convert.ToInt32(orderID.Value));
             Employee employee = EmployeeDA.GetEmployeeByID(Convert.ToInt32(driverList.SelectedValue));
             if (DeliveryDA.GetDeliveryByOrderID(order.OrderID) != null)
             {

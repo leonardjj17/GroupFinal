@@ -12,6 +12,7 @@
             <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
             <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
             <asp:BoundField DataField="ProductPrice" HeaderText="ProductPrice" SortExpression="ProductPrice" />
+            <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Delete" />
         </Columns>
     </asp:GridView>
     
@@ -22,6 +23,12 @@
     </asp:ObjectDataSource>
     
     <asp:Button ID="continueOrderBtn" class="drinkBtn" runat="server" Text="Continue Ordering" OnClick="continueOrderBtn_Click" Font-Bold="true"/>
+
+   
+    
+    <br />
+    <br />
+    <asp:Button ID="btnPlaceOrder" runat="server" OnClick="btnPlaceOrder_Click" Text="Place Order" />
     
    
     
