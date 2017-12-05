@@ -87,18 +87,5 @@ namespace GroupFinal.Classes
                 OrderEstimation = "Please allow 15 - 20 minutes to make your items";
             }
         }
-        public void ConvertThenSave(Cart theCart)
-        {
-            List<CartItem> cartItems = theCart.CartItems;
-            
-            foreach (CartItem cartItem in cartItems)
-            {
-
-                string description = cartItem.Description;
-                int productID = cartItem.ProductID;
-
-                
-            }
-        }
     }
 }

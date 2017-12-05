@@ -32,17 +32,6 @@ namespace GroupFinal.Views
                 lblOrderType.Text = o.OrderType;
             }
             
-            //Needs the customers email passed to the "to" variable to work.
-            /*
-            SmtpClient client = new SmtpClient();
-
-            MailAddress from = new MailAddress("noreply@shenaniganspizza.com", "O'Shea Shenanigan's Pizza", System.Text.Encoding.UTF8);
-            MailAddress to = new MailAddress();
-            MailMessage message = new MailMessage(from, to);
-            message.Body = "Thank you for signing up for your new account " + firstName + "\nWe hope you enjoy the pizza!";
-            message.BodyEncoding = System.Text.Encoding.UTF8;
-            client.Send(message);
-            */
         }
     }
 }

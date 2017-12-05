@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.Classes;
-
+using GroupFinal.DA;
 namespace GroupFinal.Views
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -21,75 +21,91 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string currentTime = Convert.ToString(date.Hour + ": " + date.Minute);
+            if (Session["Order"] == null || Session["items"] == null)
+                Response.Redirect("~");
+
             
-            List<CartItem> cartItems = (List<CartItem>)Session["items"];
-            currentCustomer = (Customer)Session["customer"];
-            currentOrder = (Order)Session["Order"];
+            
+                string currentTime = Convert.ToString(date.Hour + ": " + date.Minute);
 
-            if(currentCustomer != null)
-            {
-                customerName = currentCustomer.CustomerFirst + " " + currentCustomer.CustomerLast;
-                lblCustomerName.Text = customerName;
-            }
+                List<CartItem> cartItems = (List<CartItem>)Session["items"];
+                currentCustomer = (Customer)Session["customer"];
+                currentOrder = (Order)Session["Order"];
 
-            else
-            {
-                Label guest = new Label();
-                Label lblFirstName = new Label();
-                Label lblLastName = new Label();
-                lblName.Enabled = false;
+                if (currentCustomer != null)
+                {
+                    customerName = currentCustomer.CustomerFirst + " " + currentCustomer.CustomerLast;
+                    lblCustomerName.Text = customerName;
+                }
 
-                TextBox txtFirstName = new TextBox();
-                TextBox txtLastName = new TextBox();
+                else
+                {
+                    pnlNewCustomer.Visible = true;                
+                }
+                if (currentCustomer != null)
+                {
+                    deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
+                }
+                else
+                {
+                    deliveryTime = date;
+                }
 
-                guest.Text = "Not signed in? No problem, just enter some quick info";
-                lblFirstName.Text = "First Name: ";
-                lblLastName.Text = "Last Name: ";
+                string deliveryEstimated = Convert.ToString(deliveryTime.Hour + ": " + deliveryTime.Minute);
 
+                lblOrderType.Text = currentOrder.OrderType;
+                lblOrderEstimation.Text = deliveryEstimated + ". That's about " + currentOrder.OrderEstimation + " minutes from now";
 
-                pnlNewCustomer.Controls.Add(guest);
-                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
+                //lblDate.Text = Convert.ToString(currentTime);
 
-                pnlNewCustomer.Controls.Add(lblFirstName);
-                pnlNewCustomer.Controls.Add(new LiteralControl("\t"));
-                pnlNewCustomer.Controls.Add(txtFirstName);
-                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
+                foreach (CartItem item in cartItems)
+                {
+                    total += item.ProductPrice;
+                }
 
-                pnlNewCustomer.Controls.Add(lblLastName);
-                pnlNewCustomer.Controls.Add(new LiteralControl("\t"));
-                pnlNewCustomer.Controls.Add(txtLastName);
-                pnlNewCustomer.Controls.Add(new LiteralControl("</br>"));
-
-
-            }
-            if (currentCustomer != null)
-            {
-                deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
-            }
-            else
-            {
-                deliveryTime = date;
-            }
-
-            string deliveryEstimated = Convert.ToString(deliveryTime.Hour + ": " + deliveryTime.Minute);
-
-            lblOrderType.Text = currentOrder.OrderType;
-            lblOrderEstimation.Text = deliveryEstimated + ". That's about "+currentOrder.OrderEstimation+" minutes from now";
-
-            //lblDate.Text = Convert.ToString(currentTime);
-
-            foreach(CartItem item in cartItems)
-            {
-                total += item.ProductPrice;
-            }
-
-            lblTotal.Text = total.ToString("c2");
+                lblTotal.Text = total.ToString("c2");
             
         }
 
         protected void btnSubmitOrder_Click(object sender, EventArgs e)
         {
+            List<CartItem> cartItems = (List<CartItem>)Session["items"];
+            if(currentCustomer != null)
+            {
+                currentOrder.CustomerFirst = currentCustomer.CustomerFirst;
+                currentOrder.CustomerLast = currentCustomer.CustomerLast;
+                currentOrder.OrderDate = DateTime.Now;
+                currentOrder.OrderTotal = total;
+                OrderDA.SaveOrder(currentOrder);
+                currentOrder = OrderDA.GetCustomersLatestOrder(currentCustomer.CustomerFirst, currentCustomer.CustomerLast);
+                foreach(CartItem item in cartItems)
+                {
+                    int productID = item.ProductID;
+                    int orderID = currentOrder.OrderID;
+                    string productDetail = item.Description;
+
+                    OrderDA.SaveOrderLineItems(orderID, productID, productDetail);
+                }
+                Session["Receipt"] = currentOrder;
+            }
+            else
+            {
+                currentOrder.CustomerFirst = txtFirstName.Text;
+                currentOrder.CustomerLast = txtLastName.Text;
+                currentOrder.OrderDate = DateTime.Now;
+                currentOrder.OrderTotal = total;
+                OrderDA.SaveOrder(currentOrder);
+                currentOrder = OrderDA.GetCustomersLatestOrder(currentOrder.CustomerFirst, currentOrder.CustomerLast);
+                foreach(CartItem item in cartItems)
+                {
+                    int productID = item.ProductID;
+                    int orderID = currentOrder.OrderID;
+                    string productDetail = item.ProductDetail;
+
+                    OrderDA.SaveOrderLineItems(orderID, productID, productDetail);
+                }
+                Session["Receipt"] = currentOrder;
+            }
             Response.Redirect("OrderReciept.aspx");
         }
     }

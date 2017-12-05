@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="GroupFinal.Views.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Panel ID="pnlNewCustomer" runat="server" Width="680px">
+    <asp:Panel ID="pnlNewCustomer" runat="server" Width="680px" Visible="False">
+        First Name:
+        <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
+        <br />
+        Last Name:
+        <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
     </asp:Panel>
     <br />
     <table style="width: 54%">
@@ -51,7 +56,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Name on Card:"></asp:Label>
             </td>
             <td class="text-left">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCardName" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>

@@ -11,9 +11,6 @@ namespace GroupFinal.Views
 {
     public partial class orderType : System.Web.UI.Page
     {
-        
-        Order o = new Order();
-        ServiceZips zip = new ServiceZips();
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Session["Customer"] != null)
@@ -25,35 +22,36 @@ namespace GroupFinal.Views
 
         protected void btnOrderType_Click(object sender, EventArgs e)
         {
-            Session["Order"] = o;
-            Response.Redirect("~/Views/Menu.aspx");
-
-        }
-
-        protected void rdoDelivery_CheckedChanged(object sender, EventArgs e)
-        {
-            o.OrderType = "delivery";
-            o.OrderEstimation = "50";
-        }
-
-        protected void rdoCarryOut_CheckedChanged(object sender, EventArgs e)
-        {
-            o.OrderType = "carryout";
-            o.OrderEstimation = "20";
-        }
-
-        protected void txtZip_TextChanged(object sender, EventArgs e)
-        {
-            zip.ServiceZip = txtZip.ToString();
+            Order o = new Order();
+            ServiceZips zip = new ServiceZips();
+            zip.ServiceZip = txtZip.Text.ToString();
             List<ServiceZips> zips = ServiceZipsDA.GetAllServiceZips();
-            foreach(ServiceZips z in zips)
+            foreach (ServiceZips z in zips)
             {
-                if(zip.ServiceZip == z.ServiceZip)
+                if (zip.ServiceZip == z.ServiceZip)
                 {
                     o.StoreNum = z.StoreNum;
+
+                    if(rdoCarryOut.Checked)
+                    {
+                        o.OrderType = "carryout";
+                        o.OrderEstimation = "20";
+                    }
+                    else
+                    {
+                        o.OrderType = "delivery";
+                        o.OrderEstimation = "50";
+                    }
+
+                    Session["Order"] = o;
+                    Response.Redirect("~/Views/Menu.aspx");
+                }
+                else
+                {
+
                 }
             }
-         
+            
         }
     }
 }
