@@ -63,18 +63,16 @@ namespace GroupFinal.Views
 
 
             }
-            if (currentCustomer != null)
-            {
-                deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
-            }
-            else
-            {
-                deliveryTime = date;
-            }
-
-            string deliveryEstimated = Convert.ToString(date);
 
             lblOrderType.Text = currentOrder.OrderType;
+
+            deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
+            
+
+            string deliveryEstimated = Convert.ToString(deliveryTime);
+
+
+            
             lblOrderEstimation.Text = deliveryEstimated + ". That's about "+currentOrder.OrderEstimation+" minutes from now";
 
             //lblDate.Text = Convert.ToString(currentTime);

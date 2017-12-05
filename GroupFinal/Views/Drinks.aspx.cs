@@ -70,7 +70,7 @@ namespace GroupFinal.Views
 
                             Session["items"] = cartItems;
 
-                            Response.Redirect("CartView2.aspx");
+                            Response.Redirect("CartView.aspx");
                         }
                     }
                 }
