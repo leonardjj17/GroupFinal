@@ -49,3 +49,9 @@ footer ul{
 .nonwhite {
     color: #029350;
 }
+.nonwhite a {
+    color:#029350;
+}
+.nonwhite:hover {
+    color: aliceblue;
+}

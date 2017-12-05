@@ -12,7 +12,7 @@ namespace GroupFinal.Employees
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["storeNum"] == null)
+            if ((Session["storeNum"] == null) || ((string)Session["role"] != "store manager"))
             {
                 Response.Redirect("~");
             }
