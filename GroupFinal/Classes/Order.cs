@@ -82,8 +82,7 @@ namespace GroupFinal.Classes
             foreach (CartItem cartItem in cartItems)
             {
 
-                string description = cartItem.Description;
-                int productID = cartItem.ProductID;
+                OrderSubTotal += cartItem.Price;       
 
                 
             }
