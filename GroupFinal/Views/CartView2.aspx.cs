@@ -50,12 +50,12 @@ namespace GroupFinal.Views
                 TableCell newCell2 = new TableCell();
                 TableCell newCell3 = new TableCell();
                 TableCell newCell4 = new TableCell();
-                TableCell editRow = new TableCell();
+                //TableCell editRow = new TableCell();
                 TableCell deleteRow = new TableCell();
 
-                Button btnEdit = new Button();
+                //Button btnEdit = new Button();
                 Button btnDelete = new Button();
-                btnEdit.Text = "Edit Item";
+                //btnEdit.Text = "Edit Item";
                 btnDelete.Text = "Delete Item";
                 btnDelete.ID = Convert.ToString(currentIndex);
 
@@ -63,7 +63,7 @@ namespace GroupFinal.Views
 
                 btnDelete.Click += BtnDelete_Click;
 
-                editRow.Controls.Add(btnEdit);
+                //editRow.Controls.Add(btnEdit);
                 deleteRow.Controls.Add(btnDelete);
 
                 shoppingCart.Rows.Add(newRow);
@@ -72,7 +72,7 @@ namespace GroupFinal.Views
                 newRow.Cells.Add(newCell2);
                 newRow.Cells.Add(newCell3);
                 newRow.Cells.Add(newCell4);
-                newRow.Cells.Add(editRow);
+                //newRow.Cells.Add(editRow);
                 newRow.Cells.Add(deleteRow);
 
                 

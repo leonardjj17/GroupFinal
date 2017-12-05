@@ -72,7 +72,7 @@ namespace GroupFinal.Views
                 deliveryTime = date;
             }
 
-            string deliveryEstimated = Convert.ToString(deliveryTime.Hour + ": " + deliveryTime.Minute);
+            string deliveryEstimated = Convert.ToString(date);
 
             lblOrderType.Text = currentOrder.OrderType;
             lblOrderEstimation.Text = deliveryEstimated + ". That's about "+currentOrder.OrderEstimation+" minutes from now";
