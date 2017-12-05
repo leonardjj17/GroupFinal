@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="Sign-on" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="customerLogin.aspx.cs" Inherits="GroupFinal.CustomerPages.customerLogin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="cLogin">
+  
+      <div class="cLogin">
 
     <h3>
-        Sigh-In To Your Shenanigan&#39;s Account</h3>
+        Sign-In To Your Shenanigan&#39;s Account</h3>
     <p>
         <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
     </p>
@@ -37,4 +38,5 @@
       </table>
 
     </div>
+    
 </asp:Content>
