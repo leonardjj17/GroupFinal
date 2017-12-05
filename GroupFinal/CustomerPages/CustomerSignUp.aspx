@@ -1,14 +1,15 @@
 ﻿<%@ Page Title="Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerSignUp.aspx.cs" Inherits="GroupFinal.CustomerPages.CustomerSignUp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <p>
-        Sign-Up for a O&#39;Shea Shenanigan&#39;s Account!
-    </p>
+    <div class="cSign">
+    
+        <h3>Sign-Up for a O&#39;Shea Shenanigan&#39;s Account!</h3>
+    
 
     <asp:Label ID="lblError" runat="server" Visible="False"></asp:Label>
-    <table style="text-align: left">
+    <table style="text-align: left; ">
         <tr>
-            <td>First Name:</td>
+            <td style="width: 200px;">First Name:</td>
             <td>
                 <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
             </td>
@@ -44,7 +45,7 @@
         <tr>
             <td>State:</td>
             <td>
-                <asp:DropDownList ID="cmboState" runat="server">
+                <asp:DropDownList ID="cmboState" style="height: 33px;" runat="server">
                     <asp:ListItem Value="AL">Alabama</asp:ListItem>
                     <asp:ListItem Value="AK">Alaska</asp:ListItem>
                     <asp:ListItem Value="AZ">Arizona</asp:ListItem>
@@ -105,7 +106,7 @@
             <td>
                 <asp:TextBox ID="txtZip" runat="server"></asp:TextBox>
             </td>
-            <td>
+            <td >
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtZip" CssClass="alert-danger" ErrorMessage="Must enter a Zipcode"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" ErrorMessage="Must Enter a Valid Zip code" ValidationExpression="\d{5}(-\d{4})?" CssClass="alert-danger"></asp:RegularExpressionValidator>
             </td>
@@ -142,7 +143,7 @@
             </td>
         </tr>
     </table>
-
+        <br />
     <p>
         Please look through your info once again to make sure you got it right!
     </p>
@@ -150,4 +151,6 @@
         
         <asp:Button ID="btnSignUp" runat="server" OnClick="btnSignUp_Click" Text="Sign Up!" />
     </p>
+    </div>
+
 </asp:Content>
