@@ -30,8 +30,11 @@ namespace GroupFinal.Views
             Promotional shirt3 = new Promotional();
             Promotional shirt4 = new Promotional();
 
+            int productID = ProductsDA.GetLatestProductID();
+
             if (ddlQtyShirt1.SelectedValue != "0" && ddlSizeShirt1.SelectedValue != " ")
             {
+                shirt1.ProductID = productID;
                 shirt1.ProductQty = Convert.ToInt32(ddlQtyShirt1.SelectedValue);
                 shirt1.ProductPrice = 15.99 * shirt1.ProductQty;
                 shirt1.PromotionalSize = ddlSizeShirt1.SelectedValue;
@@ -47,6 +50,7 @@ namespace GroupFinal.Views
             }
             if (ddlQtyShirt2.SelectedValue != "0" && ddlSizeShirt2.SelectedValue != " ")
             {
+                shirt2.ProductID = productID;
                 shirt2.ProductQty = Convert.ToInt32(ddlQtyShirt2.SelectedValue);
                 shirt2.ProductPrice = 15.99 * shirt2.ProductQty;
                 shirt2.PromotionalSize = ddlSizeShirt2.SelectedValue;
@@ -60,6 +64,7 @@ namespace GroupFinal.Views
             }
             if (ddlQtyShirt3.SelectedValue != "0" && ddlSizeShirt3.SelectedValue != " ")
             {
+                shirt3.ProductID = productID;
                 shirt3.ProductQty = Convert.ToInt32(ddlQtyShirt3.SelectedValue);
                 shirt3.ProductPrice = 15.99 * shirt3.ProductQty;
                 shirt3.PromotionalSize = ddlSizeShirt3.SelectedValue;
@@ -73,7 +78,7 @@ namespace GroupFinal.Views
             }
             if (ddlQtyShirt4.SelectedValue != "0" && ddlSizeShirt4.SelectedValue != " ")
             {
-
+                shirt4.ProductID = productID;
                 shirt4.ProductQty = Convert.ToInt32(ddlQtyShirt4.SelectedValue);
                 shirt4.ProductPrice = 15.99 * shirt4.ProductQty;
                 shirt4.PromotionalSize = ddlSizeShirt4.SelectedValue;

@@ -91,8 +91,9 @@ namespace GroupFinal.Views
 
             }
 
+            int productID = ProductsDA.GetLatestProductID();
 
-            newSide = new Side(selectedSides, sideTotal, 1, sideTotal, "Side Item", 1, selectedSides);
+            newSide = new Side(selectedSides, sideTotal, productID, sideTotal, "Side Item", 1, selectedSides);
 
             cartItems = Cart.AddItemToCart(newSide, cartItems);
 

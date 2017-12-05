@@ -52,6 +52,43 @@ namespace GroupFinal.Database
             return allProducts;
         }
 
+        public static int GetLatestProductID()
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "Select TOP 1 productID From Products";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            int productID = 0;
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    productID = (int)read["productID"];
+
+                    
+                }
+                return productID;
+
+            }
+            catch (SqlException ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return productID;
+        }
+
         public static List<Products> GetAllIngredients()
         {
             List<Products> allIngredients = new List<Products>();
