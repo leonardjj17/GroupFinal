@@ -6,9 +6,10 @@
         <asp:Label ID="lblUserName" runat="server" Text="User"></asp:Label>
     </h2>
     <p>
-        <a href ="OrdersList.aspx" class="nonwhite">Order</a>&nbsp;&nbsp;&nbsp;
+        <asp:LinkButton ID="lnkOrdersList" runat="server" Visible="true" PostBackUrl="OrdersList" CssClass="nonwhite">Order List</asp:LinkButton>
+        <br />
         <asp:LinkButton ID="lnkEmployeeListing" runat="server" Visible="False" OnClick="lnkEmployeeListing_Click" PostBackUrl="~/Employees/EditEmployees.aspx" CssClass="nonwhite">Employee Listing</asp:LinkButton>
-        &nbsp;&nbsp;&nbsp;
+        <br />
         <asp:LinkButton ID="lnkCreateEmployee" runat="server" Visible="false" PostBackUrl="~/Employees/CreateEmployee" CssClass="nonwhite">New Employee Signup</asp:LinkButton>
     </p>
         

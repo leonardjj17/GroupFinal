@@ -5,7 +5,7 @@
     <h1>Specials</h1>
     <p>&nbsp;</p>
     <p>
-        <asp:RadioButton ID="rdoLGFamPk" runat="server" Text="Large Family Pack $29.99" Font-Bold="True" Font-Size="Large" />
+        <asp:RadioButton ID="rdoLGFamPk" runat="server" Text="Large Family Pack $29.99" Font-Bold="True" Font-Size="Large" Checked="True" />
     </p>
     <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A large pepperoni pizza, a large supreme pizza, an order of breadsticks, and a liter of Pepsi</p>

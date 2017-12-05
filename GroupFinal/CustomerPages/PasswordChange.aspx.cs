@@ -12,7 +12,10 @@ namespace GroupFinal.CustomerPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Customer"] == null)
+            {
+                Response.Redirect("~");
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

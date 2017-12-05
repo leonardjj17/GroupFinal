@@ -13,7 +13,7 @@ namespace GroupFinal.CustomerPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ValueChanging"] == null)
+            if ((Session["ValueChanging"] == null) || (Session["Customer"] == null))
             {
                 Response.Redirect("~");
             }
