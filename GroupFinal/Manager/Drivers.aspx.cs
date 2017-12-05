@@ -18,7 +18,7 @@ namespace GroupFinal.Manager
             }
             else
             {
-                Dictionary<String, int> list = DeliveryDA.getDeliveryCountForAllDriversAtStore(((Employee)Session["employee"]).StoreNum);
+                Dictionary<String, int> list = DeliveryDA.GetDeliveryCountForAllDriversAtStore(((Employee)Session["employee"]).StoreNum);
                 foreach (KeyValuePair<string, int> entry in list)
                 {
                     TableRow newRow = new TableRow();

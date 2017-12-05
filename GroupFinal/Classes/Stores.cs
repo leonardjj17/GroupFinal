@@ -7,7 +7,12 @@ namespace GroupFinal.Classes
 {
     public class Stores
     {
-        private string storeID, storeAddress, storeCity, storeState, storeZip, storeManager;
+        private string storeID;
+        private string storeAddress;
+        private string storeCity;
+        private string storeState;
+        private string storeZip;
+        private string storeManager;
 
 
 

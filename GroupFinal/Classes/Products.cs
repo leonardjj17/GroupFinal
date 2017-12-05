@@ -8,6 +8,14 @@ namespace GroupFinal
     [Serializable]
     public class Products
     {
+        //instantiating the variables
+        private int productID;
+        private double productPrice;
+        private string productType;
+        private int productQty;
+        private string productDetail;
+
+
         //get and sets for all variables
         public int ProductID { get; set; }
         public double ProductPrice { get; set; }

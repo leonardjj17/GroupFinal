@@ -28,7 +28,7 @@ namespace GroupFinal.Views
                 lblLast.Text = o.CustomerLast;
                 lblOrderTotal.Text = o.OrderTotal.ToString("c2");
                 lblStoreNumber.Text = Convert.ToString(o.StoreNum);
-                lblIsFavorite.Text = o.IsFavorite;
+                
                 lblOrderType.Text = o.OrderType;
             }
             

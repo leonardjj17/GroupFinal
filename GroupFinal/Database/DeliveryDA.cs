@@ -14,7 +14,7 @@ namespace GroupFinal.Database
         {
             List<Delivery> allDeliveries = new List<Delivery>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Delivery";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -53,7 +53,7 @@ namespace GroupFinal.Database
         {
             List<Delivery> allDeliveries = new List<Delivery>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Delivery WHERE employeeNum = @employeeID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -94,7 +94,7 @@ namespace GroupFinal.Database
         {
             List<Delivery> allDeliveries = new List<Delivery>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Delivery WHERE orderNum = @orderNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -134,7 +134,7 @@ namespace GroupFinal.Database
         {
             int driver;
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Delivery WHERE orderNum = @orderID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -169,7 +169,7 @@ namespace GroupFinal.Database
         }
         public static void AddDriverToOrder(Order order, Employee driver)
         {
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "INSERT INTO Delivery (orderNum, employeeNum) VALUES (@orderNum, @employeeNum)";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -198,7 +198,7 @@ namespace GroupFinal.Database
 
         public static void UpdateDriverForOrder (Order order, Employee driver)
         {
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "UPDATE Delivery SET employeeNum = @employeeNum WHERE orderNum = @orderNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -225,10 +225,10 @@ namespace GroupFinal.Database
             }
         }
         
-        public static Dictionary<String, int> getDeliveryCountForAllDriversAtStore(string storeNum)
+        public static Dictionary<String, int> GetDeliveryCountForAllDriversAtStore(string storeNum)
         {
             Dictionary<String, int> deliveryCount = new Dictionary<string, int>();
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT CONCAT(e.employeeFirst, ', ', e.employeeLast) as name, count(*) as count " +
                 "FROM Delivery AS d " +

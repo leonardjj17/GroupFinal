@@ -30,7 +30,7 @@ namespace GroupFinal.Views
             {
                 if((storeNumber == Convert.ToInt16(admin.StoreNum)) &&
                     login == Convert.ToString(admin.Login) &&
-                    EmployeeDA.verifyLogin(login, password))      
+                    EmployeeDA.VerifyLogin(login, password))      
                 {
                     Session["employee"] = admin;
                     Session["role"] = admin.EmployeeRole;

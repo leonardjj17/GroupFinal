@@ -20,7 +20,7 @@ namespace GroupFinal.Employees
             string login = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (EmployeeDA.verifyLogin(login, password)) { 
+            if (EmployeeDA.VerifyLogin(login, password)) { 
                 //find out if username exists had has correct password
                 Employee employee = EmployeeDA.GetEmployeeByLogin(login);
                 

@@ -9,10 +9,10 @@ namespace GroupFinal.Database
 {
     public class CustomerDA
     {
-        public static Boolean verifyLogin(String login, String password)
+        public static Boolean VerifyLogin(String login, String password)
         {
             if (login == null) return false;
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
             if (connection != null)
             {
                 connection.Open();
@@ -50,7 +50,7 @@ namespace GroupFinal.Database
         {
             Customer c = new Customer();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
             if (connection != null)
             {
                 connection.Open();
@@ -100,7 +100,7 @@ namespace GroupFinal.Database
         {
             List<Customer> allCustomers = new List<Customer>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Customers";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -150,7 +150,7 @@ namespace GroupFinal.Database
         {
             List<Customer> allCustomers = new List<Customer>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Customers WHERE primaryStore = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -201,7 +201,7 @@ namespace GroupFinal.Database
         {
             Customer aCustomer = new Customer();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Customers WHERE customerID = @customerID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -246,7 +246,7 @@ namespace GroupFinal.Database
         }
         public static void AddCustomer(Customer c)
         {
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "INSERT INTO Customers (customerFirst, customerLast, customerPhone, cusstomerAddress, customerCity, customerState, customerZip, Login, Password, primaryStore) VALUES (@customerFirst, @customerLast, @customerPhone, @cusstomerAddress, @customerCity, @customerState, @customerZip, @Login, @Password, @primaryStore) ";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -283,7 +283,7 @@ namespace GroupFinal.Database
         }
         public static void UpdateCustomer(Customer c)
         {
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "Update Customers Set customerFirst = @customerFirst, customerLast = @customerLast, customerPhone = @customerPhone, cusstomerAddress = @cusstomerAddress, customerCity = @customerCity, customerState = @customerState, customerZip = @customerZip, Login = @login, Password = @password, primaryStore = @primaryStore where CustomerID = @customerID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -316,6 +316,36 @@ namespace GroupFinal.Database
             finally
             {
                 connection.Close();
+            }
+        }
+
+        public static void RemoveCustomer(Customer c)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "DELETE FROM Customers WHERE CustomerID = @customerID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+  
+            cmd.Parameters.AddWithValue("@CustomerID", c.CustomerID);
+
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                ex.ToString();
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+            }
+            finally
+            {
+                connection.Close();
+                c.CustomerID = 0;
             }
         }
     }

@@ -13,7 +13,7 @@ namespace GroupFinal.Database
         {
             List<Products> allProducts = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -56,7 +56,7 @@ namespace GroupFinal.Database
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'ingredients'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -99,7 +99,7 @@ namespace GroupFinal.Database
         {
             List<Products> allToppings = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'toppings'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -143,7 +143,7 @@ namespace GroupFinal.Database
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'side'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -182,97 +182,13 @@ namespace GroupFinal.Database
             return allIngredients;
         }
 
-        public static List<Products> GetPizzaCrust()
-        {
-            List<Products> allCrusts = new List<Products>();
-
-            SqlConnection connection = Connection.getConnection();
-
-            String query = "Select * from Products Where productType = 'crust'";
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-
-            try
-            {
-                connection.Open();
-                SqlDataReader read = cmd.ExecuteReader();
-
-                while(read.Read())
-                {
-                    Products p = new Products();
-
-                    p.ProductID = (int)read["productID"];
-                    p.ProductType = (String)read["productType"];
-                    p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
-                    p.ProductQty = (int)read["productQty"];
-
-                    allCrusts.Add(p);
-                }
-            }
-            catch (SqlException ex)
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return allCrusts;
-        }
-
-        public static List<Products> GetPizzaSauce()
-        {
-            List<Products> allSauce = new List<Products>();
-
-            SqlConnection connection = Connection.getConnection();
-
-            String query = "Select * from Products Where productType = 'sauce'";
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-
-            try
-            {
-                connection.Open();
-                SqlDataReader read = cmd.ExecuteReader();
-
-                while (read.Read())
-                {
-                    Products p = new Products();
-
-                    p.ProductID = (int)read["productID"];
-                    p.ProductType = (String)read["productType"];
-                    p.ProductDetail = (String)read["productDetail"];
-                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
-                    p.ProductQty = (int)read["productQty"];
-
-                    allSauce.Add(p);
-                }
-            }
-            catch (SqlException ex)
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                connection.Close();
-            }
-            return allSauce;
-        }
+       
 
         public static List<Products> GetAllSalads()
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'salads'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -315,7 +231,7 @@ namespace GroupFinal.Database
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'dressings'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -357,7 +273,7 @@ namespace GroupFinal.Database
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'drinks'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -399,7 +315,7 @@ namespace GroupFinal.Database
         {
             List<Products> allIngredients = new List<Products>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productType = 'alcohol'";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -441,7 +357,7 @@ namespace GroupFinal.Database
         public static Products GetProductByID(int id)
         {
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM Products WHERE productID = @productID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -479,20 +395,20 @@ namespace GroupFinal.Database
             }
             return null;
         }
-        public static void UpdateProduct(Products product)
-        {
-            SqlConnection connection = Connection.getConnection();
 
-            String query = "UPDATE Products SET productType = @productType, " +
-                "productDetail = @productDetail, productQty = @productQty, " +
-                "productCost = @productCost, productMenuPrice = @productMenuPrice " +
-                "WHERE productID = @productID";
+        public static void AddNewProduct(Products p)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "INSERT INTO Products (productType, productDetail, productQty, productMenuPrice) " +
+                            "VALUES (@productType,@productDetail,@productQty,@productMenuPrice)";
+              
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@productType", product.ProductType);
-            cmd.Parameters.AddWithValue("@productDetail", product.ProductDetail);
-            cmd.Parameters.AddWithValue("@productQty", product.ProductQty);
-            cmd.Parameters.AddWithValue("@productMenuPrice", product.ProductPrice);
-            cmd.Parameters.AddWithValue("@productID", product.ProductID);
+            cmd.Parameters.AddWithValue("@productType", p.ProductType);
+            cmd.Parameters.AddWithValue("@productDetail", p.ProductDetail);
+            cmd.Parameters.AddWithValue("@productQty", p.ProductQty);
+            cmd.Parameters.AddWithValue("@productMenuPrice", p.ProductPrice);
+        
             try
             {
                 connection.Open();
@@ -511,6 +427,156 @@ namespace GroupFinal.Database
             {
                 connection.Close();
             }
+        }
+
+        public static void UpdateProduct(Products p)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "UPDATE Products SET productType = @productType, " +
+                "productDetail = @productDetail, productQty = @productQty, " +
+                "productCost = @productCost, productMenuPrice = @productMenuPrice " +
+                "WHERE productID = @productID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@productType", p.ProductType);
+            cmd.Parameters.AddWithValue("@productDetail", p.ProductDetail);
+            cmd.Parameters.AddWithValue("@productQty", p.ProductQty);
+            cmd.Parameters.AddWithValue("@productMenuPrice", p.ProductPrice);
+            cmd.Parameters.AddWithValue("@productID", p.ProductID);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void RemoveProduct(Products p)
+        {
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "DELETE FROM Products WHERE productID = @productID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+      
+            cmd.Parameters.AddWithValue("@productID", p.ProductID);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+                p.ProductID = 0;
+            }
+        }
+
+        public static List<Products> GetPizzaCrust()
+        {
+            List<Products> allCrusts = new List<Products>();
+
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "Select * from Products Where productType = 'crust'";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductQty = (int)read["productQty"];
+
+                    allCrusts.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allCrusts;
+        }
+
+        public static List<Products> GetPizzaSauce()
+        {
+            List<Products> allSauce = new List<Products>();
+
+            SqlConnection connection = Connection.GetConnection();
+
+            String query = "Select * from Products Where productType = 'sauce'";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+
+                while (read.Read())
+                {
+                    Products p = new Products();
+
+                    p.ProductID = (int)read["productID"];
+                    p.ProductType = (String)read["productType"];
+                    p.ProductDetail = (String)read["productDetail"];
+                    p.ProductPrice = Convert.ToDouble(read["productMenuPrice"]);
+                    p.ProductQty = (int)read["productQty"];
+
+                    allSauce.Add(p);
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return allSauce;
         }
     }
 }

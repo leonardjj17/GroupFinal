@@ -14,7 +14,7 @@ namespace GroupFinal.Database
         {
             List<ServiceZips> allServiceZips = new List<ServiceZips>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM ServiceZips";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -50,11 +50,11 @@ namespace GroupFinal.Database
             return allServiceZips;
         }
 
-        public static List<ServiceZips> GetAllServiceZipsByStoreNum(int storeNum)
+        public static List<ServiceZips> GetAllServiceZipsByStoreNum(string storeNum)
         {
             List<ServiceZips> allServiceZips = new List<ServiceZips>();
 
-            SqlConnection connection = Connection.getConnection();
+            SqlConnection connection = Connection.GetConnection();
 
             String query = "SELECT * FROM ServiceZips WHERE storeNum = @storeNum";
             SqlCommand cmd = new SqlCommand(query, connection);

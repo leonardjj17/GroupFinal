@@ -18,12 +18,12 @@ namespace GroupFinal.Classes
         {
             return orders;
         }
-        public void addOrder(Order order)
+        public void AddOrder(Order order)
         {
             this.orders.Add(order);
             //OrderDA.addOrder(order);
         }
-        public void removeOrder(Order order)
+        public void RemoveOrder(Order order)
         {
             this.orders.Remove(order);
             //OrderDA.removeOrder(order);

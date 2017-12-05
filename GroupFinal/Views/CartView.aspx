@@ -8,11 +8,11 @@
   
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
         <Columns>
-            <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="ProductType" HeaderText="ProductType" SortExpression="ProductType" />
             <asp:BoundField DataField="ProductQty" HeaderText="ProductQty" SortExpression="ProductQty" />
             <asp:BoundField DataField="ProductDetail" HeaderText="ProductDetail" SortExpression="ProductDetail" />
             <asp:BoundField DataField="ProductPrice" HeaderText="ProductPrice" SortExpression="ProductPrice" />
+            <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="Delete" />
         </Columns>
     </asp:GridView>
     
