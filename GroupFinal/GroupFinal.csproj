@@ -169,7 +169,6 @@
     <Content Include="Manager\Drivers.aspx" />
     <Content Include="Manager\Menu.aspx" />
     <Content Include="Manager\OrderHistory.aspx" />
-    <Content Include="Views\CartView.aspx" />
     <Content Include="Views\CartView2.aspx" />
     <Content Include="Views\Menu.aspx" />
     <Content Include="Views\About.aspx" />
@@ -382,13 +381,6 @@
     </Compile>
     <Compile Include="Manager\OrderHistory.aspx.designer.cs">
       <DependentUpon>OrderHistory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CartView.aspx.cs">
-      <DependentUpon>CartView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\CartView.aspx.designer.cs">
-      <DependentUpon>CartView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CartView2.aspx.cs">
       <DependentUpon>CartView2.aspx</DependentUpon>
