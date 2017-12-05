@@ -1650,7 +1650,7 @@ margin: 0 auto;
     }
     .front_page p {
         margin-right: auto;
-        margin-left: 150px;
+        margin-left: 100px;
     }
 }
 @media (min-width: 768px) {
@@ -5156,10 +5156,30 @@ a.badge:focus {
         height:320px;
         width:320px;
     }
+    #MainContent_pnlShoppingCart table {
+        width: 300px;
+        margin-left: -2px;
+    }
+    #MainContent_btnContinueOrdering {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
+
+    #MainContent_btnPayment {
+        margin-left: 20px;
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
 }
 @media screen and (min-width: 576px) {
   .jumbotron {
-    padding: 10px 0px 10px 10px;
+    padding: 20px 0px 0px 20px;
     
   }
   .container .jumbotron,
@@ -5188,6 +5208,24 @@ a.badge:focus {
 
     .navbar-collapse.collapse ul {
         padding-right: 0px;
+    }
+    #MainContent_pnlShoppingCart table {
+        width: 600px;
+        
+    }
+    #MainContent_btnContinueOrdering {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
+    #MainContent_btnPayment {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
     }
 }
 @media screen and (min-width: 768px) {
@@ -5222,6 +5260,21 @@ a.badge:focus {
     .navbar-collapse.collapse ul {
         padding-right: 0px;
     }
+    #MainContent_btnContinueOrdering {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
+
+    #MainContent_btnPayment {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
 }
 @media screen and (min-width: 992px) {
     .jumbotron {
@@ -5254,6 +5307,21 @@ a.badge:focus {
 
     nav.navbar {
         font-size: .9em;
+    }
+    #MainContent_btnContinueOrdering {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
+
+    #MainContent_btnPayment {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -5297,6 +5365,21 @@ a.badge:focus {
 
     nav.navbar {
         font-size: .9em;
+    }
+    #MainContent_btnContinueOrdering {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
+    }
+
+    #MainContent_btnPayment {
+        margin-bottom: 10px;
+        padding: 2px 15px 2px 15px;
+        border-radius: 10px;
+        background-color: #029350;
+        color: white;
     }
     
 }
@@ -7272,5 +7355,14 @@ footer {
 
 
 }
+#MainContent_btnOrderType {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 2px 15px 2px 15px;
+    border-radius: 10px;
+    background-color: #029350;
+    color: white;
+}
+
     /*# sourceMappingURL=bootstrap.css.map */
     

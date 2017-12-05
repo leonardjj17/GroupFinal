@@ -23,7 +23,7 @@
             <asp:SqlDataSource ID="OsheaDB" runat="server" ConnectionString="<%$ ConnectionStrings:OsheaDB2644 %>" SelectCommand="SELECT [storeCity], [storeState] FROM [Store]"></asp:SqlDataSource>
         </p>
         <p>
-            <asp:Button ID="btnOrderType" runat="server" OnClick="btnOrderType_Click" Text="Start Order" BackColor="#029350" BorderColor="#999999" BorderStyle="Outset" Font-Bold="True" ForeColor="Black" Width="154px" />
+            <asp:Button ID="btnOrderType" runat="server" OnClick="btnOrderType_Click" Text="Start Order" BackColor="#029350" BorderColor="#999999" BorderStyle="Outset" Font-Bold="True" ForeColor="white" Width="154px" />
         </p>
         </div>
 </asp:Content>

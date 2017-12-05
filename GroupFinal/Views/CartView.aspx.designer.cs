@@ -22,15 +22,6 @@ namespace GroupFinal.Views {
         protected global::System.Web.UI.WebControls.Panel pnlShoppingCart;
         
         /// <summary>
-        /// btnContinueOrdering control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinueOrdering;
-        
-        /// <summary>
         /// btnPayment control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,14 @@ namespace GroupFinal.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPayment;
+        
+        /// <summary>
+        /// btnContinueOrdering control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnContinueOrdering;
     }
 }

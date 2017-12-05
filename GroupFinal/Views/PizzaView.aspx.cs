@@ -187,7 +187,7 @@ namespace GroupFinal.Views
 
             //string pizza = newPizza.PizzaToppings;
             int productID;
-            if(rdolarge)
+            //if(rdolarge)
             newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, pizzaSize + " " + pizzaCrust + " Pizza: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
 

@@ -16,7 +16,7 @@ namespace GroupFinal.Views
         {
             cartItems = (List<CartItem>)Session["items"];
 
-            shoppingCart.Width = 1200;
+            //shoppingCart.Width = 1200;
             TableRow headingRow = new TableRow();
             TableCell head1 = new TableCell();
             TableCell head2 = new TableCell();
@@ -35,10 +35,11 @@ namespace GroupFinal.Views
             headingRow.Cells.Add(head2);
             headingRow.Cells.Add(head3);
             headingRow.Cells.Add(head4);
+            
 
 
-            head1.Width = 200;
-            head2.Width = 500;
+            //head1.Width = 200;
+            //head2.Width = 500;
             pnlShoppingCart.Controls.Add(shoppingCart);
             int currentIndex = 0;
 
