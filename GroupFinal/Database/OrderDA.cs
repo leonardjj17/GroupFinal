@@ -300,7 +300,7 @@ namespace GroupFinal.DA
            
             SqlConnection connection = Connection.GetConnection();
 
-            String query = "Insert into Orders(customerFirst, customerLast, orderTotal, storeNum, orderType, orderDate) values (@customerFirst, @customerLast, @orderTotal, @storeNum, @isFavorite, @orderType, @orderDate)";
+            String query = "Insert into Orders(customerFirst, customerLast, orderTotal, storeNum, orderType, orderDate) values (@customerFirst, @customerLast, @orderTotal, @storeNum, @orderType, @orderDate)";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@customerFirst", o.CustomerFirst);
             cmd.Parameters.AddWithValue("@customerLast", o.CustomerLast);

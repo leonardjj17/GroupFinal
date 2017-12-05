@@ -4,14 +4,17 @@
         <h1>
             Order Type</h1>
         <p>
-            <asp:RadioButton ID="rdoDelivery" runat="server" Text="Delivery" GroupName="rdogrpOrderType" OnCheckedChanged="rdoDelivery_CheckedChanged" Checked="True" />
+            <asp:Label ID="lblError" runat="server"></asp:Label>
+        </p>
+        <p>
+            <asp:RadioButton ID="rdoDelivery" runat="server" Text="Delivery" GroupName="rdogrpOrderType" Checked="True" />
 &nbsp;&nbsp;&nbsp;
-            <asp:RadioButton ID="rdoCarryOut" runat="server" Text="Carry Out" GroupName="rdogrpOrderType" OnCheckedChanged="rdoCarryOut_CheckedChanged" />
+            <asp:RadioButton ID="rdoCarryOut" runat="server" Text="Carry Out" GroupName="rdogrpOrderType" />
         </p>
         <p>
             <asp:Label ID="Label1" runat="server" Text="Zip Code:   "></asp:Label>
 &nbsp;&nbsp;
-            <asp:TextBox ID="txtZip" runat="server" OnTextChanged="txtZip_TextChanged" Height="27px" Width="123px"></asp:TextBox>
+            <asp:TextBox ID="txtZip" runat="server" Height="27px" Width="123px"></asp:TextBox>
         </p>
         <p>
             Choose Store City:&nbsp;&nbsp;
