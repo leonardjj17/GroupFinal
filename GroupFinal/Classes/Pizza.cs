@@ -27,7 +27,7 @@ namespace GroupFinal
         public Pizza(int productID, double productPrice, string productType, int productQty, double productCost, string productDetail, string pizzaToppings, string pizzaCheese, string pizzaSauce, string pizzaCrust, string pizzaExtras, string pizzaSize, double pizzaPrice) :base( productID, productPrice, productType, productQty, productDetail)
             
         {
-            this.ProductID = 1;
+            this.ProductID = productID;
             PizzaToppings = pizzaToppings;
             PizzaCheese = pizzaCheese;
             PizzaSauce = pizzaSauce;

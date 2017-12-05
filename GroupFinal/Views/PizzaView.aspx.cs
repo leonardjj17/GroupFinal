@@ -186,9 +186,10 @@ namespace GroupFinal.Views
 
 
             //string pizza = newPizza.PizzaToppings;
-            int productID;
+            int productID = ProductsDA.GetLatestProductID();
             //if(rdolarge)
-            newPizza = new Pizza(1, pizzaCost, "Pizza", 1, pizzaCost, pizzaSize + " " + pizzaCrust + " Pizza: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
+
+            newPizza = new Pizza(productID, pizzaCost, "Pizza", 1, pizzaCost, pizzaSize + " " + pizzaCrust + " Pizza: " + pizzaToppings, pizzaToppings, pizzaCheese, pizzaSauce, pizzaCrust, pizzaExtras, pizzaSize, pizzaCost);
 
 
             cartItems = Cart.AddItemToCart(newPizza, cartItems);

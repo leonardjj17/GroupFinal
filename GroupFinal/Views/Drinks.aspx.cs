@@ -73,7 +73,9 @@ namespace GroupFinal.Views
                     {
                         if (product.ProductDetail == (((RadioButton)rdoDrink).Text))
                         {
-                            drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2), 1, Math.Round(product.ProductPrice * pricemultiplier, 2), product.ProductType, 1, product.ProductDetail);
+                            int productID = ProductsDA.GetLatestProductID() + 2000;
+
+                            drink = new Drink(size, product.ProductDetail, Math.Round(product.ProductPrice * pricemultiplier,2), productID, Math.Round(product.ProductPrice * pricemultiplier, 2), product.ProductType, 1, product.ProductDetail);
 
                             cartItems = Cart.AddItemToCart(drink, cartItems);
 

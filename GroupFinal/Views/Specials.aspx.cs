@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using GroupFinal.Classes;
+using GroupFinal.Database;
 
 namespace GroupFinal.Views
 {
@@ -46,9 +47,14 @@ namespace GroupFinal.Views
         {
             specials = new Products();
             cartItems = (List<CartItem>)Session["items"];
+
+            int productID = ProductsDA.GetLatestProductID();
+
             if (rdoFamPk.Checked == true)
             {
-                specials.ProductID = 1;
+
+                
+                specials.ProductID = productID;
                 specials.ProductPrice = 19.99;
                 specials.ProductQty = 1;
                 specials.ProductType = "Special";
@@ -57,7 +63,7 @@ namespace GroupFinal.Views
             }
             else if(rdoIndivPk.Checked == true)
             {
-                specials.ProductID = 1;
+                specials.ProductID = productID;
                 specials.ProductPrice = 9.99;
                 specials.ProductQty = 1;
                 specials.ProductType = "Special";
@@ -65,7 +71,7 @@ namespace GroupFinal.Views
             }
             else if(rdoLGFamPk.Checked == true)
             {
-                specials.ProductID = 1;
+                specials.ProductID = productID;
                 specials.ProductPrice = 29.99;
                 specials.ProductQty = 1;
                 specials.ProductType = "Special";
