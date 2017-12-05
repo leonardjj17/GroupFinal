@@ -4,7 +4,7 @@
         <h1>
             Order Type</h1>
         <p>
-            <asp:RadioButton ID="rdoDelivery" runat="server" Text="Delivery" GroupName="rdogrpOrderType" OnCheckedChanged="rdoDelivery_CheckedChanged" />
+            <asp:RadioButton ID="rdoDelivery" runat="server" Text="Delivery" GroupName="rdogrpOrderType" OnCheckedChanged="rdoDelivery_CheckedChanged" Checked="True" />
 &nbsp;&nbsp;&nbsp;
             <asp:RadioButton ID="rdoCarryOut" runat="server" Text="Carry Out" GroupName="rdogrpOrderType" OnCheckedChanged="rdoCarryOut_CheckedChanged" />
         </p>

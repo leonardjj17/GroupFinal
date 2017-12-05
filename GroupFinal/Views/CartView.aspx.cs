@@ -41,48 +41,51 @@ namespace GroupFinal.Views
             head2.Width = 500;
             pnlShoppingCart.Controls.Add(shoppingCart);
             int currentIndex = 0;
-            foreach (CartItem items in cartItems)
+
+            if (cartItems != null)
             {
-                
+                foreach (CartItem items in cartItems)
+                {
 
-                TableRow newRow = new TableRow();
-                TableCell newCell1 = new TableCell();
-                TableCell newCell2 = new TableCell();
-                TableCell newCell3 = new TableCell();
-                TableCell newCell4 = new TableCell();
-                TableCell editRow = new TableCell();
-                TableCell deleteRow = new TableCell();
 
-                Button btnEdit = new Button();
-                Button btnDelete = new Button();
-                btnEdit.Text = "Edit Item";
-                btnDelete.Text = "Delete Item";
-                btnDelete.ID = Convert.ToString(currentIndex);
+                    TableRow newRow = new TableRow();
+                    TableCell newCell1 = new TableCell();
+                    TableCell newCell2 = new TableCell();
+                    TableCell newCell3 = new TableCell();
+                    TableCell newCell4 = new TableCell();
+                    //TableCell editRow = new TableCell();
+                    TableCell deleteRow = new TableCell();
 
-                currentIndex++;
+                    //Button btnEdit = new Button();
+                    Button btnDelete = new Button();
+                    //btnEdit.Text = "Edit Item";
+                    btnDelete.Text = "Delete Item";
+                    btnDelete.ID = Convert.ToString(currentIndex);
 
-                btnDelete.Click += BtnDelete_Click;
+                    currentIndex++;
 
-                editRow.Controls.Add(btnEdit);
-                deleteRow.Controls.Add(btnDelete);
+                    btnDelete.Click += BtnDelete_Click;
 
-                shoppingCart.Rows.Add(newRow);
+                    //editRow.Controls.Add(btnEdit);
+                    deleteRow.Controls.Add(btnDelete);
 
-                newRow.Cells.Add(newCell1);
-                newRow.Cells.Add(newCell2);
-                newRow.Cells.Add(newCell3);
-                newRow.Cells.Add(newCell4);
-                newRow.Cells.Add(editRow);
-                newRow.Cells.Add(deleteRow);
+                    shoppingCart.Rows.Add(newRow);
 
-                
+                    newRow.Cells.Add(newCell1);
+                    newRow.Cells.Add(newCell2);
+                    newRow.Cells.Add(newCell3);
+                    newRow.Cells.Add(newCell4);
+                    //newRow.Cells.Add(editRow);
+                    newRow.Cells.Add(deleteRow);
 
-                newCell1.Text = items.ProductType;
-                newCell2.Text = items.ProductDetail;
-                newCell3.Text = items.ProductQty.ToString();
-                newCell4.Text = items.ProductPrice.ToString("c2");
+
+
+                    newCell1.Text = items.ProductType;
+                    newCell2.Text = items.ProductDetail;
+                    newCell3.Text = items.ProductQty.ToString();
+                    newCell4.Text = items.ProductPrice.ToString("c2");
+                }
             }
-
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

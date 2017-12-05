@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CartView2.aspx.cs" Inherits="GroupFinal.Views.CartView2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CartView.aspx.cs" Inherits="GroupFinal.Views.CartView2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     Your Current Order<br />
     <asp:Panel ID="pnlShoppingCart" runat="server">

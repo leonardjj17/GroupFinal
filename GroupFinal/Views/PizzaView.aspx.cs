@@ -20,33 +20,37 @@ namespace GroupFinal.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            int count = 0;
             //cartItems = new List<CartItem>();
             foreach (Products crusts in allCrusts)
             {
                 RadioButton newCrust = new RadioButton();
                 newCrust.Text = crusts.ProductDetail;
                 newCrust.GroupName = "grpCrusts";
-
+                if (count == 0) newCrust.Checked = true;
+                count++;
                 pnlCrusts.Controls.Add(newCrust);
                 pnlCrusts.Controls.Add(new LiteralControl("<br />"));
 
             }
-
+            count = 0;
             foreach(Products sauces in allSauces)
             {
                 RadioButton newSauce = new RadioButton();
                 newSauce.Text = sauces.ProductDetail;
                 newSauce.GroupName = "grpSauce";
-                
+                if (count == 0) newSauce.Checked = true;
+                count++;
                 pnlSauce.Controls.Add(newSauce);
                 pnlSauce.Controls.Add(new LiteralControl("<br />"));
             }
-
+            count = 0;
             foreach(Products toppings in allToppings)
             {
                 CheckBox newTopping = new CheckBox();
                 newTopping.Text = toppings.ProductDetail;
-
+                if (count == 0) newTopping.Checked = true;
+                count++;
                 pnlToppings.Controls.Add(newTopping);
                 pnlToppings.Controls.Add(new LiteralControl("<br />"));
             }
@@ -192,7 +196,7 @@ namespace GroupFinal.Views
 
             Session["items"] = cartItems;
 
-            Response.Redirect("CartView2.aspx");
+            Response.Redirect("CartView.aspx");
         }
     }
 }
