@@ -20,6 +20,7 @@ namespace GroupFinal.Views
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            int count = 0;
             cartItems = new List<CartItem>();
             drinks = ProductsDA.GetAllDrinks();
             double basePrice = drinks.First().ProductPrice;
@@ -31,9 +32,10 @@ namespace GroupFinal.Views
                 RadioButton newDrink = new RadioButton();
                 newDrink.Text = drink.ProductDetail;
                 newDrink.GroupName = "grpDrinks";
-
+                if (count < 1) newDrink.Checked = true;
                 pnlDrink.Controls.Add(newDrink);
                 pnlDrink.Controls.Add(new LiteralControl("<br />"));
+                count++;
             }
         }
         
@@ -43,8 +45,12 @@ namespace GroupFinal.Views
             List<CartItem> cartItems = (List<CartItem>)Session["items"];
             drinks = ProductsDA.GetAllDrinks();
             double pricemultiplier = 1;
-            string size = "small";
-            if (rdoMedium.Checked)
+            string size = null;
+            if (rdoSmall.Checked)
+            {
+                size = "small";
+            }
+            else if (rdoMedium.Checked)
             {
                 pricemultiplier = MEDIUM_PRICE_MULTIPLIER;
                 size = "medium";
@@ -53,6 +59,10 @@ namespace GroupFinal.Views
             {
                 pricemultiplier = LARGE_PRICE_MULTIPLIER;
                 size = "large";
+            }
+            else
+            {
+                Response.Redirect("Drinks.aspx");
             }
             
             foreach (Control rdoDrink in pnlDrink.Controls)
@@ -75,6 +85,7 @@ namespace GroupFinal.Views
                     }
                 }
             }
+            Response.Redirect("Drinks.aspx");
         }
     }
 }

@@ -6,7 +6,7 @@
         <asp:Panel ID="pnlSize" style="margin: 0 auto; text-align: left;" runat="server" Width="300px">
         <asp:RadioButton ID="rdoSmall" runat="server" GroupName="drinkSize" Text="  Small  (12oz)  " />
         <br />
-        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="drinkSize" Text="  Medium  (24oz)  " />
+        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="drinkSize" Text="  Medium  (24oz)  " Checked="True" />
         <br />
         <asp:RadioButton ID="rdoLarge" runat="server" GroupName="drinkSize" Text="  Large  (48oz)  " />
     </asp:Panel>

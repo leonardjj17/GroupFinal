@@ -34,13 +34,19 @@ namespace GroupFinal.Employees
                 {
                     TableRow row = new TableRow();
                     TableCell corderID = new TableCell();
+                    corderID.HorizontalAlign = HorizontalAlign.Left;
                     TableCell ccustomerName = new TableCell();
+                    ccustomerName.HorizontalAlign = HorizontalAlign.Left;
                     TableCell corderTotal = new TableCell();
+                    corderTotal.HorizontalAlign = HorizontalAlign.Left;
                     TableCell corderType = new TableCell();
+                    corderType.HorizontalAlign = HorizontalAlign.Left;
                     TableCell cdriver = new TableCell();
+                    cdriver.HorizontalAlign = HorizontalAlign.Left;
                     TableCell cassign = new TableCell();
-                    TableCell cdelete = new TableCell();
+                    cassign.HorizontalAlign = HorizontalAlign.Left;
                     TableCell cmarkComplete = new TableCell();
+                    cmarkComplete.HorizontalAlign = HorizontalAlign.Left;
 
                     corderID.Text = Convert.ToString(order.OrderID);
                     ccustomerName.Text = order.CustomerFirst + " " + order.CustomerLast;
@@ -69,26 +75,6 @@ namespace GroupFinal.Employees
                         
                     }
                     else cassign.Text = "";
-                    
-                    Button btnDelete = new Button();
-                    btnDelete.Text = "Delete Order";
-                    if ((string)Session["role"] == "store manager")
-                    {
-                        btnDelete.Click += (senderer, ee) =>
-                        {
-                            Response.Redirect("Delete.aspx");
-                        };
-                        
-                    }
-                    else
-                    {
-                        btnDelete.Click += (senderer, ee) =>
-                        {
-                            Response.Redirect("../Manager/AdminLogin.aspx");
-                        };
-                    }
-
-                    cdelete.Controls.Add(btnDelete);
 
                     Button btnMarkComplete = new Button();
                     btnMarkComplete.Text = "Complete";
@@ -105,7 +91,6 @@ namespace GroupFinal.Employees
                     row.Controls.Add(corderType);
                     row.Controls.Add(cdriver);
                     row.Controls.Add(cassign);
-                    row.Controls.Add(cdelete);
                     row.Controls.Add(cmarkComplete);
                     table.Controls.Add(row);
 

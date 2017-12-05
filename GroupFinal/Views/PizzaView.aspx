@@ -10,7 +10,7 @@
     Select your Size<asp:Panel ID="pnlSize" runat="server" Width="300px">
         <asp:RadioButton ID="rdoSmall" runat="server" GroupName="pizzaSize" Text="Small (12&quot;) $8.99" />
         <br />
-        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;) $11.99" />
+        <asp:RadioButton ID="rdoMedium" runat="server" GroupName="pizzaSize" Text="Medium (15&quot;) $11.99" Checked="True" />
         <br />
         <asp:RadioButton ID="rdoLarge" runat="server" GroupName="pizzaSize" Text="Large (18&quot;) $14.99" />
     </asp:Panel>
@@ -34,7 +34,7 @@
     <asp:Panel ID="pnlCheese" runat="server" Width="200px">
         <asp:RadioButton ID="rdoNone" runat="server" GroupName="grpCheese"  Text="None" />
         <br />
-        <asp:RadioButton ID="rdoRegular" runat="server" GroupName="grpCheese" Text="Regular Mozzerella" />
+        <asp:RadioButton ID="rdoRegular" runat="server" GroupName="grpCheese" Text="Regular Mozzerella" Checked="True" />
         <br />
     </asp:Panel>
         <br />
