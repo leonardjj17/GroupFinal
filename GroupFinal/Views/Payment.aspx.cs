@@ -31,29 +31,37 @@ namespace GroupFinal.Views
                 List<CartItem> cartItems = (List<CartItem>)Session["items"];
                 currentCustomer = (Customer)Session["customer"];
                 currentOrder = (Order)Session["Order"];
+            lblOrderType.Text = currentOrder.OrderType;
 
-                if (currentCustomer != null)
+            if (currentCustomer != null)
                 {
                     customerName = currentCustomer.CustomerFirst + " " + currentCustomer.CustomerLast;
                     lblCustomerName.Text = customerName;
+     
                 }
 
                 else
                 {
-                    pnlNewCustomer.Visible = true;                
-                }
+                    pnlNewCustomer.Visible = true;
+                //checks for order type without customer value
+                        if (lblOrderType.Text == "delivery")
+                        {
+                            deliveryTime = date.AddMinutes(50d);
+                        }
+                        else if (lblOrderType.Text == "carryout")
+                        {
+                            deliveryTime = date.AddMinutes(20d);
+                        }
+            }
                 if (currentCustomer != null)
                 {
                     deliveryTime = date.AddMinutes(Convert.ToDouble(currentOrder.OrderEstimation));
                 }
-                else
-                {
-                    deliveryTime = date;
-                }
 
-                string deliveryEstimated = Convert.ToString(deliveryTime.Hour + ": " + deliveryTime.Minute);
 
-                lblOrderType.Text = currentOrder.OrderType;
+                string deliveryEstimated = Convert.ToString(deliveryTime);
+
+
                 lblOrderEstimation.Text = deliveryEstimated + ". That's about " + currentOrder.OrderEstimation + " minutes from now";
 
                 //lblDate.Text = Convert.ToString(currentTime);
